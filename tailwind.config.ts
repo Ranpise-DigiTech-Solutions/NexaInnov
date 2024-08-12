@@ -1,20 +1,54 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        'primary-blue': 'var(--primary-blue)',
+        'primary-pink': 'var(--primary-pink)',
+        'primary-purple': 'var(--primary-purple)',
+        'primary-black': 'var(--primary-black)',
+        'primary-light-blue': 'var(--primary-light-blue)',
+
+        'neutral-800': 'var(--neutral-800)',
+        'neutral-700': 'var(--neutral-700)',
+        'neutral-600': 'var(--neutral-600)',
+        'neutral-500': 'var(--neutral-500)',
+        'neutral-400': 'var(--neutral-400)',
+        'neutral-300': 'var(--neutral-300)',
+        'neutral-200': 'var(--neutral-200)',
+
+        white: 'var(--white)',
+        black: 'var(--black)',
+      },
+      boxShadow: {
+        'card-default': 'var(--shadow-card-default)',
+        'card-large': 'var(--shadow-card-large)',
+        'card-large-dark': 'var(--shadow-card-large-dark)',
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
-  plugins: [],
-};
-export default config;
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config
