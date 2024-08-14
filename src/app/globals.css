@@ -7,10 +7,10 @@
     --primary-blue: #2d42ff;
     --primary-pink: #ff4895;
     --primary-purple: #6e4fe9;
-    --primary-black: #1d1a27;
+    --primary-black: #13111a;
     --primary-light-blue: #1766ff;
 
-    --neutral-800: #13111a;
+    --neutral-800: #1d1a27;
     --neutral-700: #302c3f;
     --neutral-600: #5e5b71;
     --neutral-500: #88849c;
@@ -56,5 +56,83 @@
     --shadow-card-default: rgba(0, 0, 0, 0.1);
     --shadow-card-large: rgba(0, 0, 0, 0.35);
     --shadow-card-large-dark: rgba(0, 0, 0, 0.45);
+  }
+
+  .button-primary-gradient {
+    transform-style: preserve-3d;
+    background-image: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+    border-radius: 10000px;
+    padding: 2px;
+    transition: transform 0.3s;
+    display: inline-block;
+    transform: scale3d(1, 1, 1.01);
+    box-shadow: 0 3px 7px rgba(19, 17, 26, 0.14);
+  }
+
+  .gradient-border {
+  }
+
+  .gradient-border-inner {
+    padding: 15px 50px;
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 2rem;
+    background: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .gradient-border-inner:hover {
+    border-radius: 1.6rem;
+  }
+
+  .gradient-border-inner::before {
+    content: "";
+    color: var(--white);
+    position: absolute;
+    top: 1.5px;
+    right: 1.5px;
+    bottom: 1.5px;
+    left: 1.5px;
+    background-color: var(--primary-black);
+    border-radius: 2rem;
+    z-index: -1;
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(270deg, #4f56ff, #ff4980);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .line-divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--neutral-700);
+  }
+
+  .icon-gradient {
+    transform-style: preserve-3d;
+    background-image: linear-gradient(315deg, #434bff, #ff4b81);
+  }
+
+  .link-underline-gradient-container:hover {
+    .link-underline-gradient-effect::after {
+      width: 100%;
+    }
+  }
+
+  .link-underline-gradient-effect::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.5rem;
+    height: 1px;
+    width: 0;
+    background: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+    transition: all 0.3s ease-out;
   }
 }

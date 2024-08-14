@@ -5,7 +5,11 @@ type Props = {
 };
 
 const MainLayout = ({ children }: Props) => {
-  return <>{children}</>;
+  return (
+    <div className="min-h-screen min-w-screen bg-primary-black font-helvetica">
+      {children}
+    </div>
+  );
 };
 
 export default MainLayout;

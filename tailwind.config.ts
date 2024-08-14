@@ -46,6 +46,30 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        swipeOutLeft: {
+          '0%': { opacity: '1', transform: 'translateX(0)' },
+          '100%': { opacity: '0', transform: 'translateX(-100%)' },
+        },
+        swipeInRight: {
+          '0%': { opacity: '0', transform: 'translateX(100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        swipeOutRight: {
+          '0%': { opacity: '1', transform: 'translateX(0)' },
+          '100%': { opacity: '0', transform: 'translateX(100%)' },
+        },
+        swipeInLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-100%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        swipeOutLeft: 'swipeOutLeft 0.5s ease-out forwards',
+        swipeInRight: 'swipeInRight 0.5s ease-out forwards',
+        swipeOutRight: 'swipeOutRight 0.5s ease-out forwards',
+        swipeInLeft: 'swipeInLeft 0.5s ease-out forwards',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
