@@ -25,6 +25,10 @@ const config = {
         'primary-black': 'var(--primary-black)',
         'primary-light-blue': 'var(--primary-light-blue)',
 
+        'secondary-blue': 'var(--secondary-blue)',
+        'secondary-pink': 'var(--secondary-pink)',
+        'secondary-purple': 'var(--secondary-purple)',
+
         'neutral-800': 'var(--neutral-800)',
         'neutral-700': 'var(--neutral-700)',
         'neutral-600': 'var(--neutral-600)',
@@ -40,6 +44,7 @@ const config = {
         'card-default': 'var(--shadow-card-default)',
         'card-large': 'var(--shadow-card-large)',
         'card-large-dark': 'var(--shadow-card-large-dark)',
+        'card-extra-large-dark': 'var(--shadow-card-extra-large-dark)',
       },
       borderRadius: {
         lg: "var(--radius)",
