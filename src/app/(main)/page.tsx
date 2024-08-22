@@ -3,6 +3,7 @@ import GetStartedComponent from "./_components/get-started";
 import FooterComponent from "@/components/global/footer";
 import TestimonialComponent from "./_components/testimonial";
 import ArticlesComponent from "./_components/articles";
+import OurClientsComponent from "./_components/our-clients";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <NavbarComponent className="flex-[15%]" />
         <GetStartedComponent className="flex-[85%]"/>
       </div>
+      <OurClientsComponent />
       <TestimonialComponent />
       <ArticlesComponent />
       <>

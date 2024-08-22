@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ContactLayout = ({ children }: Props) => {
+const TeamLayout = ({ children }: Props) => {
   return (
     <div>
       <NavbarComponent />
@@ -19,4 +19,4 @@ const ContactLayout = ({ children }: Props) => {
   );
 };
 
-export default ContactLayout;
+export default TeamLayout;

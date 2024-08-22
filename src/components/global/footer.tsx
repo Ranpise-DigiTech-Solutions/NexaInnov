@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { ChangeEvent, useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 type Props = {};
 
@@ -16,7 +17,7 @@ const FooterComponent = (props: Props) => {
 
   return (
     <div className="text-white py-10 px-14 flex flex-col items-center justify-center gap-6 w-full">
-      <div className="w-[95%] flex flex-row items-start justify-between gap-10">
+      <div className="w-[95%] flex flex-row items-start justify-between gap-10 flex-wrap xl:flex-nowrap">
         <div className="flex-[35%] flex flex-col items-start justify-center gap-6">
           <div className="text-2xl font-bold">Pages</div>
           <div className="flex flex-row items-start justify-center gap-[6rem] text-neutral-400">
@@ -45,12 +46,12 @@ const FooterComponent = (props: Props) => {
               >
                 Contact
               </a>
-              <a
-                href="#"
+              <Link
+                href="/team"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Blog
-              </a>
+                Team
+              </Link>
               <a
                 href="#"
                 className="transition-all duration-300 hover:text-primary-pink"
@@ -235,14 +236,19 @@ const FooterComponent = (props: Props) => {
       </div>
       <div className="line-divider w-[95%]"></div>
       <div className="w-[95%] flex items-center justify-between">
-        <Image
-          src={
-            "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/612bc71c644420792634e5a4_logo-dark-template.svg"
-          }
-          height={100}
-          width={100}
-          alt="logo"
-        />
+      <Link href={"/"}>
+        <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
+          <Image
+            src={
+              "/images/logo.png"
+            }
+            height={60}
+            width={60}
+            alt="logo"
+          />
+          <p className="text-xl italic font-serif text-logo-text">NexaInnov</p>
+        </div>
+      </Link>
         <div className="text-neutral-400">
           &copy; 2024 <span className="font-serif">NexaInnov</span>. All rights reserved. Designed by{" "}
           <a

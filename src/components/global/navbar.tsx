@@ -16,23 +16,25 @@ const NavbarComponent = ({ className }: Props) => {
 
   return (
     <div
-      className={`w-full flex text-white items-center justify-between p-8 ${className}`}
+      className={`w-full flex text-white items-center justify-between px-8 py-4 ${className} bg-neutral-800 shadow-md shadow-neutral-700`}
     >
-      <div className="flex items-center gap-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
-        <Image
-          src={
-            "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/612bc71c644420792634e5a4_logo-dark-template.svg"
-          }
-          height={105}
-          width={105}
-          alt="logo"
-        />
-        {/* <div className="text-xl font-serif">NexaInnov</div> */}
-      </div>
+      <Link href={"/"}>
+        <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
+          <Image
+            src={
+              "/images/logo.png"
+            }
+            height={75}
+            width={75}
+            alt="logo"
+          />
+          <p className="text-2xl italic font-serif text-logo-text">NexaInnov</p>
+        </div>
+      </Link>
       <div className="flex items-center gap-8 tracking-wide">
-        <a
+        <Link
           className="hover:text-primary-pink transition-all transform duration-300 relative"
-          href="#"
+          href="/"
         >
           <p className={clsx(pathName === "/" ? "text-primary-pink" : "")}>
             Home
@@ -45,7 +47,25 @@ const NavbarComponent = ({ className }: Props) => {
               )}
             ></span>
           </p>
-        </a>
+        </Link>
+        <Link
+          className="hover:text-primary-pink transition-all transform duration-300 relative"
+          href="/about"
+        >
+          <p
+            className={clsx(pathName === "/about" ? "text-primary-pink" : "")}
+          >
+            About Us
+          </p>
+          <p className="absolute -bottom-4 h-2 w-full flex items-center justify-center">
+            <span
+              className={clsx(
+                "h-full w-2 bg-primary-pink rounded-full",
+                pathName === "/about" ? "" : "hidden"
+              )}
+            ></span>
+          </p>
+        </Link>
         <Link
           className="hover:text-primary-pink transition-all transform duration-300 relative"
           href="/service"
@@ -53,7 +73,7 @@ const NavbarComponent = ({ className }: Props) => {
           <p
             className={clsx(pathName === "/service" ? "text-primary-pink" : "")}
           >
-            Service
+            Services
           </p>
           <p className="absolute -bottom-4 h-2 w-full flex items-center justify-center">
             <span
@@ -106,24 +126,6 @@ const NavbarComponent = ({ className }: Props) => {
         </Link>
         <Link
           className="hover:text-primary-pink transition-all transform duration-300 relative"
-          href="/aboutUs"
-        >
-          <p
-            className={clsx(pathName === "/aboutUs" ? "text-primary-pink" : "")}
-          >
-            About Us
-          </p>
-          <p className="absolute -bottom-4 h-2 w-full flex items-center justify-center">
-            <span
-              className={clsx(
-                "h-full w-2 bg-primary-pink rounded-full",
-                pathName === "/aboutUs" ? "" : "hidden"
-              )}
-            ></span>
-          </p>
-        </Link>
-        <Link
-          className="hover:text-primary-pink transition-all transform duration-300 relative"
           href="clients"
         >
           <p
@@ -142,11 +144,11 @@ const NavbarComponent = ({ className }: Props) => {
         </Link>
         <Link
           className="hover:text-primary-pink transition-all transform duration-300 relative"
-          href="/contactUs"
+          href="/contact"
         >
           <p
             className={clsx(
-              pathName === "/contactUs" ? "text-primary-pink" : ""
+              pathName === "/contact" ? "text-primary-pink" : ""
             )}
           >
             Contact Us
@@ -155,7 +157,7 @@ const NavbarComponent = ({ className }: Props) => {
             <span
               className={clsx(
                 "h-full w-2 bg-primary-pink rounded-full",
-                pathName === "/contactUs" ? "" : "hidden"
+                pathName === "/contact" ? "" : "hidden"
               )}
             ></span>
           </p>

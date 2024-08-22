@@ -18,3 +18,87 @@ export const testimonialData = [
         designation: "VP of Marketing @ Facebook"
     },
 ]
+
+export const userActivity = [
+    {
+        id: 1,
+        heading: "Spotify New York",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur aliquid et commodi reprehenderit vel sunt blanditiis, perferendis culpa odit accusamus deserunt quaerat laboriosam quibusdam quis sint optio atque facilis veniam?",    
+        tag: "New",    
+    },
+    {
+        id: 2,
+        heading: "Spotify New York",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur aliquid et commodi reprehenderit vel sunt blanditiis, perferendis culpa odit accusamus deserunt quaerat laboriosam quibusdam quis sint optio atque facilis veniam?",        
+        tag: "Popular"
+    },
+    {
+        id: 3,
+        heading: "Spotify New York",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur aliquid et commodi reprehenderit vel sunt blanditiis, perferendis culpa odit accusamus deserunt quaerat laboriosam quibusdam quis sint optio atque facilis veniam?",        
+        tag: "New"
+    },
+    {
+        id: 4,
+        heading: "Spotify New York",
+        description: "Lorem ipsum,?",        
+        tag: "Popular"
+    },
+]
+
+export const clientReviews = [
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+    {
+        heading: "Exceeded our Expectations",
+        content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptate. Explicabo, alias! Voluptas et expedita iure veritatis doloremque rerum possimus pariatur. Ratione provident rerum molestiae distinctio fugiat cumque ex nemo sequi id nostrum porr officia repudiandae debitis magnam",
+        author: "John Smith",
+        designation: "Homeowner @Smith Family Homes"
+    },
+]

@@ -6,9 +6,9 @@ type Props = {
   children: React.ReactNode;
 };
 
-const ContactLayout = ({ children }: Props) => {
+const AboutLayout = ({ children }: Props) => {
   return (
-    <div>
+    <div className="min-h-screen">
       <NavbarComponent />
       {children}
       <>
@@ -19,4 +19,4 @@ const ContactLayout = ({ children }: Props) => {
   );
 };
 
-export default ContactLayout;
+export default AboutLayout;

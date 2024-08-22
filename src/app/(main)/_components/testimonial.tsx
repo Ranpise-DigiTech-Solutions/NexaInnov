@@ -3,8 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import React, {
-  ChangeEvent,
-  ReactHTMLElement,
   useEffect,
   useRef,
   useState,
@@ -62,7 +60,7 @@ const TestimonialComponent = (props: Props) => {
           </Button>
         </div>
         <div className="flex-[70%] h-[30em] bg-neutral-800 rounded-3xl p-[4rem]">
-          <div className={`h-full w-full flex flex-row items-center justify-between gap-4 inset-0 animate-${animation}`} key={currentIndex}>
+          <div className={`h-full w-full flex flex-row items-center justify-between gap-4 inset-0 ${animation ? `animate-${animation}` : ''}`}>
             <div className="flex flex-col items-start justify-between gap-10 text-neutral-200">
               <div className="text-2xl font-bold">
                 {testimonialData[currentIndex].heading}

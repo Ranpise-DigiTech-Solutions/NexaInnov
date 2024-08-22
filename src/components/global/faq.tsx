@@ -6,10 +6,13 @@ import clsx from "clsx";
 import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
-const FAQComponent = (props: Props) => {
+const FAQComponent = ({ className }: Props) => {
   const [faqTrigger, setFaqTrigger] = useState<{
     faq1: boolean;
     faq2: boolean;
@@ -34,7 +37,7 @@ const FAQComponent = (props: Props) => {
   console.log(faqTrigger);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center gap-6 py-[4rem]">
+    <div className={twMerge("min-h-screen w-full flex flex-col items-center justify-center gap-6", className)}>
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="w-full text-4xl font-bold text-center">
           Frequently Asked Questions
