@@ -13,6 +13,8 @@
     --secondary-blue: #4f56ff;
     --secondary-pink: #ff4980;
     --secondary-purple: #c084fc;
+    --secondary-purple-dark: #9C27B0;
+    --secondary-neon: #00c4cc;
 
     --neutral-800: #1d1a27;
     --neutral-700: #302c3f;
@@ -157,4 +159,13 @@
   .text-details-dot-separator * {
     text-decoration-line: inherit;
   }
+
+  .bg-gradient {
+    background: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+  }
+
+  .bg-navbar-gradient {
+    background: linear-gradient(to right, rgb(155, 162, 175), #302c3f 25%, #1d1a27 100%);
+  }
+
 }

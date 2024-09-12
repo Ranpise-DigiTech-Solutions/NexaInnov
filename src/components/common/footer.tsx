@@ -16,181 +16,175 @@ const FooterComponent = (props: Props) => {
   };
 
   return (
-    <div className="text-white py-10 px-14 flex flex-col items-center justify-center gap-6 w-full">
+    <div className="text-white px-[1rem] lg:px-14 flex flex-col items-center justify-center gap-6 w-full">
       <div className="w-[95%] flex flex-row items-start justify-between gap-10 flex-wrap xl:flex-nowrap">
         <div className="flex-[35%] flex flex-col items-start justify-center gap-6">
-          <div className="text-2xl font-bold">Pages</div>
+          <div className="text-2xl font-bold capitalize">About us</div>
           <div className="flex flex-row items-start justify-center gap-[6rem] text-neutral-400">
             <div className="flex flex-col items-start justify-center gap-4">
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Sales Home
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Primary Home
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Contact
-              </a>
+                Our Story
+              </Link>
               <Link
                 href="/team"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Team
+                Our leadership
+              </Link>
+              <Link
+                href="/team"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Client stories
+              </Link>
+              <Link
+                href="/careers"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Privacy policies
+              </Link>
+              <Link
+                href="/training"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Career
+              </Link>
+              <Link
+                href="/contact"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Subsidiaries
+              </Link>
+              <Link
+                href="#"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Alumni
+              </Link>
+              <Link
+                href="#"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Newsroom
+              </Link>
+            </div>
+            <div className="flex flex-col items-start justify-center gap-4">
+              <Link
+                href="#"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                CSR Activities
+              </Link>
+              <Link
+                href="/training"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Training
+              </Link>
+              <Link
+                href="/careers"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Careers
               </Link>
               <a
                 href="#"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Blog Post
+                Contact Us
               </a>
               <a
                 href="#"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Pricing
+                lorem
               </a>
               <a
                 href="#"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Pricing Single
-              </a>
-            </div>
-            <div className="flex flex-col items-start justify-center gap-4">
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Sales Home
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Primary Home
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                About
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Contact
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Blog
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Blog Post
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Pricing
+                lorem
               </a>
             </div>
           </div>
         </div>
         <div className="flex-[20%] flex flex-col items-start justify-center gap-6">
-          <div className="text-2xl font-bold">Services</div>
+          <div className="text-2xl font-bold capitalize">our Services</div>
           <div className="flex flex-col items-start justify-center gap-4 text-neutral-400">
-            <a
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Web Development
-            </a>
-            <a
+              IT and DT Consulting
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Web Design
-            </a>
-            <a
+              Automation
+            </Link>
+            <Link
+              href="#"
+              className="transition-all duration-300 hover:text-primary-pink"
+            >
+              Digital Marketing
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Software Development
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              SEO Optimization
-            </a>
-            <a
+              Website & Mobile App Development
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Social Media Design
-            </a>
-            <a
+              Advisory & Outsourcing Services
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Landing Page
-            </a>
-            <a
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              CMS Development
-            </a>
+              IBM I(AS/400) & JD Edwards ERP Consulting
+            </Link>
           </div>
         </div>
         <div className="flex-[20%] flex flex-col items-start justify-center gap-6">
-          <div className="text-2xl font-bold">Utility Pages</div>
+          <div className="text-2xl font-bold">Our Pages</div>
           <div className="flex flex-col items-start justify-center gap-4 text-neutral-400">
-            <a
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Start Here
-            </a>
-            <a
+              EventifyConnect
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Style Guide
-            </a>
-            <a
+              Dragblitz
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              Password Protected
-            </a>
-            <a
+              Shopify
+            </Link>
+            <Link
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
-              404 Not Found
-            </a>
+              lorem
+            </Link>
             <a
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
@@ -235,22 +229,18 @@ const FooterComponent = (props: Props) => {
         </div>
       </div>
       <div className="line-divider w-[95%]"></div>
-      <div className="w-[95%] flex items-center justify-between">
-      <Link href={"/"}>
-        <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
-          <Image
-            src={
-              "/images/logo.png"
-            }
-            height={60}
-            width={60}
-            alt="logo"
-          />
-          <p className="text-xl italic font-serif text-logo-text">NexaInnov</p>
-        </div>
-      </Link>
-        <div className="text-neutral-400">
-          &copy; 2024 <span className="font-serif">NexaInnov</span>. All rights reserved. Designed by{" "}
+      <div className="w-[95%] flex flex-col lg:flex-row items-start lg:items-center justify-between">
+        <Link href={"/"}>
+          <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
+            <Image src={"/images/logo.png"} height={60} width={60} alt="logo" />
+            <p className="text-xl italic font-serif text-logo-text">
+              NexaInnov
+            </p>
+          </div>
+        </Link>
+        <div className="text-neutral-400 lg:text-nowrap text-wrap leading-7">
+          &copy; 2024 <span className="font-serif">NexaInnov</span>. All rights
+          reserved. Designed by{" "}
           <a
             href="#"
             className="transition-all duration-300 hover:text-primary-pink font-serif"

@@ -28,6 +28,8 @@ const config = {
         "secondary-blue": "var(--secondary-blue)",
         "secondary-pink": "var(--secondary-pink)",
         "secondary-purple": "var(--secondary-purple)",
+        "secondary-purple-dark": "var(--secondary-purple-dark)",
+        "secondary-neon": "var(--secondary-neon)",
 
         "neutral-800": "var(--neutral-800)",
         "neutral-700": "var(--neutral-700)",
@@ -72,13 +74,26 @@ const config = {
           "0%": { opacity: "0", transform: "translateX(-100%)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        marquee: {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-25%)",
+          },
+        },
       },
       animation: {
         swipeOutLeft: "swipeOutLeft 0.5s ease-out forwards",
         swipeInRight: "swipeInRight 0.5s ease-out forwards",
         swipeOutRight: "swipeOutRight 0.5s ease-out forwards",
         swipeInLeft: "swipeInLeft 0.5s ease-out forwards",
+        marquee: "marquee 15s linear infinite",
       },
+      zIndex: {
+        '100': '100',
+      },
+      
     },
   },
   plugins: [require("tailwindcss-animate")],

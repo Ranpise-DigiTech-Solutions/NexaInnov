@@ -13,14 +13,14 @@ const ContactForm = ({ className }: Props) => {
   return (
     <div
       className={twMerge(
-        "rounded-3xl border border-slate-500 px-[3rem] py-[2rem] shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)] bg-neutral-800",
+        "rounded-3xl border border-slate-500 px-[1.5rem] lg:px-[3rem] py-[2rem] shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)] bg-neutral-800",
         className
       )}
     >
       <div className="w-full h-full flex flex-col items-stretch gap-8 justify-center">
-        <div className="w-[50%]">
-          <div className="w-full flex flex-col items-start justify-center gap-2 pr-2">
-            <p className="text-l font-bold">Email</p>
+        <div className="w-full lg:w-[50%]">
+          <div className="w-full flex flex-col items-start justify-center gap-2 lg:pr-2">
+            <p className="text-lg font-bold">Name</p>
             <Input
               type="email"
               placeholder="Full name"
@@ -28,9 +28,9 @@ const ContactForm = ({ className }: Props) => {
             />
           </div>
         </div>
-        <div className="w-full flex items-center justify-between gap-4">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-4">
           <div className="w-full flex flex-col items-start justify-center gap-2">
-            <p className="text-l font-bold">Email</p>
+            <p className="text-lg font-bold">Email</p>
             <Input
               type="email"
               placeholder="Full name"
@@ -38,7 +38,7 @@ const ContactForm = ({ className }: Props) => {
             />
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-2">
-            <p className="text-l font-bold">Phone</p>
+            <p className="text-lg font-bold">Phone</p>
             <Input
               type="number"
               placeholder="Full name"
@@ -48,7 +48,7 @@ const ContactForm = ({ className }: Props) => {
         </div>
         <div className="w-full">
           <div className="w-full flex flex-col items-start justify-center gap-2">
-            <p className="text-md font-bold">Subject</p>
+            <p className="text-lg font-bold">Subject</p>
             <Input
               type="email"
               placeholder="Full name"
@@ -58,7 +58,7 @@ const ContactForm = ({ className }: Props) => {
         </div>
         <div className="w-full">
           <div className="w-full flex flex-col items-start justify-center gap-2">
-            <p className="text-l font-bold">Message</p>
+            <p className="text-lg font-bold">Message</p>
             <textarea
               placeholder="Please enter your message..."
               className="bg-neutral-600 w-full rounded-md p-4 text-sm border min-h-[6rem] transition-all transform duration-300 hover:bg-neutral-700"

@@ -6,7 +6,7 @@ type Props = {
 
 const MainLayout = ({ children }: Props) => {
   return (
-    <div className="min-h-screen min-w-screen bg-primary-black font-helvetica select-none">
+    <div className="min-h-screen max-w-screen overflow-x-clip bg-primary-black font-helvetica select-none">
       {children}
     </div>
   );

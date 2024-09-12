@@ -7,10 +7,10 @@ type Props = {};
 
 const TeamPage = (props: Props) => {
   return (
-    <>
-        <TeamMembersComponent />
+    <div className="w-full flex flex-col items-center justify-center gap-[5rem]">
+        <TeamMembersComponent className="mt-[2rem]"/>
         <JoinUsComponent />
-    </>
+    </div>
   );
 };
 
