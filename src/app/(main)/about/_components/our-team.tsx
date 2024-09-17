@@ -21,14 +21,14 @@ const OurTeamComponent = (props: Props) => {
           <div className="relative group min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transfrom transition-all duration-500 hover:min-w-[350px] overflow-clip">
             <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-75">
               <p className="w-full text-neutral-200 text-center font-semibold capitalize">
-                Sara Williams
+                Samadhan Ranpise
               </p>
               <p className="w-full text-center text-neutral-500 capitalize">
                 Co-Founder & CEO
               </p>
             </div>
             <Image
-              src={"/images/cto_1.jpg"}
+              src={"/images/ceo_fullpic.jpeg"}
               fill
               objectFit="cover"
               alt="CEO Profile Pic"
@@ -40,33 +40,33 @@ const OurTeamComponent = (props: Props) => {
           <div className="relative group min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transfrom transition-all duration-500 hover:min-w-[350px] overflow-clip">
             <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-75">
               <p className="w-full text-neutral-200 text-center font-semibold capitalize">
-                Chris Evans
+                Adithya R
+              </p>
+              <p className="w-full text-center text-neutral-500 capitalize">
+                Lead Software Developer
+              </p>
+            </div>
+            <Image
+              src={"/images/adithya_fullpic.jpeg"}
+              fill
+              objectFit="cover"
+              alt="CEO Profile Pic"
+              unoptimized
+              quality={100}
+              className="z-0 rounded-tr-[3rem] rounded-bl-[3rem]"
+            />
+          </div>
+          <div className="relative group min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transfrom transition-all duration-500 hover:min-w-[350px] overflow-clip">
+            <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-75">
+              <p className="w-full text-neutral-200 text-center font-semibold capitalize">
+                Ravindra Raghavan
               </p>
               <p className="w-full text-center text-neutral-500 capitalize">
                 Co-Founder & CTO
               </p>
             </div>
             <Image
-              src={"/images/ceo_1.jpg"}
-              fill
-              objectFit="cover"
-              alt="CEO Profile Pic"
-              unoptimized
-              quality={100}
-              className="z-0 rounded-tr-[3rem] rounded-bl-[3rem]"
-            />
-          </div>
-          <div className="relative group min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transfrom transition-all duration-500 hover:min-w-[350px] overflow-clip">
-            <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-75">
-              <p className="w-full text-neutral-200 text-center font-semibold capitalize">
-                Sara Williams
-              </p>
-              <p className="w-full text-center text-neutral-500 capitalize">
-                COO
-              </p>
-            </div>
-            <Image
-              src={"/images/coo_1.png"}
+              src={"/images/cto_fullpic.jpeg"}
               fill
               objectFit="cover"
               alt="CEO Profile Pic"

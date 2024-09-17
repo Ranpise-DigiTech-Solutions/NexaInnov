@@ -26,7 +26,7 @@ const JoinUsComponent = (props: Props) => {
         </div>
         <div className="w-full lg:w-[45%] h-full flex items-center justify-center">
           <Image
-            src="/images/team_pic_1.png"
+            src="/images/our-team.png"
             alt="Join Us"
             unoptimized
             unselectable={"on"}
