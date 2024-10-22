@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
 import Image from 'next/image';
+import Link from "next/link";
 
 type Props = {};
 
@@ -18,11 +19,13 @@ const JoinUsComponent = (props: Props) => {
             aliquam sunt, sit eaque, eius voluptate facere esse voluptatem
             aspernatur cum?
           </div>
-          <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-            <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-3 px-6 font-semibold">
-              Apply Now
-            </p>
-          </Button>
+          <Link href={"/careers"}>
+            <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
+              <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-3 px-6 font-semibold">
+                Apply Now
+              </p>
+            </Button>
+          </Link>
         </div>
         <div className="w-full lg:w-[45%] h-full flex items-center justify-center">
           <Image

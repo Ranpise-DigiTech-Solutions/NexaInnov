@@ -42,6 +42,7 @@ const config = {
         "green-tag": "var(--green-tag)",
         "orange-tag": "var(--orange-tag)",
         "logo-text": "var(--logo-text)",
+        "destructive-tag": "var(--destructive-tag)",
 
         white: "var(--white)",
         black: "var(--black)",
@@ -58,6 +59,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
         swipeOutLeft: {
           "0%": { opacity: "1", transform: "translateX(0)" },
           "100%": { opacity: "0", transform: "translateX(-100%)" },
@@ -89,9 +94,11 @@ const config = {
         swipeOutRight: "swipeOutRight 0.5s ease-out forwards",
         swipeInLeft: "swipeInLeft 0.5s ease-out forwards",
         marquee: "marquee 15s linear infinite",
+        spin: 'spin 1s linear infinite',
       },
       zIndex: {
         '100': '100',
+        '1000': '1000'
       },
       
     },

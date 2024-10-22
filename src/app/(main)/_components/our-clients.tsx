@@ -9,17 +9,15 @@ const OurClientsComponent = (props: Props) => {
     <div className="min-h-min w-full flex items-center justify-center">
       <div className="w-[90%] xl:w-[80%] h-full flex flex-col items-center justify-center gap-[4rem] overflow-clip">
         <div className="w-full flex flex-col items-center justify-center gap-4">
-          <p className="w-full text-center text-4xl lg:text-5xl font-semibold text-neutral-200 capitalize">
+          <p className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-200 capitalize">
             Our Happy Clients
           </p>
           <p className="w-full text-center text-base lg:text-lg font-neutral text-no-wrap text-neutral-500 leading-7">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Dignissimos, laudantium laudantium!. Lorem ipsum dolor sit
-            amet consectetur adipisicing elit.
+          Our Happy Clients: Discover how we’ve made a difference for businesses like yours! Read testimonials from our satisfied clients who have experienced the quality and dedication we bring to every project.
           </p>
         </div>
         <div className="w-full min-h-[400px] bg-white flex flex-col justify-center items-center overflow-hidden">
-          <div className="w-fit flex-1 flex flex-row items-center justify-center bg-neutral-800 animate-marquee whitespace-nowrap">
+          <div className="w-fit flex-1 flex flex-row items-center justify-center bg-neutral-800 animate-marquee whitespace-nowrap gap-[4rem]">
             {ourClients?.[0].map((client, index) => (
               <div
                 key={index}
@@ -49,7 +47,7 @@ const OurClientsComponent = (props: Props) => {
               </div>
             ))}
           </div>
-          <div className="w-fit flex-1 flex flex-row items-center justify-center bg-neutral-800 animate-marquee whitespace-nowrap">
+          {/* <div className="w-fit flex-1 flex flex-row items-center justify-center bg-neutral-800 animate-marquee whitespace-nowrap">
             {ourClients?.[1].map((client, index) => (
               <div
                 key={index}
@@ -78,7 +76,7 @@ const OurClientsComponent = (props: Props) => {
                 />
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

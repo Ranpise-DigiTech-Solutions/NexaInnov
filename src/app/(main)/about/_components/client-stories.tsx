@@ -14,13 +14,15 @@ const ClientStoriesComponent = (props: Props) => {
           <p className="w-full text-center text-base text-primary-pink">
             About Us
           </p>
-          <p className="text-center text-4xl lg:text-5xl font-semibold text-no-wrap capitalize text-neutral-200 lg:line-clamp-1">
+          <p className="text-center text-3xl md:text-4xl lg:text-5xl font-semibold text-no-wrap capitalize text-neutral-200 lg:line-clamp-1">
             our client success stories
           </p>
-          <p className="w-full text-center text-base lg:text-lg font-neutral text-no-wrap text-neutral-500 leading-7">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Dignissimos, laudantium laudantium!. <br /> Lorem ipsum dolor sit
-            amet consectetur adipisicing elit.
+          <p className="w-full text-center text-sm md:text-base lg:text-lg font-neutral text-no-wrap text-neutral-500 leading-6 md:leading-7">
+            Discover how our innovative solutions have empowered businesses to
+            achieve their goals. From seamless event management to stunning
+            digital transformations, explore real-world success stories from our
+            valued clients. Their achievements are a testament to the quality
+            and impact of our services.
           </p>
         </div>
         <div className="w-full flex items-center justify-center flex-wrap gap-8">
@@ -29,10 +31,10 @@ const ClientStoriesComponent = (props: Props) => {
               key={index}
               className="group flex-1 min-h-[275px] min-w-[300px] bg-neutral-800 shadow-md shadow-secondary-purple p-4 flex flex-col items-start justify-between gap-2 cursor-pointer transform transition-all duration-500 hover:translate-y-[-1rem]"
             >
-              <p className="w-full text-2xl font-semibold text-neutral-200 line-clamp-1 truncate capitalize transform transition-all duration-500 group-hover:text-primary-pink">
+              <p className="w-full text-xl md:text-2xl font-semibold text-neutral-200 line-clamp-1 truncate capitalize transform transition-all duration-500 group-hover:text-primary-pink">
                 Exceeded Our Expectations
               </p>
-              <p className="w-full text-neutral-400 text-base font-normal line-clamp-5 truncate text-wrap text-start leading-6">
+              <p className="w-full text-neutral-400 text-sm md:text-base font-normal line-clamp-5 truncate text-wrap text-start leading-6">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Dolorem, voluptate. Explicabo, alias! Voluptas et expedita iure
                 veritatis doloremque rerum possimus pariatur. Ratione provident
@@ -48,10 +50,10 @@ const ClientStoriesComponent = (props: Props) => {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 flex flex-col items-start justify-center">
-                  <p className="capitalize font-semibold text-lg text-neutral-300 text-wrap">
+                  <p className="capitalize font-semibold text-base md:text-lg text-neutral-300 text-wrap">
                     John smith
                   </p>
-                  <p className="text-neutral-500 capitalize text-nowrap line-clamp-1 truncate text-base">
+                  <p className="text-neutral-500 capitalize line-clamp-1 truncate text-sm md:text-base text-wrap">
                     Homeowner @Smith Family Homes
                   </p>
                 </div>
@@ -60,9 +62,12 @@ const ClientStoriesComponent = (props: Props) => {
           ))}
         </div>
         <Button className="group flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-          <p className="w-full gradient-border-inner text-lg font-bold tracking-wide text-neutral-200 px-6 py-3 flex flex-row items-center justify-center gap-2">
+          <p className="w-full gradient-border-inner text-base md:text-lg font-bold tracking-wide text-neutral-200 px-6 py-3 flex flex-row items-center justify-center gap-2">
             <span>View All</span>
-            <ArrowRight size={18} className="transform transition-all duration-300 group-hover:translate-x-2"/>
+            <ArrowRight
+              size={18}
+              className="transform transition-all duration-300 group-hover:translate-x-2"
+            />
           </p>
         </Button>
       </div>

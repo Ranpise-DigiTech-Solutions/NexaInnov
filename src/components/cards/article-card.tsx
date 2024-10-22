@@ -31,10 +31,10 @@ const ArticleCard = ({ className }: Props) => {
         />
       </div>
       <div className="w-full h-[40%] px-4 py-6 flex flex-col items-center justify-center gap-6">
-        <div className="w-full self-start text-2xl font-bold truncate translate-all transform duration-300 group-hover:text-primary-pink">
+        <div className="w-full self-start text-xl lg:text-2xl font-bold truncate translate-all transform duration-300 group-hover:text-primary-pink text-wrap">
           What is Initial Public Offering (IPO)?
         </div>
-        <div className="w-full flex items-center gap-4 justify-start text-neutral-400">
+        <div className="w-full flex items-center gap-4 justify-start text-neutral-400 text-sm md:text-base">
           <div className="flex items-center gap-2 justify-start">
             <Calendar />
             <p>September 1, 2002</p>
@@ -44,7 +44,7 @@ const ArticleCard = ({ className }: Props) => {
             <p>7 min read</p>
           </div>
         </div>
-        <div className="w-full self-start flex items-center justify-start text-lg">
+        <div className="w-full self-start flex items-center justify-start text-base md:text-lg">
           <div className="relative link-underline-gradient-effect flex items-center gap-2">
             <p className="font-bold">Read more</p>
             <ArrowUpRight className="transition-all transform duration:300 group-hover:-translate-y-1" />

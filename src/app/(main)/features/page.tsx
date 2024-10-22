@@ -8,8 +8,10 @@ const FeaturesPage = (props: Props) => {
   return (
     <div className='w-full flex flex-col items-center justify-center gap-[5rem]'>
         <FeaturesListComponent />
-        <FeatureSingleComponent className='flex-row'/>
-        <FeatureSingleComponent className='flex-row-reverse'/>
+        <FeatureSingleComponent className='lg:flex-row'/>
+        <FeatureSingleComponent className='lg:flex-row-reverse'/>
+        <FeatureSingleComponent className='lg:flex-row'/>
+        <FeatureSingleComponent className='lg:flex-row-reverse'/>
     </div>
   )
 }

@@ -19,15 +19,15 @@ const WhyUsComponent = (props: Props) => {
       className="min-h-screen w-full flex items-center justify-center"
       id="why-us"
     >
-      <div className="w-[90%] xl:w-[85%] px-[1rem] xl:p-0 flex flex-col lg:flex-row items-center lg:items-stretch justify-center xl:gap-4 gap-12">
-        <div className="flex-1 flex flex-col items-start justify-center gap-10">
+      <div className="w-[95%] overflow-hidden xl:w-[85%] px-[1rem] xl:p-0 flex flex-col lg:flex-row items-center lg:items-stretch justify-center xl:gap-4 gap-12">
+        <div className="w-full flex-1 flex flex-col items-start justify-center gap-10">
           <div className="w-full flex flex-col items-start justify-center gap-6">
             <div className="relative uppercase text-sm lg:text-base font-normal text-neutral-200">
               why choose us?
               <p className="absolute h-0.5 w-full -bottom-1 left-0 right-0 bg-primary-pink"></p>
             </div>
-            <p className="text-wrap text-neutral-200 font-bold text-4xl lg:text-5xl">
-              Powerful features of <br />{" "}
+            <p className="w-full text-wrap text-neutral-200 font-bold text-3xl md:text-4xl lg:text-5xl">
+              Powerful features of{" "}
               <span className="gradient-text">NexaInnov</span>
             </p>
           </div>
@@ -62,25 +62,25 @@ const WhyUsComponent = (props: Props) => {
                 </p>
               </div>
               <p className="w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
-                At NexaInnov Technologies, our commitment to clients doesn’t end
+                At NexaInnov Solutions, our commitment to clients doesn’t end
                 after deployment. We provide 24/7 support and maintenance
                 services, ensuring that your systems remain up-to-date and
                 operate smoothly.
               </p>
             </div>
           </div>
-          <div className="w-full flex flex-row items-center justify-center gap-2">
-            <Button className="group flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-              <p className="w-full gradient-border-inner text-lg tracking-wide text-neutral-200 px-6 py-3 flex flex-row items-center justify-center gap-1">
+          <div className="w-full overflow-hidden flex flex-nowrap flex-row items-center justify-center gap-2">
+            <Button className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 p-0">
+              <p className="w-full gradient-border-inner text-lg tracking-wide text-neutral-200 px-4 lg:px-6 py-2 lg:py-3 flex flex-row items-center justify-center gap-1">
                 <span>Explore more</span>
                 <ArrowUpRight
                   fontSize={20}
-                  className="transform transition-transform duration-300 group-hover:-translate-y-1 w-5 h-5"
+                  className="hidden md:inline-block transform transition-transform duration-300 group-hover:-translate-y-1 w-5 h-5"
                 />
               </p>
             </Button>
             <Button
-              className="group flex items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:bg-primary-black bg-neutral-700 rounded-full px-6 py-7"
+              className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 hover:bg-primary-black bg-neutral-700 rounded-full px-5 lg:px-6 py-6 lg:py-7"
               onClick={() => {
                 setOpen(
                   <CustomModal
@@ -97,7 +97,7 @@ const WhyUsComponent = (props: Props) => {
                 <span>Get a quote</span>
                 <ArrowRight
                   fontSize={16}
-                  className="transform transition-transform duration-300 group-hover:translate-x-1 h-5 w-5"
+                  className="hidden lg:inline-block transform transition-transform duration-300 group-hover:translate-x-1 h-5 w-5"
                 />
               </p>
             </Button>

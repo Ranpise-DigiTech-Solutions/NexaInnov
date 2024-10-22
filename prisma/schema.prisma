@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+enum ProjectBudget {
+  SMALL // <$5000
+  MEDIUM // $5000 - $20000
+  LARGE // >$20000
+}
+
+enum ProjectTimeline {
+  ONE_MONTH
+  THREE_MONTHS
+  SIX_MONTHS
+  MORE_THAN_SIX_MONTHS
+}
+
+enum ProjectType {
+  WEBSITE_DEVELOPMENT
+  MOBILE_APP_DEVELOPMENT
+  DESKTOP_SOFTWARE_DEVELOPMENT
+  IT_CONSULTING
+  IT_TRAINING
+}
+
+model User {
+  id            String         @id @default(cuid())
+  auth0UserId   String         @unique
+  email         String         @unique
+  name          String?
+  profilePic    String?
+  phone         String?
+  role          UserRole       @default(USER)
+  requestQuotes RequestQuote[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+model RequestQuote {
+  id              Int                   @id @default(autoincrement())
+  name            String                @db.VarChar(100)
+  email           String                @unique @db.VarChar(255)
+  phoneNo         String                @db.VarChar(20)
+  companyName     String?               @db.VarChar(150)
+  projectType     ProjectType           @default(WEBSITE_DEVELOPMENT)
+  projectBudget   ProjectBudget         @default(SMALL)
+  projectTimeline ProjectTimeline       @default(ONE_MONTH)
+  projectDetails  String                @db.Text
+  files           RequestQuoteFileUrl[]
+  userId          String
+  user            User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt       DateTime              @default(now())
+  updatedAt       DateTime              @updatedAt
+
+  @@index([userId])
+}
+
+model RequestQuoteFileUrl {
+  id             Int          @id @default(autoincrement())
+  url            String
+  requestQuoteId Int
+  requestQuote   RequestQuote @relation(fields: [requestQuoteId], references: [id], onDelete: Cascade)
+
+  @@index([requestQuoteId])
+}

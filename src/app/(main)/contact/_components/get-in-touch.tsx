@@ -21,9 +21,10 @@ const GetInTouchComponent = (props: Props) => {
         <div className="w-[90%] h-fit lg:p-[3rem] lg:h-full flex flex-col gap-8 lg:gap-12 items-start justify-center overflow-hidden">
           <p className="text-4xl lg:text-5xl font-bold">Get in touch</p>
           <p className="text-neutral-500 text-base lg:text-lg text-wrap leading-7">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum
-            ipsam nobis, quas pariatur eos accusantium ea quibusdam asperiores
-            totam fuga!
+            We’d love to hear from you! Whether you have questions, feedback, or
+            need assistance, feel free to reach out. Use the contact form below,
+            or connect with us via email or phone, and we’ll get back to you as
+            soon as possible.
           </p>
           <div className="w-full flex flex-col gap-6">
             <div className="group w-full flex flex-row items-center justify-start gap-6 cursor-pointer">
@@ -72,7 +73,14 @@ const GetInTouchComponent = (props: Props) => {
                   <YouTubeIcon className="w-6 h-6 lg:w-7 lg:h-7 text-white inline-block" />
                 </span>
               </Link>
-              <Link href={"/"} passHref>
+              <Link
+                href={
+                  "https://www.linkedin.com/company/nexainnov-solutions-llp/posts/?feedView=all"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                passHref
+              >
                 <span className="cursor-pointer transition-all transform duration-300 hover:scale-105 icon-gradient">
                   <LinkedInIcon className="w-6 h-6 lg:w-7 lg:h-7 text-white inline-block" />
                 </span>

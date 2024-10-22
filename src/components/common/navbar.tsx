@@ -6,7 +6,27 @@ import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next/link";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronDown,
+  Laptop,
+  Moon,
+  MoonIcon,
+  Sun,
+  SunIcon,
+} from "lucide-react";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import { useToast } from "../ui/use-toast";
+import LoadingScreen from "./loading-screen";
+import { ToastAction } from "@/components/ui/toast";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTheme } from "next-themes";
 
 type Props = {
   className?: string;
@@ -14,6 +34,9 @@ type Props = {
 
 const NavbarComponent = ({ className }: Props) => {
   const pathName = usePathname();
+  const { setTheme } = useTheme();
+  const { user, error, isLoading } = useUser();
+  const { toast } = useToast();
   const [menuDropdown, setMenuDropdown] = useState<{
     activeMenu: string;
     status: boolean;
@@ -58,6 +81,18 @@ const NavbarComponent = ({ className }: Props) => {
     };
   }, [toggleMenu]);
 
+  if (!isLoading) {
+    <LoadingScreen />;
+  }
+
+  if (error) {
+    toast({
+      title: "Error",
+      description: "Some error occured during sign in.",
+      action: <ToastAction altText="Goto schedule to undo">Okay</ToastAction>,
+    });
+  }
+
   return (
     <>
       <div
@@ -74,14 +109,12 @@ const NavbarComponent = ({ className }: Props) => {
                 unoptimized
                 quality={100}
                 draggable="false"
-                className="xl:h-[45px] xl:w-[45px] w-[40px] h-[40px] opacity-80"
+                className="xl:h-[45px] xl:w-[45px] w-[40px] h-[40px]"
               />
-              <p className="text-2xl italic font-serif text-white">
-                NexaInnov
-              </p>
+              <p className="text-2xl italic font-serif text-white">NexaInnov</p>
             </div>
           </Link>
-          <div className="hidden xl:flex items-center gap-8 tracking-wide">
+          <nav className="hidden xl:flex items-center gap-8 tracking-wide">
             <Link
               className="hover:text-primary-pink transition-all transform duration-300 relative"
               href="/"
@@ -208,14 +241,59 @@ const NavbarComponent = ({ className }: Props) => {
                 ></span>
               </p>
             </Link>
-          </div>
+          </nav>
           <div className="hidden xl:flex items-center gap-6">
-            <Link
-              className="transition-transform transform duration-300 hover:text-primary-pink"
-              href="/api/auth/login"
-            >
-              Sign In
-            </Link>
+            {user ? (
+              <Avatar>
+                <AvatarImage
+                  src={user.picture || "https://github.com/shadcn.png"}
+                  alt={user.name || "@shadcn"}
+                />
+                <AvatarFallback>{user.name?.substring(0, 2)}</AvatarFallback>
+              </Avatar>
+            ) : (
+              <Link
+                className="transition-transform transform duration-300 hover:text-primary-pink"
+                href="/api/auth/login"
+              >
+                Sign In
+              </Link>
+            )}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="bg-neutral-700 text-neutral-200"
+              >
+                <DropdownMenuItem
+                  onClick={() => setTheme("light")}
+                  className="w-full flex flex-row items-center justify-start gap-2 cursor-pointer transform transition-all duration-300 hover:bg-neutral-600"
+                >
+                  <Sun className="w-[20px] h-[20px]" />
+                  <span>Light</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setTheme("dark")}
+                  className="w-full flex flex-row items-center justify-start gap-2 cursor-pointer transform transition-all duration-300 hover:bg-neutral-600"
+                >
+                  <Moon className="w-[20px] h-[20px]" />
+                  <span>Dark</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => setTheme("system")}
+                  className="w-full flex flex-row items-center justify-start gap-2 cursor-pointer transform transition-all duration-300 hover:bg-neutral-600"
+                >
+                  <Laptop className="w-[20px] h-[20px]" />
+                  <span>System</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Button className="button-primary-gradient rounded-full transform transition-transform duration:300 hover:scale-105 tracking-wide">
               <p className=" w-full h-full p-2 font-bold flex items-center justify-center rounded-full">
@@ -244,11 +322,11 @@ const NavbarComponent = ({ className }: Props) => {
         </div>
         {/* menu options for small and medium screens */}
         <div
-          className={`absolute top-20 left-0 right-0 min-h-screen w-[100vw] bg-primary-black opacity-95 xl:hidden transform transition-all duration-1000 text-neutral-200 z-10 py-8 px-6 ${
+          className={`fixed top-19 left-0 right-0 max-h-[95vh] w-screen bg-primary-black opacity-95 xl:hidden transform transition-all duration-1000 text-neutral-200 z-10 py-8 px-6 overflow-y-auto ${
             toggleMenu ? "scale-x-100" : "scale-x-0"
           }`}
         >
-          <div className="h-full w-full flex flex-col items-center justify-center gap-12 tracking-wide overflow-y-scroll">
+          <div className="h-full w-full flex flex-col items-center justify-center !gap-[3rem] tracking-wide">
             <Link
               className="hover:text-primary-pink transition-all transform duration-300 relative text-lg"
               href="/"
@@ -310,6 +388,110 @@ const NavbarComponent = ({ className }: Props) => {
                 />
               </p>
             </div>
+            {menuDropdown.activeMenu === "Services" && (
+              <div
+                className="w-full h-fit flex flex-row flex-wrap items-stretch justify-between gap-8"
+                onMouseLeave={() => {
+                  setMenuDropdown({ activeMenu: "", status: false });
+                }}
+              >
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    General
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <Link href={"/services/automation"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Automation
+                      </p>
+                    </Link>
+                    <Link href={"/services/digital-marketing"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Digital Marketing
+                      </p>
+                    </Link>
+                    <Link href={"/services/software-development"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Software Development
+                      </p>
+                    </Link>
+                    <Link href={"/services/web-mobile-development"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Website and Mobile App Development
+                      </p>
+                    </Link>
+                    <Link href={"/services/advisory-outsourcing"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Advisory and OutSourcing Services
+                      </p>
+                    </Link>
+                    <Link href={"/services/erp-consulting"}>
+                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                        <span className="group-hover:text-primary-pink">
+                          IBM I (AS/400) and JD Edwards ERP Consulting
+                        </span>
+                        <ArrowUpRight
+                          fontSize={16}
+                          className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                        />
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    IT and DT Consulting
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <Link href={"/services/internet-of-things"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Internet of Thing (IOT)
+                      </p>
+                    </Link>
+                    <Link href={"/services/augmented-reality"}>
+                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                        Augmented reality (AR)
+                      </p>
+                    </Link>
+                    <Link href={"/services/virtual-reality"}>
+                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                        <span className="group-hover:text-primary-pink">
+                          Virtual Reality (VR)
+                        </span>
+                        <ArrowUpRight
+                          fontSize={16}
+                          className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                        />
+                      </p>
+                    </Link>
+                    <Link href={"/services/robotics"}>
+                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                        <span className="group-hover:text-primary-pink">
+                          Robotics
+                        </span>
+                        <ArrowUpRight
+                          fontSize={16}
+                          className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                        />
+                      </p>
+                    </Link>
+                  </div>
+                </div>
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    Others
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      NexaInnov for business
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Stories
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
             <Link
               className="hover:text-primary-pink transition-all transform duration-300 relative text-lg"
               href="/training"
@@ -361,90 +543,95 @@ const NavbarComponent = ({ className }: Props) => {
               }`}
             >
             </div> */}
-              {menuDropdown.activeMenu === "Products" && (
-                <div
-                  className="w-full h-fit flex flex-row flex-wrap items-stretch justify-between gap-8"
-                  onMouseLeave={() => {
-                    setMenuDropdown({ activeMenu: "", status: false });
-                  }}
-                >
-                  <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
-                    <p className="text-xl font-semibold text-neutral-500 text-start">
-                      DragBlitz
+            {menuDropdown.activeMenu === "Products" && (
+              <div
+                className="w-full h-fit flex flex-row flex-wrap items-stretch justify-between gap-8"
+                onMouseLeave={() => {
+                  setMenuDropdown({ activeMenu: "", status: false });
+                }}
+              >
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    EventifyConnect
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      For Everyone
                     </p>
-                    <div className="flex flex-col items-start justify-center gap-2">
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        For Everyone
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        For Teams
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        For Enterprises
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        For Education
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        Pricing
-                      </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      For Families
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      For Enterprises
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      For Vendors
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Pricing
+                    </p>
+                    <Link
+                      href={"https://www.eventifyconnect.com/"}
+                      target="_blank"
+                    >
                       <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
                         <span className="group-hover:text-primary-pink">
-                          DragBlitz login
+                          EventifyConnect Login
                         </span>
                         <ArrowUpRight
                           fontSize={16}
                           className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
                         />
                       </p>
-                    </div>
-                  </div>
-                  <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
-                    <p className="text-xl font-semibold text-neutral-500 text-start">
-                      API
-                    </p>
-                    <div className="flex flex-col items-start justify-center gap-2">
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        Platform Overview
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        Pricing
-                      </p>
-                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                        <span className="group-hover:text-primary-pink">
-                          Documentation
-                        </span>
-                        <ArrowUpRight
-                          fontSize={16}
-                          className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                        />
-                      </p>
-                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                        <span className="group-hover:text-primary-pink">
-                          API Login
-                        </span>
-                        <ArrowUpRight
-                          fontSize={16}
-                          className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                        />
-                      </p>
-                    </div>
-                  </div>
-                  <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
-                    <p className="text-xl font-semibold text-neutral-500 text-start">
-                      Explore More
-                    </p>
-                    <div className="flex flex-col items-start justify-center gap-2">
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        NexaInnov for business
-                      </p>
-                      <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                        Stories
-                      </p>
-                    </div>
+                    </Link>
                   </div>
                 </div>
-              )}
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    API
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Platform Overview
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Pricing
+                    </p>
+                    <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                      <span className="group-hover:text-primary-pink">
+                        Documentation
+                      </span>
+                      <ArrowUpRight
+                        fontSize={16}
+                        className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                      />
+                    </p>
+                    <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                      <span className="group-hover:text-primary-pink">
+                        API Login
+                      </span>
+                      <ArrowUpRight
+                        fontSize={16}
+                        className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                      />
+                    </p>
+                  </div>
+                </div>
+                <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                    Explore More
+                  </p>
+                  <div className="flex flex-col items-start justify-center gap-2">
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      NexaInnov for business
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Stories
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
             <Link
               className="hover:text-primary-pink transition-all transform duration-300 relative text-lg"
               href="/contact"
@@ -471,6 +658,7 @@ const NavbarComponent = ({ className }: Props) => {
           </div>
         </div>
       </div>
+      {/* for bigger screens */}
       <div
         className={`absolute flex-[85%] w-full transform transition-all duration-700 ease-in-out top-[5rem] left-0 right-0 bg-neutral-800 backdrop-blur-md hidden xl:flex items-start justify-center ${
           menuDropdown.status &&
@@ -489,33 +677,39 @@ const NavbarComponent = ({ className }: Props) => {
           >
             <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
               <p className="text-xl font-semibold text-neutral-500 text-start">
-                DragBlitz
+                EventifyConnect
               </p>
               <div className="flex flex-col items-start justify-center gap-4">
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                   For Everyone
                 </p>
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  For Teams
+                  For Families
                 </p>
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                   For Enterprises
                 </p>
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  For Education
+                  For Vendors
                 </p>
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                   Pricing
                 </p>
-                <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                  <span className="group-hover:text-primary-pink">
-                    DragBlitz login
-                  </span>
-                  <ArrowUpRight
-                    fontSize={16}
-                    className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                  />
-                </p>
+                <Link
+                  href={"https://www.eventifyconnect.com/"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                    <span className="group-hover:text-primary-pink">
+                      EventifyConnect login
+                    </span>
+                    <ArrowUpRight
+                      fontSize={16}
+                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                    />
+                  </p>
+                </Link>
               </div>
             </div>
             <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
@@ -576,30 +770,42 @@ const NavbarComponent = ({ className }: Props) => {
                 General
               </p>
               <div className="flex flex-col items-start justify-center gap-4">
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Automation
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Digital Marketing
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Software Developer
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Website and Mobile App Development
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Advisory and OutSourcing Services
-                </p>
-                <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                  <span className="group-hover:text-primary-pink">
-                    IBM I (AS/400) and JD Edwards ERP Consulting
-                  </span>
-                  <ArrowUpRight
-                    fontSize={16}
-                    className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                  />
-                </p>
+                <Link href={"/services/automation"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Automation
+                  </p>
+                </Link>
+                <Link href={"/services/digital-marketing"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Digital Marketing
+                  </p>
+                </Link>
+                <Link href={"/services/software-development"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Software Development
+                  </p>
+                </Link>
+                <Link href={"/services/web-mobile-development"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Website and Mobile App Development
+                  </p>
+                </Link>
+                <Link href={"/services/advisory-outsourcing"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Advisory and OutSourcing Services
+                  </p>
+                </Link>
+                <Link href={"/services/erp-consulting"}>
+                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                    <span className="group-hover:text-primary-pink">
+                      IBM I (AS/400) and JD Edwards ERP Consulting
+                    </span>
+                    <ArrowUpRight
+                      fontSize={16}
+                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                    />
+                  </p>
+                </Link>
               </div>
             </div>
             <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
@@ -607,30 +813,38 @@ const NavbarComponent = ({ className }: Props) => {
                 IT and DT Consulting
               </p>
               <div className="flex flex-col items-start justify-center gap-4">
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Internet of Thing (IOT)
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Augmented reality (AR)
-                </p>
-                <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                  <span className="group-hover:text-primary-pink">
-                    Virtual Reality (VR)
-                  </span>
-                  <ArrowUpRight
-                    fontSize={16}
-                    className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                  />
-                </p>
-                <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                  <span className="group-hover:text-primary-pink">
-                    Robotics
-                  </span>
-                  <ArrowUpRight
-                    fontSize={16}
-                    className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                  />
-                </p>
+                <Link href={"/services/internet-of-things"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Internet of Thing (IOT)
+                  </p>
+                </Link>
+                <Link href={"/services/augmented-reality"}>
+                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                    Augmented reality (AR)
+                  </p>
+                </Link>
+                <Link href={"/services/virtual-reality"}>
+                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                    <span className="group-hover:text-primary-pink">
+                      Virtual Reality (VR)
+                    </span>
+                    <ArrowUpRight
+                      fontSize={16}
+                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                    />
+                  </p>
+                </Link>
+                <Link href={"/services/robotics"}>
+                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                    <span className="group-hover:text-primary-pink">
+                      Robotics
+                    </span>
+                    <ArrowUpRight
+                      fontSize={16}
+                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+                    />
+                  </p>
+                </Link>
               </div>
             </div>
             <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">

@@ -5,25 +5,28 @@ import React, { ChangeEvent, useState } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useToast } from "../ui/use-toast";
+import { ToastAction } from "../ui/toast";
 
 type Props = {};
 
 const FooterComponent = (props: Props) => {
   const [emailInput, setEmailInput] = useState<string>("");
+  const { toast } = useToast();
 
   const handleEmailInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
     setEmailInput(e.target.value);
   };
 
   return (
-    <div className="text-white px-[1rem] lg:px-14 flex flex-col items-center justify-center gap-6 w-full">
+    <footer className="text-white px-[1rem] lg:px-14 flex flex-col items-center justify-center gap-6 w-full pb-2">
       <div className="w-[95%] flex flex-row items-start justify-between gap-10 flex-wrap xl:flex-nowrap">
         <div className="flex-[35%] flex flex-col items-start justify-center gap-6">
           <div className="text-2xl font-bold capitalize">About us</div>
           <div className="flex flex-row items-start justify-center gap-[6rem] text-neutral-400">
             <div className="flex flex-col items-start justify-center gap-4">
               <Link
-                href="/"
+                href="/about"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
                 Our Story
@@ -35,48 +38,86 @@ const FooterComponent = (props: Props) => {
                 Our leadership
               </Link>
               <Link
-                href="/team"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Client stories
-              </Link>
-              <Link
                 href="/careers"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Privacy policies
-              </Link>
-              <Link
-                href="/training"
-                className="transition-all duration-300 hover:text-primary-pink"
-              >
-                Career
+                Careers
               </Link>
               <Link
                 href="/contact"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Subsidiaries
+                Contact Us
               </Link>
-              <Link
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
               >
-                Alumni
-              </Link>
-              <Link
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
+                Client Stories
+              </p>
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
+              >
+                CSR Activities
+              </p>
+              <a
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
+              >
+                Our Events
+              </a>
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
               >
                 Newsroom
-              </Link>
+              </p>
             </div>
             <div className="flex flex-col items-start justify-center gap-4">
               <Link
-                href="#"
+                href="/terms-and-conditions"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                CSR Activities
+                Terms and Conditions
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className="transition-all duration-300 hover:text-primary-pink"
+              >
+                Privacy Policy
               </Link>
               <Link
                 href="/training"
@@ -85,29 +126,67 @@ const FooterComponent = (props: Props) => {
                 Training
               </Link>
               <Link
-                href="/careers"
+                href="/contact"
                 className="transition-all duration-300 hover:text-primary-pink"
               >
-                Careers
+                FAQ&apos;s
               </Link>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
               >
-                Contact Us
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
+                Our Alumni
+              </p>
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
               >
-                lorem
-              </a>
-              <a
-                href="#"
-                className="transition-all duration-300 hover:text-primary-pink"
+                Subsidiaries
+              </p>
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
               >
-                lorem
-              </a>
+                Media Enquiries
+              </p>
+              <p
+                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+                onClick={() => {
+                  toast({
+                    variant: "destructive",
+                    title: "Action Unavailable",
+                    description:
+                      "This page is under development. Please try again later !",
+                    className: "bg-destructive-tag text-neutral-200 ",
+                  });
+                }}
+              >
+                Support
+              </p>
             </div>
           </div>
         </div>
@@ -115,77 +194,89 @@ const FooterComponent = (props: Props) => {
           <div className="text-2xl font-bold capitalize">our Services</div>
           <div className="flex flex-col items-start justify-center gap-4 text-neutral-400">
             <Link
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              IT and DT Consulting
-            </Link>
-            <Link
-              href="#"
+              href="/services/automation"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Automation
             </Link>
             <Link
-              href="#"
+              href="/services/digital-marketing"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Digital Marketing
             </Link>
             <Link
-              href="#"
+              href="/services/software-development"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Software Development
             </Link>
             <Link
-              href="#"
+              href="/services/web-mobile-development"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Website & Mobile App Development
             </Link>
             <Link
-              href="#"
+              href="/services/advisory-outsourcing"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               Advisory & Outsourcing Services
             </Link>
             <Link
-              href="#"
+              href="/services/erp-consulting"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               IBM I(AS/400) & JD Edwards ERP Consulting
             </Link>
+            <Link
+              href="/services/internet-of-things"
+              className="transition-all duration-300 hover:text-primary-pink"
+            >
+              Internet of Things
+            </Link>
           </div>
         </div>
         <div className="flex-[20%] flex flex-col items-start justify-center gap-6">
-          <div className="text-2xl font-bold">Our Pages</div>
+          <div className="text-2xl font-bold">Our Products</div>
           <div className="flex flex-col items-start justify-center gap-4 text-neutral-400">
             <Link
-              href="#"
+              href="https://www.eventifyconnect.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               EventifyConnect
             </Link>
-            <Link
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
+            <p
+              className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+              onClick={() => {
+                toast({
+                  variant: "destructive",
+                  title: "Action Unavailable",
+                  description:
+                    "This page is under development. Please try again later !",
+                  className: "bg-destructive-tag text-neutral-200 ",
+                });
+              }}
             >
               Dragblitz
-            </Link>
-            <Link
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
+            </p>
+            <p
+              className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
+              onClick={() => {
+                toast({
+                  variant: "destructive",
+                  title: "Action Unavailable",
+                  description:
+                    "This page is under development. Please try again later !",
+                  className: "bg-destructive-tag text-neutral-200 ",
+                });
+              }}
             >
               Shopify
-            </Link>
-            <Link
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              lorem
-            </Link>
-            <a
+            </p>
+            {/* <a
               href="#"
               className="transition-all duration-300 hover:text-primary-pink"
             >
@@ -196,7 +287,7 @@ const FooterComponent = (props: Props) => {
               className="transition-all duration-300 hover:text-primary-pink"
             >
               ChangeLog
-            </a>
+            </a> */}
             <a
               href="#"
               className="text-primary-pink underline underline-offset-4"
@@ -208,8 +299,9 @@ const FooterComponent = (props: Props) => {
         <div className="flex-[25%] flex flex-col items-start justify-center gap-6">
           <div className="text-2xl font-bold">Subscribe to our newsletter</div>
           <div className="text-neutral-400 text-wrap leading-7">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-            corrupti ducimus praesentium commodi harum sunt aut
+            Stay connected with us! Subscribe to our newsletter for exclusive
+            updates, tips, and special offers delivered straight to your inbox.
+            Join our community and never miss out on the latest news!
           </div>
           <div className="flex items-center justify-between">
             <Input
@@ -229,13 +321,11 @@ const FooterComponent = (props: Props) => {
         </div>
       </div>
       <div className="line-divider w-[95%]"></div>
-      <div className="w-[95%] flex flex-col lg:flex-row items-start lg:items-center justify-between">
+      <div className="w-[95%] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2">
         <Link href={"/"}>
-          <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide">
-            <Image src={"/images/logo.png"} height={60} width={60} alt="logo" />
-            <p className="text-xl italic font-serif text-logo-text">
-              NexaInnov
-            </p>
+          <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide gap-2">
+            <Image src={"/images/logo.png"} height={40} width={40} alt="logo" />
+            <p className="text-xl italic font-serif text-white">NexaInnov</p>
           </div>
         </Link>
         <div className="text-neutral-400 lg:text-nowrap text-wrap leading-7">
@@ -249,7 +339,7 @@ const FooterComponent = (props: Props) => {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
