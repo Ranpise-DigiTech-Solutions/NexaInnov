@@ -41,9 +41,7 @@ const TeamMembersComponent = ({ className }: Props) => {
               </Button>
               <div className="w-full flex items-center justify-center">
                 <Image
-                  src={
-                    "https://media.licdn.com/dms/image/C5103AQF-qSCFnpFaLA/profile-displayphoto-shrink_100_100/0/1566392750666?e=1729123200&v=beta&t=v46_LAnrm4qvNXH7AK8sku2zdGnGB-eU4kzjbJtoAoo"
-                  }
+                  src={"/images/ceo_passportpic.jpeg"}
                   height={150}
                   width={150}
                   alt=""
@@ -106,9 +104,7 @@ const TeamMembersComponent = ({ className }: Props) => {
               </Button>
               <div className="w-full flex items-center justify-center">
                 <Image
-                  src={
-                    "https://media.licdn.com/dms/image/v2/C5603AQF5fwqrcDSJYQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1516322751212?e=1729123200&v=beta&t=6WV1wlZV-rdz95FqqUD4H4i8T24Zq1Xm7idHO8znUhI"
-                  }
+                  src={"/images/cto_passportpic.jpeg"}
                   height={150}
                   width={150}
                   alt=""
@@ -149,64 +145,6 @@ const TeamMembersComponent = ({ className }: Props) => {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  <LinkedInIcon
-                    fontSize="medium"
-                    className="transform transition-all duration-300 hover:text-primary-light-blue"
-                  />
-                </Link>
-                <InstagramIcon
-                  fontSize="medium"
-                  className="transform transition-all duration-300 hover:text-primary-light-blue"
-                />
-              </div>
-            </div>
-          </Link>
-          <Link href={"/team"}>
-            <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
-              <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-                <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
-                  Tech Lead
-                </p>
-              </Button>
-              <div className="w-full flex items-center justify-center">
-                <Image
-                  src={"/images/adithya.jpg"}
-                  height={150}
-                  width={150}
-                  alt=""
-                  unoptimized
-                  className="rounded-full"
-                />
-              </div>
-              <div className="w-full flex flex-col items-center justify-center gap-2">
-                <div className="transition-all transform duration-300 group-hover:text-primary-pink text-2xl font-semibold">
-                  Adithya R
-                </div>
-                <div className="font-bold text-neutral-500">Technical Lead</div>
-              </div>
-              <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">
-                As a Lead, I spearhead the development and management of 4 major
-                products. My role involves overseeing all stages of Software
-                Development.
-              </div>
-              <div className="w-full flex flex-row items-center justify-center gap-2">
-                <WhatsAppIcon
-                  fontSize="medium"
-                  className="transform transition-all duration-300 hover:text-primary-light-blue"
-                />
-                <FacebookIcon
-                  fontSize="medium"
-                  className="transform transition-all duration-300 hover:text-primary-light-blue"
-                />
-                <XIcon
-                  fontSize="medium"
-                  className="transform transition-all duration-300 hover:text-primary-light-blue"
-                />
-                <Link
-                  href={"https://www.linkedin.com/in/adithya-r-iyer/"}
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
                   <LinkedInIcon
                     fontSize="medium"

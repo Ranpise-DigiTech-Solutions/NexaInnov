@@ -30,13 +30,13 @@ const GetInTouchComponent = (props: Props) => {
             <div className="group w-full flex flex-row items-center justify-start gap-6 cursor-pointer">
               <LocalPhoneIcon className="w-6 h-6 lg:w-7 lg:h-7 bg-neutral-700 p-1 scale-110 rounded-md transition-all transform duration-300 group-hover:scale-125" />
               <span className="transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
-                (+91) 972-2322-232
+                (+91) 97699-19222 / 98193-44106
               </span>
             </div>
             <div className="group w-full flex flex-row items-center justify-start gap-6 cursor-pointer">
               <EmailIcon className="w-6 h-6 lg:w-7 lg:h-7 bg-neutral-700 p-1 scale-110 rounded-md transition-all transform duration-300 group-hover:scale-125" />
               <span className="transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
-                info@nexainnov.com
+                info@nexainnov.com / admin@nexainnov.com
               </span>
             </div>
           </div>

@@ -42,25 +42,6 @@ const OurTeamComponent = (props: Props) => {
           <div className="relative group min-h-[400px] md:min-h-[450px] lg:min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transform transition-all duration-500 hover:min-w-[350px] overflow-clip">
             <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-80">
               <p className="w-full text-neutral-200 text-center font-semibold capitalize">
-                Adithya R
-              </p>
-              <p className="w-full text-center text-neutral-500 capitalize">
-                Technical Lead
-              </p>
-            </div>
-            <Image
-              src={"/images/adithya_fullpic.jpeg"}
-              fill
-              objectFit="cover"
-              alt="CEO Profile Pic"
-              unoptimized
-              quality={100}
-              className="z-0 rounded-tr-[3rem] rounded-bl-[3rem]"
-            />
-          </div>
-          <div className="relative group min-h-[400px] md:min-h-[450px] lg:min-h-[500px] min-w-[250px] rounded-tr-[3rem] rounded-bl-[3rem] cursor-pointer bg-white transform transition-all duration-500 hover:min-w-[350px] overflow-clip">
-            <div className="absolute w-full  bottom-0 z-10 bg-black h-0 opacity-0 transform transition-all duration-500 flex flex-col items-center justify-center gap-2 group-hover:h-[100px] group-hover:opacity-80">
-              <p className="w-full text-neutral-200 text-center font-semibold capitalize">
                 Ravindra Raghavan
               </p>
               <p className="w-full text-center text-neutral-500 capitalize">

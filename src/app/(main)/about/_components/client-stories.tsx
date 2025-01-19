@@ -32,29 +32,25 @@ const ClientStoriesComponent = (props: Props) => {
               className="group flex-1 min-h-[275px] min-w-[300px] bg-neutral-800 shadow-md shadow-secondary-purple p-4 flex flex-col items-start justify-between gap-2 cursor-pointer transform transition-all duration-500 hover:translate-y-[-1rem]"
             >
               <p className="w-full text-xl md:text-2xl font-semibold text-neutral-200 line-clamp-1 truncate capitalize transform transition-all duration-500 group-hover:text-primary-pink">
-                Exceeded Our Expectations
+                {review.heading}
               </p>
               <p className="w-full text-neutral-400 text-sm md:text-base font-normal line-clamp-5 truncate text-wrap text-start leading-6">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Dolorem, voluptate. Explicabo, alias! Voluptas et expedita iure
-                veritatis doloremque rerum possimus pariatur. Ratione provident
-                rerum, molestiae distinctio fugiat cumque ex nemo sequi id
-                nostrum porro officia repudiandae debitis magnam
+                {review.content}
               </p>
               <div className="w-full flex flex-row items-center justify-start gap-4">
                 <Avatar className="w-[2rem] h-[2rem]">
                   <AvatarImage
-                    src="https://github.com/shadcn.png"
+                    src={review.profilePic}
                     alt="@shadcn"
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 flex flex-col items-start justify-center">
                   <p className="capitalize font-semibold text-base md:text-lg text-neutral-300 text-wrap">
-                    John smith
+                    {review.author}
                   </p>
                   <p className="text-neutral-500 capitalize line-clamp-1 truncate text-sm md:text-base text-wrap">
-                    Homeowner @Smith Family Homes
+                    {review.designation}
                   </p>
                 </div>
               </div>

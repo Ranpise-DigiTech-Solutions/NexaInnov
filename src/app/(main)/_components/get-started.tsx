@@ -43,7 +43,7 @@ const GetStartedComponent = ({ className }: Props) => {
         }
       >
         <CarouselContent>
-          {clientReviews.map((item, index) => (
+          {Array(6).fill(0).map((item, index) => (
             <CarouselItem
               key={index}
               className="w-full h-full flex items-center justify-center"

@@ -296,9 +296,9 @@ const NavbarComponent = ({ className }: Props) => {
             </DropdownMenu>
 
             <Button className="button-primary-gradient rounded-full transform transition-transform duration:300 hover:scale-105 tracking-wide">
-              <p className=" w-full h-full p-2 font-bold flex items-center justify-center rounded-full">
+              <Link href={"/#why-us"} className=" w-full h-full p-2 font-bold flex items-center justify-center rounded-full">
                 Get Started
-              </p>
+              </Link>
             </Button>
           </div>
           <div className="xl:hidden inline-block">
