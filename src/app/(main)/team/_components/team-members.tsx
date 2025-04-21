@@ -36,7 +36,7 @@ const TeamMembersComponent = ({ className }: Props) => {
             <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
               <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                 <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
-                  CEO
+                  Strategic Invester
                 </p>
               </Button>
               <div className="w-full flex items-center justify-center">
@@ -54,7 +54,7 @@ const TeamMembersComponent = ({ className }: Props) => {
                   Samadhan Ranpise
                 </div>
                 <div className="font-bold text-neutral-500">
-                  Co-Founder & CEO
+                  Strategic Invester
                 </div>
               </div>
               <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">
@@ -99,7 +99,7 @@ const TeamMembersComponent = ({ className }: Props) => {
             <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
               <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                 <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
-                  CTO
+                  Founder and CEO
                 </p>
               </Button>
               <div className="w-full flex items-center justify-center">
@@ -117,7 +117,7 @@ const TeamMembersComponent = ({ className }: Props) => {
                   Ravindra Raghavan
                 </div>
                 <div className="font-bold text-neutral-500">
-                  Co-Founder & CTO
+                  Founder and CEO
                 </div>
               </div>
               <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">

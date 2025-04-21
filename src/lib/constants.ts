@@ -92,22 +92,64 @@ export const ourClients = {
     },
     {
       id: 4,
-      logo: "/images/client_logo_1.png",
+      logo: "/images/client_logo_5.png",
       name: "client 4",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
     {
       id: 5,
+      logo: "/images/client_logo_6.png",
+      name: "Client 5",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 6,
+      logo: "/images/client_logo_7.png",
+      name: "Client 6",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 1,
+      logo: "/images/client_logo_1.png",
+      name: "Client 1",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 2,
       logo: "/images/client_logo_2.png",
       name: "Client 2",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
     {
-      id: 6,
+      id: 3,
       logo: "/images/client_logo_3.png",
       name: "Client 3",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 4,
+      logo: "/images/client_logo_5.png",
+      name: "client 4",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 5,
+      logo: "/images/client_logo_6.png",
+      name: "Client 5",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 6,
+      logo: "/images/client_logo_7.png",
+      name: "Client 6",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },

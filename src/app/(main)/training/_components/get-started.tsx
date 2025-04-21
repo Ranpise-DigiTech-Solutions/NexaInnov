@@ -8,10 +8,15 @@ const GetStartedComponent = (props: Props) => {
   return (
     <div className="min-h-fit pt-[3rem] pb-[15rem] lg:p-0 lg:min-h-screen w-full flex items-center justify-center">
       <div className="relative w-[90%] lg:w-[85%] h-full flex flex-col items-start justify-center gap-8 lg:gap-12">
+
+        {/* Top-right corner text */}
+        <div className="absolute top-4 right-4 text-right text-sm lg:text-base font-medium text-neutral-300 leading-tight z-10 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-md">
+          <div className="font-semibold text-white">Nexainnov Academy</div>
+          <div className="text-neutral-300">Learn. Grow. Lead with Nexainnov Academy.</div>
+        </div>
+
         <div className="w-full text-wrap lg:line-clamp-2 text-4xl md:text-5xl lg:text-6xl font-semibold text-neutral-200 capitalize">
-          <p className="text-nowrap">
-            Increase your skills with 
-          </p>
+          <p className="text-nowrap">Increase your skills with</p>
           <div className="w-full flex flex-row items-end justify-start gap-6">
             <p className="gradient-text text-nowrap">top instructors</p>
             <Image 
@@ -26,11 +31,11 @@ const GetStartedComponent = (props: Props) => {
             />
           </div>  
         </div>
+
         <p className="w-[80%] md:w-[70%] lg:w-[60%] xl:w-[45%] lg:line-clamp-3 line-clamp-4 truncate text-wrap text-neutral-400 text-base lg:text-lg">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque
-          ingnam harum suscipit excepturi quae ratione, earum, laudantium est
-          dolore minima aliquid accusantium.
+          Nexainnov Academy is a premier training division of Nexainnov Solutions, dedicated to empowering students and professionals with industry-relevant skills in niche and emerging technologies. 
         </p>
+
         <div className="w-fit">
           <Image
             src={"/images/training-certified-badge.png"}
@@ -44,6 +49,7 @@ const GetStartedComponent = (props: Props) => {
             className="w-[100px] h-[100px] md:w-[125px] md:h-[125px] lg:w-[150px] lg:h-[150px]"
           />
         </div>
+
         <div className="w-fit flex flex-row items-center justify-center gap-16">
           <div className="relative flex flex-row items-center justify-center gap-[-5]">
             <Avatar className="h-10 w-10">
@@ -63,16 +69,18 @@ const GetStartedComponent = (props: Props) => {
             See all trainers
           </div>
         </div>
+
         <div className="absolute top-[30rem] lg:top-[20rem] right-0 w-full lg:w-[70%] xl:w-[75%] h-fit">
-            <div className="relative w-full min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] rounded-3xl overflow-hidden">
-                <Image 
-                    src={"/images/training-get-started-bg.jpg"}
-                    alt="training get started bg"
-                    fill
-                    objectFit="cover"
-                />
-            </div>
+          <div className="relative w-full min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] rounded-3xl overflow-hidden">
+            <Image 
+              src={"/images/training-get-started-bg.jpg"}
+              alt="training get started bg"
+              fill
+              objectFit="cover"
+            />
+          </div>
         </div>
+
       </div>
     </div>
   );

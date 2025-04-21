@@ -54,7 +54,10 @@ const GetInTouchComponent = (props: Props) => {
                   </span> 
               </p>
               <p className='text-base font-normal text-neutral-400 text-wrap line-clamp-4 truncate text-center lg:text-start'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt iste officiis id excepturi maxime cum sint ut quisquam, iusto recusandae. Illum alias ad magnam eos quis aspernatur error pariatur enim! Necessitatibus consequuntur iure aliquam, saepe, ad, molestiae vero itaque illo hic ullam architecto sequi quasi asperiores earum reiciendis voluptate deserunt!
+              At Nexainnov Academy, we believe learning should be simple, flexible, and accessible to everyone.
+              Whether you're at home, on the move, or balancing a busy schedule, our expertly designed courses 
+              and hands-on training programs are tailored to fit your lifestyle. Empower yourself with industry-relevant
+              skills and grow at your own pace — anytime, anywhere.
               </p>
               <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                     <p className="w-full gradient-border-inner text-base lg:text-lg tracking-wide text-neutral-200 px-4 py-2">

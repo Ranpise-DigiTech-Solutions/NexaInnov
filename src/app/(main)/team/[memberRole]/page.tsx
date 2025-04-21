@@ -41,7 +41,7 @@ const TeamMemberProfilePage = ({ params }: Props) => {
               </span>
             </p>
             <p className="w-full text-start text-md text-neutral-500 font-extrabold">
-              Co-Founder &nbsp;| &nbsp;CEO
+              Strategic Invester &nbsp;| &nbsp;
             </p>
           </div>
           <div className="w-full flex flex-row items-center justify-start gap-2">

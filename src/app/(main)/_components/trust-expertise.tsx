@@ -14,13 +14,13 @@ const TrustOurExpertiseComponent = (props: Props) => {
           </p>
           <div className="w-full flex flex-row flex-nowrap justify-between gap-4 items-center">
             <div className="flex-1 flex flex-col gap-2 xl:items-start items-center justify-center">
-              <p className="xl:text-5xl text-4xl text-primary-pink">6+</p>
+              <p className="xl:text-5xl text-4xl text-primary-pink">15+</p>
               <p className="w-full text-center xl:text-start text-base text-neutral-400 capitalize">
                 Software Developers
               </p>
             </div>
             <div className="flex-1 flex flex-col gap-2 xl:items-start items-center justify-center">
-              <p className="xl:text-5xl text-4xl text-primary-pink">4+</p>
+              <p className="xl:text-5xl text-4xl text-primary-pink">7+</p>
               <p className="w-full text-center xl:text-start text-base text-neutral-400 capitalize">
                 Projects Completed
               </p>

@@ -50,9 +50,7 @@ const FactNumbersComponent = (props: Props) => {
             </div>
           </div>
           <div className="flex-1 text-wrap text-neutral-300 line-clamp-4 lg:line-clamp-3 leading-7 font-normal text-base">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
-            accusamus soluta nulla cupiditate aliquam laboriosam, consequuntur
-            debitis sequi expedita voluptatem sit itaque quisquam corporis eum
+          Our expert-led programs focus on practical, hands-on learning in areas like AI/ML, Full Stack Development (MERN/MEAN), DevOps, IBM i (AS/400), Cloud Computing, and more
           </div>
         </div>
       </div>

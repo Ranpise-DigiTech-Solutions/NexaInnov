@@ -25,7 +25,7 @@ const OurPartnersComponent = (props: Props) => {
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:flex-wrap">
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
-              src={"/images/client_logo_1.png"}
+              src={"/images/client_logo_5.png"}
               height={250}
               width={250}
               objectFit="cover"
@@ -34,7 +34,7 @@ const OurPartnersComponent = (props: Props) => {
           </div>
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
-              src={"/images/client_logo_2.png"}
+              src={"/images/client_logo_6.png"}
               height={250}
               width={250}
               objectFit="cover"
@@ -52,7 +52,7 @@ const OurPartnersComponent = (props: Props) => {
           </div>
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
-              src={"/images/client_logo_4.png"}
+              src={"/images/client_logo_7.png"}
               height={250}
               width={250}
               objectFit="cover"

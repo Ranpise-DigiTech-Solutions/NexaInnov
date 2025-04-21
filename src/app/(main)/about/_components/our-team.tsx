@@ -26,7 +26,7 @@ const OurTeamComponent = (props: Props) => {
                 Samadhan Ranpise
               </p>
               <p className="w-full text-center text-neutral-500 capitalize">
-                Co-Founder & CEO
+                Investor
               </p>
             </div>
             <Image
@@ -45,7 +45,7 @@ const OurTeamComponent = (props: Props) => {
                 Ravindra Raghavan
               </p>
               <p className="w-full text-center text-neutral-500 capitalize">
-                Co-Founder & CTO
+                Founder and CEO
               </p>
             </div>
             <Image
