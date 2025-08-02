@@ -6,7 +6,14 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { useToast } from "../ui/use-toast";
-import { ToastAction } from "../ui/toast";
+import XIcon from "@mui/icons-material/X";
+import WhatsappIcon from "@mui/icons-material/WhatsApp";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube"; // Added YouTubeIcon
+import { m } from "framer-motion";
 
 type Props = {};
 
@@ -49,20 +56,7 @@ const FooterComponent = (props: Props) => {
               >
                 Contact Us
               </Link>
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
-              >
-                Client Stories
-              </p>
+      
               <p
                 className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
                 onClick={() => {
@@ -77,20 +71,7 @@ const FooterComponent = (props: Props) => {
               >
                 CSR Activities
               </p>
-              <a
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
-              >
-                Our Events
-              </a>
+              
               <p
                 className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
                 onClick={() => {
@@ -144,48 +125,6 @@ const FooterComponent = (props: Props) => {
                 }}
               >
                 Our Alumni
-              </p>
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
-              >
-                Subsidiaries
-              </p>
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
-              >
-                Media Enquiries
-              </p>
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
-              >
-                Support
               </p>
             </div>
           </div>
@@ -276,18 +215,6 @@ const FooterComponent = (props: Props) => {
             >
               Shopify
             </p>
-            {/* <a
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              Licenses
-            </a>
-            <a
-              href="#"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              ChangeLog
-            </a> */}
             <a
               href="#"
               className="text-primary-pink underline underline-offset-4"
@@ -318,6 +245,65 @@ const FooterComponent = (props: Props) => {
               </p>
             </Button>
           </div>
+          <div className="flex items-center gap-4">
+          <Link href="https://www.facebook.com/profile.php?id=61575933402915" target="_blank" rel="noopener noreferrer">
+            <FacebookIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">Facebook</span>
+          </Link>
+          <Link href="https://x.com/home" target="_blank" rel="noopener noreferrer">
+            <XIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">X (formerly Twitter)</span>
+          </Link>
+          <Link href="https://in.pinterest.com/business/hub/" target="_blank" rel="noopener noreferrer">
+            <PinterestIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">Pinterest</span>
+          </Link>
+          <Link href="#" target="_blank" rel="noopener noreferrer">
+            <WhatsappIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">WhatsApp</span>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/company/nexainnov-solutions-llp/?viewAsMember=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">LinkedIn</span>
+          </Link>
+          <Link
+            href="https://www.instagram.com/nexainnov_solutions"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <InstagramIcon
+              fontSize="medium"
+              className="transform transition-all duration-300 hover:text-primary-pink"
+            />
+            <span className="sr-only">Instagram</span>
+          </Link>
+          <Link href="https://www.youtube.com/@NexainnovSolutions" target="_blank" rel="noopener noreferrer">
+  <YouTubeIcon
+    fontSize="medium"
+    className="transform transition-all duration-300 hover:text-primary-pink"
+  />
+  <span className="sr-only">YouTube</span>
+</Link>
+        </div>
         </div>
       </div>
       <div className="line-divider w-[95%]"></div>

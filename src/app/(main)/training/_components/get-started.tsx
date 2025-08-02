@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -64,9 +65,17 @@ const GetStartedComponent = (props: Props) => {
               <AvatarImage src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPU6snloie_2mVOBoi7IQVMNfMBl7dHFrrvrcet5L0KSeQHGUhjYCEvU5uKEy35u49zrg&usqp=CAU" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
+            <Avatar className="h-10 w-10">
+              <AvatarImage src="images/trainer.jpg" alt="@shadcn" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           </div>
           <div className="underline text-neutral-300 text-base font-normal underline-offset-4 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-            See all trainers
+           <Link href="/trainers" passHref> {/* Link to the general trainers list page */}
+            <div className="underline text-neutral-300 text-base font-normal underline-offset-4 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+              See all trainers
+            </div>
+          </Link>
           </div>
         </div>
 

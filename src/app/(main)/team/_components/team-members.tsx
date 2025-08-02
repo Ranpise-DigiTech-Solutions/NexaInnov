@@ -36,7 +36,7 @@ const TeamMembersComponent = ({ className }: Props) => {
             <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
               <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                 <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
-                  Strategic Invester
+                  Strategic Investor
                 </p>
               </Button>
               <div className="w-full flex items-center justify-center">
@@ -54,7 +54,7 @@ const TeamMembersComponent = ({ className }: Props) => {
                   Samadhan Ranpise
                 </div>
                 <div className="font-bold text-neutral-500">
-                  Strategic Invester
+                  Strategic Investor
                 </div>
               </div>
               <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">

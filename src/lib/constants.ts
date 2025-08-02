@@ -111,6 +111,28 @@ export const ourClients = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
+  
+    {
+      id: 7,
+      logo: "/images/client_logo_8.jpg",
+      name: "Client 7",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 8,
+      logo: "/images/client_logo_9.jpg",
+      name: "Client 8",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 9,
+      logo: "/images/client_logo_10.jpg",
+      name: "Client 9",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
     {
       id: 1,
       logo: "/images/client_logo_1.png",
@@ -153,6 +175,29 @@ export const ourClients = {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
+  
+    {
+      id: 7,
+      logo: "/images/client_logo_8.jpg",
+      name: "Client 7",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 8,
+      logo: "/images/client_logo_9.jpg",
+      name: "Client 8",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 9,
+      logo: "/images/client_logo_10.jpg",
+      name: "Client 9",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    }
+
     // {
     //     id: 7,
     //     logo: "/images/client_logo_1.png",

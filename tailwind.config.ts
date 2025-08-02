@@ -1,3 +1,4 @@
+// tailwind.config.js
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -100,10 +101,13 @@ const config = {
         '100': '100',
         '1000': '1000'
       },
-      
+
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('@tailwindcss/line-clamp'), // <--- ADD THIS LINE HERE!
+  ],
 } satisfies Config;
 
 export default config;

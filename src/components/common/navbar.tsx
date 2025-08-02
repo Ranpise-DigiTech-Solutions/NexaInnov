@@ -15,7 +15,7 @@ import {
   Sun,
   SunIcon,
 } from "lucide-react";
-import { useUser } from "@auth0/nextjs-auth0/client";
+import { useUser } from '@auth0/nextjs-auth0/client';
 import { useToast } from "../ui/use-toast";
 import LoadingScreen from "./loading-screen";
 import { ToastAction } from "@/components/ui/toast";
@@ -858,6 +858,14 @@ const NavbarComponent = ({ className }: Props) => {
                 <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                   Stories
                 </p>
+                <Link href={"/services/staffing"}>
+                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+                        <span className="group-hover:text-primary-pink">
+                          Staffing
+                        </span>
+                        
+                      </p>
+                    </Link>
               </div>
             </div>
           </div>
