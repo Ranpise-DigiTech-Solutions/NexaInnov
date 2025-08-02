@@ -11,7 +11,7 @@ const GetStartedComponent = (props: Props) => {
       <div className="relative w-[90%] lg:w-[85%] h-full flex flex-col items-start justify-center gap-8 lg:gap-12">
 
         {/* Top-right corner text */}
-        <div className="absolute top-4 right-4 text-right text-sm lg:text-base font-medium text-neutral-300 leading-tight z-10 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-md">
+        <div className="absolute top-4 right-4 text-right text-sm lg:text-base font-medium text-neutral-300 leading-tight bg-black/30 backdrop-blur-sm px-4 py-2 rounded-md">
           <div className="font-semibold text-white">Nexainnov Academy</div>
           <div className="text-neutral-300">Learn. Grow. Lead with Nexainnov Academy.</div>
         </div>
@@ -30,7 +30,7 @@ const GetStartedComponent = (props: Props) => {
               quality={100}
               className="max-h-[30px] min-w-[100px] md:max-h-[35px] md:min-w-[120px] lg:max-h-[45px] lg:min-w-[150px] rounded-full object-cover"
             />
-          </div>  
+          </div> 
         </div>
 
         <p className="w-[80%] md:w-[70%] lg:w-[60%] xl:w-[45%] lg:line-clamp-3 line-clamp-4 truncate text-wrap text-neutral-400 text-base lg:text-lg">
@@ -70,13 +70,11 @@ const GetStartedComponent = (props: Props) => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </div>
-          <div className="underline text-neutral-300 text-base font-normal underline-offset-4 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-           <Link href="/trainers" passHref> {/* Link to the general trainers list page */}
+          <Link href="/trainers" passHref> {/* Link to the general trainers list page */}
             <div className="underline text-neutral-300 text-base font-normal underline-offset-4 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
               See all trainers
             </div>
           </Link>
-          </div>
         </div>
 
         <div className="absolute top-[30rem] lg:top-[20rem] right-0 w-full lg:w-[70%] xl:w-[75%] h-fit">
