@@ -1,5 +1,5 @@
 const config = {
-    siteUrl: 'https://nexainnov.com',
+    siteUrl: 'https://www.nexainnov.com',
     generateRobotsTxt: true,
   };
   
