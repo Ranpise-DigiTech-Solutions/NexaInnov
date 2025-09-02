@@ -73,8 +73,7 @@ const CourseListComponent = () => {
             Our <span className="gradient-text">Popular Training Courses</span>
           </h2>
           <p className="text-neutral-300 text-base lg:text-lg max-w-2xl mt-2 animate-fade-in delay-200">
-            Dive into hands-on Infor M3 modules with expert-led workshops, designed to
-            equip professionals and enterprises with practical, in-demand skills.
+            Immerse yourself in hands-on training through expert-led workshops, tailored to equip professionals and enterprises with practical, in-demand skills
           </p>
         </div>
 
@@ -107,10 +106,10 @@ const CourseListComponent = () => {
             </div>
           </div>
 
-          <Link href="/courses" className="inline-flex items-center gap-2 text-neutral-200 text-lg font-semibold hover:text-primary-blue transition-colors duration-300 group">
+          {/*<Link href="/courses" className="inline-flex items-center gap-2 text-neutral-200 text-lg font-semibold hover:text-primary-blue transition-colors duration-300 group">
             Explore All Courses
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
+          </Link>*/}
         </div>
 
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">

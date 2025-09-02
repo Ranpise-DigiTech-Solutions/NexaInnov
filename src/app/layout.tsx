@@ -77,6 +77,8 @@ export default function RootLayout({
           content="Providing next-generation technology solutions."
         />
         <meta name="twitter:image" content="https://nexainnov.com/logo.png" />
+        <meta name="p:domain_verify" content="8f322e05f258f4f3cecc2b75d694ca2c" />
+        <meta name="google-site-verification" content="google4b0da5e0dcffbac1" />
       </head>
       <body>
         <UserProvider>

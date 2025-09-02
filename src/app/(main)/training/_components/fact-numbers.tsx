@@ -8,14 +8,14 @@ const FactNumbersComponent = (props: Props) => {
       <div className="w-[90%] lg:w-[80%] flex flex-col lg:flex-row items-start justify-center gap-8">
         <div className="flex-1 flex flex-col items-start justify-center gap-2">
           <p className="text-sm lg:text-base text-secondary-pink font-normal uppercase">
-            lorem academy
+            Nexainnov Solutions
           </p>
           <p className="text-neutral-200 text-4xl lg:text-5xl font-semibold text-wrap lg:line-clamp-3 xl:line-clamp-2">
             How about some fact numbers about us ?
           </p>
         </div>
         <div className="flex-1 flex flex-col items-stretch justify-center gap-8">
-          <div className="flex flex-row items-start justify-between gap-8">
+          {/*<div className="flex flex-row items-start justify-between gap-8">
             <div className="flex-1 flex flex-col items-start lg:items-center justify-center gap-1">
               <p className="uppercase text-3xl lg:text-4xl font-semibold text-secondary-pink">
                 5k
@@ -48,7 +48,7 @@ const FactNumbersComponent = (props: Props) => {
                 Client Satisfied
               </p>
             </div>
-          </div>
+          </div>*/}
           <div className="flex-1 text-wrap text-neutral-300 line-clamp-4 lg:line-clamp-3 leading-7 font-normal text-base">
           Our expert-led programs focus on practical, hands-on learning in areas like AI/ML, Full Stack Development (MERN/MEAN), DevOps, IBM i (AS/400), Cloud Computing, and more
           </div>

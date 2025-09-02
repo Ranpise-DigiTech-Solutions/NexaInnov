@@ -1,14 +1,32 @@
-import Image from "next/image";
-import React from "react";
+"use client";
 
+import Image from "next/image";
+import React, { useState } from "react";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import { ArrowUpRight } from "lucide-react";
 import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import ArticleIcon from "@mui/icons-material/Article";
+import { twMerge } from "tailwind-merge";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import SalesForm from "@/components/contact/SalesForm";
+import SupportForm from "@/components/contact/SupportForm";
+import {MediaInquiryForm} from "@/components/MediaInquiryForm";
 
 type Props = {};
 
 const ContactDetailsComponent = (props: Props) => {
+  const [openForm, setOpenForm] = useState<
+    "sales" | "support" | "media" | null
+  >(null);
+
+  const openFormModal = (formType: "sales" | "support" | "media") => {
+    setOpenForm(formType);
+  };
+
+  const closeFormModal = () => {
+    setOpenForm(null);
+  };
+
   return (
     <div className="max-h-[40vh] md:min-h-[50vh] w-full py-[2rem] md:px-[6rem] text-neutral-200 relative z-0 flex flex-row items-center justify-end mb-[53rem] md:mb-[18rem]">
       <Image
@@ -34,7 +52,10 @@ const ContactDetailsComponent = (props: Props) => {
       </div>
       <div className="absolute top-[15rem] left-0 right-0 md:top-auto lg:left-[2rem] lg:right-[2rem] md:h-[350px] md:bottom-[-17rem] z-100">
         <div className="w-full h-full p-[2rem] flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container">
+          <div
+            className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container"
+            onClick={() => openFormModal("sales")}
+          >
             <p className="bg-neutral-700 p-2 rounded-xl transition-all transform duration-300 group-hover:scale-105">
               <BusinessCenterIcon fontSize="large" />
             </p>
@@ -54,7 +75,10 @@ const ContactDetailsComponent = (props: Props) => {
               <ArrowUpRight className="transition-all transform duration-300 group-hover:-translate-y-1" />
             </div>
           </div>
-          <div className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container">
+          <div
+            className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container"
+            onClick={() => openFormModal("support")}
+          >
             <p className="bg-neutral-700 p-2 rounded-xl transition-all transform duration-300 group-hover:scale-105">
               <LocalPostOfficeIcon fontSize="large" />
             </p>
@@ -72,7 +96,10 @@ const ContactDetailsComponent = (props: Props) => {
               <ArrowUpRight className="transition-all transform duration-300 group-hover:-translate-y-1" />
             </div>
           </div>
-          <div className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container">
+          <div
+            className="group h-full w-[400px] bg-neutral-800 rounded-3xl flex flex-col items-center justify-center gap-3 p-[1.5rem] cursor-pointer link-underline-gradient-container"
+            onClick={() => openFormModal("media")}
+          >
             <p className="bg-neutral-700 p-2 rounded-xl transition-all transform duration-300 group-hover:scale-105">
               <ArticleIcon fontSize="large" />
             </p>
@@ -91,6 +118,13 @@ const ContactDetailsComponent = (props: Props) => {
           </div>
         </div>
       </div>
+      <Dialog open={!!openForm} onOpenChange={closeFormModal}>
+        <DialogContent className="border-none w-[95%] md:w-[60%] lg:w-[45%] rounded-3xl bg-transparent p-0">
+          {openForm === "sales" && <SalesForm />}
+          {openForm === "support" && <SupportForm />}
+          {openForm === "media" && <MediaInquiryForm />}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

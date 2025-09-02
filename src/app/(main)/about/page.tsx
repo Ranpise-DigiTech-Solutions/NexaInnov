@@ -46,12 +46,12 @@ const AboutPage = (props: Props) => {
           answer:
             "Yes, our platform supports managing multiple events with easy scheduling and booking features."
         },
-        {
+        /*{
           key: "faq5",
           question: "Do I need coding experience to use DragBlitz?",
           answer:
             "No, DragBlitz is a user-friendly platform that allows anyone to build websites without any coding or design experience."
-        },
+        },*/
       ]}/>
     </div>
   );

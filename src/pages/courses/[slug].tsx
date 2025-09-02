@@ -11,6 +11,8 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 import { toast } from 'sonner'; // Assuming you have 'sonner' for toasts (optional, but good for UX)
+import FooterComponent from "@/components/common/footer";
+import NavbarComponent from "@/components/common/navbar";
 
 // If you don't have 'sonner' installed, run:
 // npm install sonner
@@ -115,6 +117,7 @@ export default function CourseDetailsPage({ course }: Props) {
   return (
     <main className="min-h-screen bg-gradient-to-b from-neutral-800 via-primary-black to-neutral-800 text-white p-6 sm:p-12 relative overflow-hidden">
       {/* Decorative background elements (same as CourseList) */}
+      <NavbarComponent></NavbarComponent>
       <div className="absolute top-10 left-10 w-40 h-40 bg-secondary-purple rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
       <div className="absolute bottom-20 right-20 w-52 h-52 bg-primary-pink rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
 
@@ -224,6 +227,7 @@ export default function CourseDetailsPage({ course }: Props) {
           </ul>
         </section>
       </div>
+      <FooterComponent></FooterComponent>
     </main>
   );
 }

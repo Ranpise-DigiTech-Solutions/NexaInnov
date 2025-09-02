@@ -25,12 +25,13 @@ const OurPartnersComponent = (props: Props) => {
         <div className="w-full flex flex-col md:flex-row items-center justify-center md:flex-wrap">
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
-              src={"/images/client_logo_5.png"}
+              src={"/images/client_logo_11.png"}
               height={250}
               width={250}
               objectFit="cover"
               alt=""
             />
+            <p className="text-neutral-200 text-center text-lg mt-2">Anav Decals</p>
           </div>
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
@@ -40,6 +41,7 @@ const OurPartnersComponent = (props: Props) => {
               objectFit="cover"
               alt=""
             />
+            <p className="text-neutral-200 text-center text-lg mt-2">HD Group Mangalore</p>
           </div>
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
@@ -49,6 +51,7 @@ const OurPartnersComponent = (props: Props) => {
               objectFit="cover"
               alt=""
             />
+            <p className="text-neutral-200 text-center text-lg mt-2">Ranpise Digitech</p>
           </div>
           <div className="min-h-[250px] w-full md:min-w-[400px] lg:min-w-[500px] bg-neutral-800 border-neutral-700 border flex-1 flex flex-row items-center justify-center gap-2">
             <Image
@@ -58,6 +61,7 @@ const OurPartnersComponent = (props: Props) => {
               objectFit="cover"
               alt=""
             />
+            <p className="text-neutral-200 text-center text-lg mt-2">Qodes Systems</p>
           </div>
         </div>
       </div>

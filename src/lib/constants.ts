@@ -15,14 +15,25 @@ export const testimonialData = [
   },
   {
     id: 2,
-    heading: "A truly next-gen tarding app",
+    heading: "Revolutionizing our brand's online presence",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sequi quae veritatis maiores iure repellendus vitae vel Error tenetur reprehenderit dicta nesciunt maxime quaerat ab assumenda fuga atque",
-    author: "John Doe",
+      "“We partnered with NexaInnov Solutions to build our new corporate website, and the outcome exceeded all expectations. Their meticulous attention to detail and creative vision led to a stunning, user-friendly platform that perfectly captures our brand. The positive feedback from our clients has been incredible, and it's all thanks to their exceptional work.”",
+    author: "Mr Shlyesh",
     profilePic: "/images/avatar_1.jpg",
     companyLogo:
       "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg",
-    designation: "VP of Marketing @ Facebook",
+    designation: "Managing Partner @ HDGroup Mangalore",
+  },
+  {
+    id: 3,
+    heading: "Unlocking unparalleled efficiency",
+    description:
+      "“NexaInnov Solutions provided us with a custom software solution that streamlined our operations and boosted our team's productivity. Their deep understanding of our business needs and their proactive approach to problem-solving made them an invaluable partner. The impact on our workflow has been truly transformative.”",
+    author: "Mr. Wilson Monteiro",
+    profilePic: "/images/avatar_1.jpg", // You might need a new image for this person
+    companyLogo:
+      "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg", // Use a relevant logo URL here
+    designation: "Director @ CommLogic Group Australia",
   },
 ];
 
@@ -134,6 +145,13 @@ export const ourClients = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
     {
+      id: 10,
+      logo: "/images/client_logo_12.png",
+      name: "Client 10",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
       id: 1,
       logo: "/images/client_logo_1.png",
       name: "Client 1",
@@ -194,6 +212,13 @@ export const ourClients = {
       id: 9,
       logo: "/images/client_logo_10.jpg",
       name: "Client 9",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
+      id: 10,
+      logo: "/images/client_logo_12.png",
+      name: "Client 10",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     }
@@ -461,7 +486,7 @@ export const ourFeatures = [
     imgUrl: "",
     heading: "Scalability",
     description:
-      "Solutions that are built to grow with the client&#39;s business, offering scalability to handle increased demand or expansion seamlessly.",
+      "Solutions that are built to grow with the clients business, offering scalability to handle increased demand or expansion seamlessly.",
   },
   {
     imgUrl: "",
@@ -491,7 +516,7 @@ export const ourFeatures = [
     imgUrl: "",
     heading: "Integration Capabilities",
     description:
-      "Seamless integration with existing systems and third-party applications, ensuring that new solutions work harmoniously within the client&#39;s current IT ecosystem.",
+      "Seamless integration with existing systems and third-party applications, ensuring that new solutions work harmoniously within the clients current IT ecosystem.",
   },
   {
     imgUrl: "",

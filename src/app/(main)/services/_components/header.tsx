@@ -43,7 +43,7 @@ const HeaderComponent = ({ bgImageUrl, title }: Props) => {
         >
           Core Offerings
         </p>
-        <p className="text-base xl:text-lg capitalize font-neutral text-neutral-200 cursor-pointer text-center">
+        {/*<p className="text-base xl:text-lg capitalize font-neutral text-neutral-200 cursor-pointer text-center">
           Our Expertise
         </p>
         <p className="text-base xl:text-lg capitalize font-neutral text-neutral-200 cursor-pointer text-center">
@@ -57,7 +57,7 @@ const HeaderComponent = ({ bgImageUrl, title }: Props) => {
         </p>
         <p className="text-base xl:text-lg capitalize font-neutral text-neutral-200 cursor-pointer text-center">
           Success Stories
-        </p>
+        </p>*/}
       </nav>
       <div className="w-full h-fit bg-secondary-purple-dark px-[2rem] py-[1rem] lg:hidden flex flex-col items-center justify-center">
         <div
@@ -87,7 +87,7 @@ const HeaderComponent = ({ bgImageUrl, title }: Props) => {
         >
           Core offerings
         </p>
-        <p className="text-lg capitalize font-neutral text-neutral-400 cursor-pointer transform transition-all duration-300 hover:text-neutral-200">
+        {/*<p className="text-lg capitalize font-neutral text-neutral-400 cursor-pointer transform transition-all duration-300 hover:text-neutral-200">
           Our Expertise
         </p>
         <p className="text-lg capitalize font-neutral text-neutral-400 cursor-pointer transform transition-all duration-300 hover:text-neutral-200">
@@ -101,7 +101,7 @@ const HeaderComponent = ({ bgImageUrl, title }: Props) => {
         </p>
         <p className="text-lg capitalize font-neutral text-neutral-400 cursor-pointer transform transition-all duration-300 hover:text-neutral-200">
           Success Stories
-        </p>
+        </p>*/}
       </nav>
     </div>
   );

@@ -19,10 +19,64 @@ type Props = {};
 
 const FooterComponent = (props: Props) => {
   const [emailInput, setEmailInput] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false); // NEW: State to manage loading status
   const { toast } = useToast();
 
-  const handleEmailInputChange = async (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEmailInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmailInput(e.target.value);
+  };
+
+  // NEW: Function to handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Prevent page reload
+
+    // Basic validation
+    if (!emailInput.trim()) {
+      toast({
+        variant: "destructive",
+        title: "Invalid Email",
+        description: "Please enter a valid email address to subscribe.",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        type: 'newsletter',
+        email: emailInput,
+      };
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe. Please try again.");
+      }
+      
+      // Success
+      toast({
+        title: "Subscribed Successfully!",
+        description: "Thank you for joining our newsletter.",
+      });
+      setEmailInput(""); // Clear the input field on success
+
+    } catch (error) {
+      console.error("Subscription error:", error);
+      toast({
+        variant: "destructive",
+        title: "Subscription Failed",
+        description: "There was an error subscribing. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -56,36 +110,18 @@ const FooterComponent = (props: Props) => {
               >
                 Contact Us
               </Link>
-      
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
+              <Link
+                href="/csr-activities"
+                className="transition-all duration-300 hover:text-primary-pink"
               >
                 CSR Activities
-              </p>
-              
-              <p
-                className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
+              </Link>
+              <Link
+                href="/newsroom"
+                className="transition-all duration-300 hover:text-primary-pink"
               >
-                Newsroom
-              </p>
+                News Room
+              </Link>
             </div>
             <div className="flex flex-col items-start justify-center gap-4">
               <Link
@@ -112,20 +148,12 @@ const FooterComponent = (props: Props) => {
               >
                 FAQ&apos;s
               </Link>
-              <p
+              <Link
+                href="/alumni"
                 className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
-                onClick={() => {
-                  toast({
-                    variant: "destructive",
-                    title: "Action Unavailable",
-                    description:
-                      "This page is under development. Please try again later !",
-                    className: "bg-destructive-tag text-neutral-200 ",
-                  });
-                }}
               >
                 Our Alumni
-              </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -168,24 +196,34 @@ const FooterComponent = (props: Props) => {
             >
               IBM I(AS/400) & JD Edwards ERP Consulting
             </Link>
-            <Link
-              href="/services/internet-of-things"
-              className="transition-all duration-300 hover:text-primary-pink"
-            >
-              Internet of Things
-            </Link>
           </div>
         </div>
         <div className="flex-[20%] flex flex-col items-start justify-center gap-6">
           <div className="text-2xl font-bold">Our Products</div>
           <div className="flex flex-col items-start justify-center gap-4 text-neutral-400">
             <Link
-              href="https://www.eventifyconnect.com"
+              href="/eventify-connect"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:text-primary-pink"
             >
               EventifyConnect
+            </Link>
+            <Link
+              href="/restaurant-management-system"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:text-primary-pink"
+            >
+              Restaurant Management System
+            </Link>
+            <Link
+              href="/ppf-cutting-software"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:text-primary-pink"
+            >
+              PPF Cutting Software
             </Link>
             <p
               className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
@@ -199,7 +237,7 @@ const FooterComponent = (props: Props) => {
                 });
               }}
             >
-              Dragblitz
+              
             </p>
             <p
               className="transition-all duration-300 hover:text-primary-pink cursor-pointer"
@@ -213,7 +251,7 @@ const FooterComponent = (props: Props) => {
                 });
               }}
             >
-              Shopify
+              
             </p>
             <a
               href="#"
@@ -230,80 +268,90 @@ const FooterComponent = (props: Props) => {
             updates, tips, and special offers delivered straight to your inbox.
             Join our community and never miss out on the latest news!
           </div>
-          <div className="flex items-center justify-between">
-            <Input
-              type="email"
-              name="email"
-              value={emailInput}
-              onChange={handleEmailInputChange}
-              className="bg-neutral-700 outline-none border-none p-4"
-              placeholder="Your email address"
-            />
-            <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-              <p className="w-full gradient-border-inner tracking-wide text-neutral-200 p-2">
-                Subscribe
-              </p>
-            </Button>
-          </div>
+          {/* NEW: Use a form element and a loading state */}
+          <form onSubmit={handleSubmit} className="w-full">
+            <div className="flex items-center justify-between gap-4">
+              <Input
+                type="email"
+                name="email"
+                value={emailInput}
+                onChange={handleEmailInputChange}
+                className="bg-neutral-700 outline-none border-none p-4 w-full"
+                placeholder="Your email address"
+                disabled={isLoading} // NEW: Disable input during loading
+              />
+              <Button 
+                type="submit" 
+                className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
+                disabled={isLoading} // NEW: Disable button during loading
+              >
+                <p className="w-full gradient-border-inner tracking-wide text-neutral-200 p-2">
+                  {/* NEW: Conditional button text */}
+                  {isLoading ? "Subscribing..." : "Subscribe"}
+                </p>
+              </Button>
+            </div>
+          </form>
+          {/* END NEW */}
           <div className="flex items-center gap-4">
-          <Link href="https://www.facebook.com/profile.php?id=61575933402915" target="_blank" rel="noopener noreferrer">
-            <FacebookIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">Facebook</span>
-          </Link>
-          <Link href="https://x.com/home" target="_blank" rel="noopener noreferrer">
-            <XIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">X (formerly Twitter)</span>
-          </Link>
-          <Link href="https://in.pinterest.com/business/hub/" target="_blank" rel="noopener noreferrer">
-            <PinterestIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">Pinterest</span>
-          </Link>
-          <Link href="#" target="_blank" rel="noopener noreferrer">
-            <WhatsappIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">WhatsApp</span>
-          </Link>
-          <Link
-            href="https://www.linkedin.com/company/nexainnov-solutions-llp/?viewAsMember=true"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <LinkedInIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link
-            href="https://www.instagram.com/nexainnov_solutions"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <InstagramIcon
-              fontSize="medium"
-              className="transform transition-all duration-300 hover:text-primary-pink"
-            />
-            <span className="sr-only">Instagram</span>
-          </Link>
-          <Link href="https://www.youtube.com/@NexainnovSolutions" target="_blank" rel="noopener noreferrer">
-  <YouTubeIcon
-    fontSize="medium"
-    className="transform transition-all duration-300 hover:text-primary-pink"
-  />
-  <span className="sr-only">YouTube</span>
-</Link>
-        </div>
+            <Link href="https://www.facebook.com/profile.php?id=61575933402915" target="_blank" rel="noopener noreferrer">
+              <FacebookIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link href="https://x.com/home" target="_blank" rel="noopener noreferrer">
+              <XIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">X (formerly Twitter)</span>
+            </Link>
+            <Link href="https://in.pinterest.com/business/hub/" target="_blank" rel="noopener noreferrer">
+              <PinterestIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">Pinterest</span>
+            </Link>
+            <Link href="#" target="_blank" rel="noopener noreferrer">
+              <WhatsappIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">WhatsApp</span>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/company/nexainnov-solutions-llp/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+            <Link
+              href="https://www.instagram.com/nexainnov_solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link href="https://www.youtube.com/@NexainnovSolutions" target="_blank" rel="noopener noreferrer">
+              <YouTubeIcon
+                fontSize="medium"
+                className="transform transition-all duration-300 hover:text-primary-pink"
+              />
+              <span className="sr-only">YouTube</span>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="line-divider w-[95%]"></div>
@@ -311,17 +359,17 @@ const FooterComponent = (props: Props) => {
         <Link href={"/"}>
           <div className="flex items-center transform transition-transform duration-300 hover:scale-105 cursor-pointer tracking-wide gap-2">
             <Image src={"/images/logo.png"} height={40} width={40} alt="logo" />
-            <p className="text-xl italic font-serif text-white">NexaInnov</p>
+            <p className="text-xl italic font-serif text-white">NexaInnov Solutions</p>
           </div>
         </Link>
         <div className="text-neutral-400 lg:text-nowrap text-wrap leading-7">
-          &copy; 2024 <span className="font-serif">NexaInnov</span>. All rights
+          &copy; 2024 <span className="font-serif">NexaInnov Solutions</span>. All rights
           reserved. Designed by{" "}
           <a
             href="#"
             className="transition-all duration-300 hover:text-primary-pink font-serif"
           >
-            `NexaInnov`
+            `NexaInnov Solutions`
           </a>
         </div>
       </div>

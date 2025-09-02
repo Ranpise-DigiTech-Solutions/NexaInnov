@@ -3,6 +3,8 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import { allTrainers, Trainer } from '@/data/trainer'; // Import allTrainers data
 import TrainerProfile from '@/components/TrainerProfile'; // Re-use the component we made earlier
+import FooterComponent from "@/components/common/footer";
+import NavbarComponent from "@/components/common/navbar";
 
 interface TrainerPageProps {
   trainer: Trainer;
@@ -14,16 +16,20 @@ export default function TrainerDetailsPage({ trainer }: TrainerPageProps) {
     // but good for type safety or if fallback: true is used later.
     return (
       <div className="min-h-screen bg-primary-black text-white flex items-center justify-center">
+        <NavbarComponent></NavbarComponent>
         <p>Trainer not found.</p>
+        <FooterComponent></FooterComponent>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-800 via-primary-black to-neutral-800 py-16 px-6">
+      <NavbarComponent></NavbarComponent>
       <div className="max-w-4xl mx-auto">
         <TrainerProfile trainer={trainer} />
       </div>
+      <FooterComponent></FooterComponent>
     </div>
   );
 }

@@ -111,7 +111,7 @@ const NavbarComponent = ({ className }: Props) => {
                 draggable="false"
                 className="xl:h-[45px] xl:w-[45px] w-[40px] h-[40px]"
               />
-              <p className="text-2xl italic font-serif text-white">NexaInnov</p>
+              <p className="text-2xl italic font-serif text-white">NexaInnov Solutions</p>
             </div>
           </Link>
           <nav className="hidden xl:flex items-center gap-8 tracking-wide">
@@ -443,17 +443,17 @@ const NavbarComponent = ({ className }: Props) => {
                     IT and DT Consulting
                   </p>
                   <div className="flex flex-col items-start justify-center gap-2">
-                    <Link href={"/services/internet-of-things"}>
+                    {/*<Link href={"/services/internet-of-things"}>
                       <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                         Internet of Thing (IOT)
                       </p>
-                    </Link>
+                    </Link>*/}
                     <Link href={"/services/augmented-reality"}>
                       <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                         Augmented reality (AR)
                       </p>
                     </Link>
-                    <Link href={"/services/virtual-reality"}>
+                    {/*<Link href={"/services/virtual-reality"}>
                       <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
                         <span className="group-hover:text-primary-pink">
                           Virtual Reality (VR)
@@ -474,21 +474,32 @@ const NavbarComponent = ({ className }: Props) => {
                           className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
                         />
                       </p>
-                    </Link>
+                    </Link>*/}
+                    <Link href={"/services/staffing"}>
+          <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+            <span className="group-hover:text-primary-pink">
+              Staffing
+            </span>
+            <ArrowUpRight
+              fontSize={16}
+              className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+            />
+          </p>
+        </Link>
                   </div>
                 </div>
                 <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
-                  <p className="text-xl font-semibold text-neutral-500 text-start">
+                  {/*<p className="text-xl font-semibold text-neutral-500 text-start">
                     Others
                   </p>
-                  <div className="flex flex-col items-start justify-center gap-2">
+                  {/*<div className="flex flex-col items-start justify-center gap-2">
                     <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                       NexaInnov for business
                     </p>
                     <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
                       Stories
                     </p>
-                  </div>
+                  </div>*/}
                 </div>
               </div>
             )}
@@ -551,6 +562,37 @@ const NavbarComponent = ({ className }: Props) => {
                 }}
               >
                 <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
+                  <div className="flex flex-col items-start justify-center gap-2">
+
+        {/* Eventify Connect Link */}
+        <Link 
+          href="/eventify-connect"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">✨</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">Eventify Connect</span>
+        </Link>
+
+        {/* Restaurant Management System Link */}
+        <Link 
+          href="/restaurant-management-system"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">🍽️</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">Restaurant Management system</span>
+        </Link>
+
+        {/* PPF Cutting Software Link */}
+        <Link 
+          href="/ppf-cutting-software"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">✂️</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">PPF cutting Software</span>
+        </Link>
+        </div>
+                </div>
+                {/*<div className="min-w-[200px] flex flex-col items-stretch justify-start gap-4 tracking-wide">
                   <p className="text-xl font-semibold text-neutral-500 text-start">
                     EventifyConnect
                   </p>
@@ -629,7 +671,7 @@ const NavbarComponent = ({ className }: Props) => {
                       Stories
                     </p>
                   </div>
-                </div>
+                </div>*/}
               </div>
             )}
             <Link
@@ -675,7 +717,36 @@ const NavbarComponent = ({ className }: Props) => {
               setMenuDropdown({ activeMenu: "", status: false });
             }}
           >
-            <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
+            <div className="flex flex-col items-start justify-center gap-2">
+
+        {/* Eventify Connect Link */}
+        <Link 
+          href="/eventify-connect"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">✨</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">Eventify Connect</span>
+        </Link>
+
+        {/* Restaurant Management System Link */}
+        <Link 
+          href="/restaurant-management-system"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">🍽️</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">Restaurant Management system</span>
+        </Link>
+
+        {/* PPF Cutting Software Link */}
+        <Link 
+          href="/ppf-cutting-software"
+          className="group flex items-center gap-3 w-full p-2 rounded-lg text-lg font-medium text-neutral-200 hover:bg-gray-700 transform transition-all duration-300 hover:text-primary-pink cursor-pointer"
+        >
+          <span className="text-2xl text-primary-pink group-hover:animate-pulse">✂️</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">PPF cutting Software</span>
+        </Link>
+                </div>
+            {/*<div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
               <p className="text-xl font-semibold text-neutral-500 text-start">
                 EventifyConnect
               </p>
@@ -755,121 +826,123 @@ const NavbarComponent = ({ className }: Props) => {
                   Stories
                 </p>
               </div>
-            </div>
+            </div>*/}
           </div>
         )}
         {menuDropdown.activeMenu === "Services" && (
-          <div
-            className="w-[80%] h-fit flex flex-row items-stretch justify-between gap-4 py-[4rem]"
-            onMouseLeave={() => {
-              setMenuDropdown({ activeMenu: "", status: false });
-            }}
-          >
-            <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
-              <p className="text-xl font-semibold text-neutral-500 text-start">
-                General
-              </p>
-              <div className="flex flex-col items-start justify-center gap-4">
-                <Link href={"/services/automation"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Automation
-                  </p>
-                </Link>
-                <Link href={"/services/digital-marketing"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Digital Marketing
-                  </p>
-                </Link>
-                <Link href={"/services/software-development"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Software Development
-                  </p>
-                </Link>
-                <Link href={"/services/web-mobile-development"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Website and Mobile App Development
-                  </p>
-                </Link>
-                <Link href={"/services/advisory-outsourcing"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Advisory and OutSourcing Services
-                  </p>
-                </Link>
-                <Link href={"/services/erp-consulting"}>
-                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                    <span className="group-hover:text-primary-pink">
-                      IBM I (AS/400) and JD Edwards ERP Consulting
-                    </span>
-                    <ArrowUpRight
-                      fontSize={16}
-                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                    />
-                  </p>
-                </Link>
-              </div>
-            </div>
-            <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
-              <p className="text-xl font-semibold text-neutral-500 text-start">
-                IT and DT Consulting
-              </p>
-              <div className="flex flex-col items-start justify-center gap-4">
-                <Link href={"/services/internet-of-things"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Internet of Thing (IOT)
-                  </p>
-                </Link>
-                <Link href={"/services/augmented-reality"}>
-                  <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                    Augmented reality (AR)
-                  </p>
-                </Link>
-                <Link href={"/services/virtual-reality"}>
-                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                    <span className="group-hover:text-primary-pink">
-                      Virtual Reality (VR)
-                    </span>
-                    <ArrowUpRight
-                      fontSize={16}
-                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                    />
-                  </p>
-                </Link>
-                <Link href={"/services/robotics"}>
-                  <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                    <span className="group-hover:text-primary-pink">
-                      Robotics
-                    </span>
-                    <ArrowUpRight
-                      fontSize={16}
-                      className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
-                    />
-                  </p>
-                </Link>
-              </div>
-            </div>
-            <div className="min-w-[200px] flex flex-col items-stretch justify-start gap-6 tracking-wide">
-              <p className="text-xl font-semibold text-neutral-500 text-start">
-                Others
-              </p>
-              <div className="flex flex-col items-start justify-center gap-4">
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  NexaInnov for business
-                </p>
-                <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
-                  Stories
-                </p>
-                <Link href={"/services/staffing"}>
-                      <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
-                        <span className="group-hover:text-primary-pink">
-                          Staffing
-                        </span>
-                        
-                      </p>
-                    </Link>
-              </div>
-            </div>
-          </div>
-        )}
+  <div
+    className="w-full h-fit flex flex-col sm:flex-row items-start sm:items-stretch justify-between gap-8 sm:gap-4 py-8 sm:py-[4rem] px-4"
+    onMouseLeave={() => {
+      setMenuDropdown({ activeMenu: "", status: false });
+    }}
+  >
+    {/* General Column */}
+    <div className="w-full sm:min-w-[200px] flex flex-col items-start justify-start gap-4 tracking-wide pb-6">
+      <p className="text-xl font-semibold text-neutral-500">General</p>
+      <div className="flex flex-col items-start justify-center gap-4">
+        <Link href={"/services/automation"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Automation
+          </p>
+        </Link>
+        <Link href={"/services/digital-marketing"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Digital Marketing
+          </p>
+        </Link>
+        <Link href={"/services/software-development"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Software Development
+          </p>
+        </Link>
+        <Link href={"/services/web-mobile-development"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Website and Mobile App Development
+          </p>
+        </Link>
+        <Link href={"/services/advisory-outsourcing"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Advisory and OutSourcing Services
+          </p>
+        </Link>
+        <Link href={"/services/erp-consulting"}>
+          <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+            <span className="group-hover:text-primary-pink">
+              IBM I (AS/400) and JD Edwards ERP Consulting
+            </span>
+            <ArrowUpRight
+              fontSize={16}
+              className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+            />
+          </p>
+        </Link>
+      </div>
+    </div>
+    
+    {/* IT and DT Consulting Column */}
+    <div className="w-full sm:min-w-[200px] flex flex-col items-start justify-start gap-4 tracking-wide pb-6">
+      <p className="text-xl font-semibold text-neutral-500">IT and DT Consulting</p>
+      <div className="flex flex-col items-start justify-center gap-4">
+{/*<Link href={"/services/internet-of-things"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Internet of Thing (IOT)
+          </p>
+        </Link>*/}
+        <Link href={"/services/augmented-reality"}>
+          <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+            Augmented reality (AR)
+          </p>
+        </Link>
+        {/*<Link href={"/services/virtual-reality"}>
+          <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+            <span className="group-hover:text-primary-pink">
+              Virtual Reality (VR)
+            </span>
+            <ArrowUpRight
+              fontSize={16}
+              className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+            />
+          </p>
+        </Link>
+        <Link href={"/services/robotics"}>
+          <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+            <span className="group-hover:text-primary-pink">
+              Robotics
+            </span>
+            <ArrowUpRight
+              fontSize={16}
+              className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+            />
+          </p>
+        </Link>*/}
+        <Link href={"/services/staffing"}>
+          <p className="group text-lg font-neutral text-neutral-200 transform transition-all duration-300 cursor-pointer flex flex-row gap-1 items-center justify-center">
+            <span className="group-hover:text-primary-pink">
+              Staffing
+            </span>
+            <ArrowUpRight
+              fontSize={16}
+              className="transfrom transition-all duration-300 group-hover:text-primary-pink group-hover:-translate-y-0.5"
+            />
+          </p>
+        </Link>
+      </div>
+    </div>
+    
+    {/* Others Column */}
+    <div className="w-full sm:min-w-[200px] flex flex-col items-start justify-start gap-4 tracking-wide">
+      {/*<p className="text-xl font-semibold text-neutral-500">Others</p>
+      <div className="flex flex-col items-start justify-center gap-2">
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      NexaInnov for business
+                    </p>
+                    <p className="text-lg font-neutral text-neutral-200 transform transition-all duration-300 hover:text-primary-pink cursor-pointer">
+                      Stories
+                    </p>
+      </div>*/}
+    </div>
+  </div>
+)}
       </div>
     </>
   );

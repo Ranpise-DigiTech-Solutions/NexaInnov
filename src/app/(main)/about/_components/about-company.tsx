@@ -38,13 +38,13 @@ const AboutCompanyComponent = (props: Props) => {
             </p>
           </div>
           <div className="h-full flex flex-col items-center justify-center gap-2">
-            <p className="text-neutral-200 text-2xl md:text-3xl font-bold">3+</p>
+            <p className="text-neutral-200 text-2xl md:text-3xl font-bold">4+</p>
             <p className="text-neutral-400 text-sm md:text-base font-normal capitalize">
               countries
             </p>
           </div>
           <div className="h-full flex flex-col items-center justify-center gap-2">
-            <p className="text-neutral-200 text-2xl md:text-3xl font-bold">7+</p>
+            <p className="text-neutral-200 text-2xl md:text-3xl font-bold">10+</p>
             <p className="text-neutral-400 text-sm md:text-base font-normal capitalize text-center">
               Projects done
             </p>

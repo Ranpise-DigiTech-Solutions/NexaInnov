@@ -40,7 +40,7 @@ const GetInTouchComponent = (props: Props) => {
               </span>
             </div>
           </div>
-          <div className="w-full flex flex-col gap-6">
+          {/*<div className="w-full flex flex-col gap-6">
             <p className="text-xl lg:text-2xl font-bold">Follow us on</p>
             <div className="w-full min-h-[40px] lg:h-fit flex flex-row items-center justify-start gap-4">
               <Link
@@ -91,7 +91,7 @@ const GetInTouchComponent = (props: Props) => {
                 </span>
               </Link>
             </div>
-          </div>
+          </div>*/}
         </div>
       </div>
       <div className="w-full lg:w-[50%] h-full flex items-center justify-center">

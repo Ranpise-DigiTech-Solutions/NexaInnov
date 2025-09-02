@@ -20,7 +20,7 @@ const TrustOurExpertiseComponent = (props: Props) => {
               </p>
             </div>
             <div className="flex-1 flex flex-col gap-2 xl:items-start items-center justify-center">
-              <p className="xl:text-5xl text-4xl text-primary-pink">7+</p>
+              <p className="xl:text-5xl text-4xl text-primary-pink">10+</p>
               <p className="w-full text-center xl:text-start text-base text-neutral-400 capitalize">
                 Projects Completed
               </p>
@@ -32,11 +32,11 @@ const TrustOurExpertiseComponent = (props: Props) => {
               </p>
             </div>
           </div>
-          <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105 ">
+          {/*<Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105 ">
             <p className="w-full gradient-border-inner xl:text-xl text-lg tracking-wide text-neutral-300 bg-primary-pink px-6 py-3 rounded-4xl">
               Get Started
             </p>
-          </Button>
+          </Button>*/}
         </div>
         <div className="flex-1 flex items-center xl:justify-start justify-center">
           <div className="relative xl:min-h-[450px] xl:min-w-[650px] w-[90%] h-[350px] md:w-full md:h-[400px]">

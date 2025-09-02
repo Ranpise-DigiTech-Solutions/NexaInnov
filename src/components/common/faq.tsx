@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { useToast } from "../ui/use-toast"; // NEW: Import useToast hook
 
 type Props = {
   className?: string;
@@ -32,11 +33,72 @@ const FAQComponent = ({ className, faqs }: Props) => {
     faq5: false,
   });
 
+  // NEW: State for the FAQ query input and loading status
+  const [faqQuery, setFaqQuery] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
   const handleFaqTrigger = (key: keyof typeof faqTrigger, value: boolean) => {
     setFaqTrigger((prevValue) => ({
       ...prevValue,
       [key]: value,
     }));
+  };
+
+  // NEW: Handler for the FAQ input change
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFaqQuery(e.target.value);
+  };
+
+  // NEW: Handler for form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!faqQuery.trim()) {
+      toast({
+        variant: "destructive",
+        title: "Input Required",
+        description: "Please type your question before sending.",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        type: 'faq-query',
+        query: faqQuery,
+      };
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send your question. Please try again.");
+      }
+
+      toast({
+        title: "Question Sent!",
+        description: "Thank you for reaching out. We will get back to you shortly.",
+      });
+      setFaqQuery(""); // Clear the input field on success
+
+    } catch (error) {
+      console.error("FAQ form submission error:", error);
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: "There was an error sending your question. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   console.log(faqTrigger);
@@ -108,7 +170,7 @@ const FAQComponent = ({ className, faqs }: Props) => {
             </div>
           ))}
 
-          <div className="w-full flex items-center justify-center gap-[4rem]">
+          {/*<div className="w-full flex items-center justify-center gap-[4rem]">
             <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-110 p-0">
               <p className="w-full gradient-border-inner text-neutral-200 p-3">
                 <ArrowLeft size={24} />
@@ -119,8 +181,9 @@ const FAQComponent = ({ className, faqs }: Props) => {
                 <ArrowRight size={24} />
               </p>
             </Button>
-          </div>
+          </div>*/}
         </div>
+        {/* NEW: Use a form element to handle the submission */}
         <div className="w-full lg:w-[45%] py-[2rem] lg:pr-[4rem] flex flex-col items-center justify-center gap-8">
           <div className="w-full h-[200px] flex items-center justify-center">
             <Image
@@ -137,11 +200,11 @@ const FAQComponent = ({ className, faqs }: Props) => {
               Do You Have Any Question ?
             </div>
             <div className="w-full text-sm md:text-base text-neutral-500 leading-6 md:leading-7 text-center">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-              quod recusandae quae nulla aliquid accusantium?
+              Whether you need a quote, have a project in mind, or simply want to learn more,
+              our experts are just a message away.
             </div>
           </div>
-          <div className="w-full flex flex-col items-start justify-center gap-2">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col items-start justify-center gap-2">
             <p className="text-base md:text-lg font-semibold text-neutral-300">
               Let us know
             </p>
@@ -150,13 +213,20 @@ const FAQComponent = ({ className, faqs }: Props) => {
               type="text"
               name="faqQuery"
               className="w-full bg-neutral-600 transition-all transform duration-300 hover:bg-neutral-700"
+              value={faqQuery}
+              onChange={handleInputChange}
+              disabled={isLoading}
             />
-          </div>
-          <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-            <p className="w-full gradient-border-inner text-sm md:text-base lg:text-lg tracking-wide text-neutral-200 py-2 px-4 md:px-6">
-              Send
-            </p>
-          </Button>
+            <Button
+              type="submit"
+              className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
+              disabled={isLoading}
+            >
+              <p className="w-full gradient-border-inner text-sm md:text-base lg:text-lg tracking-wide text-neutral-200 py-2 px-4 md:px-6">
+                {isLoading ? "Sending..." : "Send"}
+              </p>
+            </Button>
+          </form>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* --- NexaInnov Custom Colors (Keep these as they are) --- */
     --primary-blue: #2d42ff;
     --primary-pink: #ff4895;
     --primary-purple: #6e4fe9;
@@ -22,7 +23,7 @@
     --neutral-500: #88849c;
     --neutral-400: #b7b4c7;
     --neutral-300: #d9d7e6;
-    --neutral-200: #f5f4fa;
+    --neutral-200: #f5f4fa; /* This is a very light gray, close to white */
 
     --white: #ffffff;
     --black: #000000;
@@ -30,7 +31,7 @@
 
     --shadow-card-default: rgba(0, 0, 0, 0.1);
     --shadow-card-large: rgba(0, 0, 0, 0.35);
-    --shadow-card-large-dark: rgba(0, 0, 0, 0.45);
+    --shadow-card-large-dark: rgba(0, 0, 0, .45);
     --shadow-card-extra-large-dark: rgba(0, 0, 0, .65);
 
     --radius: 0.5rem;
@@ -45,9 +46,27 @@
     --border: 0 0% 90.2%;
     --input: 0 0% 90.2%;
     --ring: 214.12 100% 50%;
+
+    /* --- ADDED FOR THEME SWITCHING --- */
+    /* Light Theme (Default) */
+    --background: 0 0% 100%; /* Pure white background */
+    --foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
+    --card: 0 0% 100%; /* Card background in light mode */
+    --card-foreground: 222.2 47.4% 11.2%; /* Card text in light mode */
+    --popover: 0 0% 100%; /* Popover background in light mode */
+    --popover-foreground: 222.2 47.4% 11.2%; /* Popover text in light mode */
+    --primary: 222.2 47.4% 11.2%; /* Primary color for light mode (e.g., buttons) */
+    --primary-foreground: 210 40% 98%; /* Primary text color for light mode */
+    --secondary: 210 40% 96.1%; /* Secondary color for light mode */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Secondary text color for light mode */
+    --muted: 210 40% 96.1%; /* Muted background for light mode */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Muted text for light mode */
+    --accent: 210 40% 96.1%; /* Accent background for light mode */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Accent text for light mode */
   }
 
   .dark {
+    /* --- NexaInnov Custom Colors (Keep these as they are) --- */
     --primary-blue: #4a5eff;
     --primary-pink: #ff67a5;
     --primary-purple: #7e5ffe;
@@ -68,7 +87,26 @@
     --shadow-card-default: rgba(0, 0, 0, 0.1);
     --shadow-card-large: rgba(0, 0, 0, 0.35);
     --shadow-card-large-dark: rgba(0, 0, 0, 0.45);
+
+    /* --- ADDED FOR THEME SWITCHING --- */
+    /* Dark Theme */
+    --background: 222.2 47.4% 11.2%; /* Dark background */
+    --foreground: 210 40% 98%; /* Light text for contrast */
+    --card: 222.2 47.4% 11.2%; /* Card background in dark mode */
+    --card-foreground: 210 40% 98%; /* Card text in dark mode */
+    --popover: 222.2 47.4% 11.2%; /* Popover background in dark mode */
+    --popover-foreground: 210 40% 98%; /* Popover text in dark mode */
+    --primary: 210 40% 98%; /* Primary color for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%; /* Primary text color for dark mode */
+    --secondary: 217.2 32.6% 17.5%; /* Secondary color for dark mode */
+    --secondary-foreground: 210 40% 98%; /* Secondary text color for dark mode */
+    --muted: 217.2 32.6% 17.5%; /* Muted background for dark mode */
+    --muted-foreground: 215 20.2% 65.1%; /* Muted text for dark mode */
+    --accent: 217.2 32.6% 17.5%; /* Accent background for dark mode */
+    --accent-foreground: 210 40% 98%; /* Accent text for dark mode */
   }
+
+  /* ... (rest of your custom CSS classes like .button-primary-gradient, .gradient-border-inner, etc.) */
 
   .button-primary-gradient {
     transform-style: preserve-3d;
@@ -123,13 +161,9 @@
   }
 
   .icon-gradient {
-    /* transform-style: preserve-3d; */
     background-image: linear-gradient(315deg, #434bff, #ff4b81);
     padding: 0.5rem;
     border-radius: 0.5rem;
-    /* -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: "transparent"; */
   }
 
   .link-underline-gradient-container:hover {
@@ -168,5 +202,4 @@
   .bg-navbar-gradient {
     background: linear-gradient(to right, rgb(155, 162, 175), #302c3f 25%, #1d1a27 100%);
   }
-
 }

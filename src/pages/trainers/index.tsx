@@ -3,6 +3,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { allTrainers, Trainer } from '@/data/trainer'; // Corrected import path from '@/data/trainer' to '@/data/trainers'
+import FooterComponent from "@/components/common/footer";
+import NavbarComponent from "@/components/common/navbar";
 
 interface TrainersListPageProps {
   trainers: Trainer[];
@@ -11,6 +13,7 @@ interface TrainersListPageProps {
 export default function TrainersListPage({ trainers }: TrainersListPageProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-neutral-800 via-primary-black to-neutral-800 text-white py-16 px-6">
+      <NavbarComponent></NavbarComponent>
       <div className="max-w-5xl mx-auto space-y-12">
         <h1 className="text-5xl lg:text-6xl font-extrabold text-center animate-fade-in-down">
           Meet Our <span className="gradient-text">Expert Trainers</span>
@@ -58,6 +61,7 @@ export default function TrainersListPage({ trainers }: TrainersListPageProps) {
           ))}
         </div>
       </div>
+      <FooterComponent></FooterComponent>
     </div>
   );
 }

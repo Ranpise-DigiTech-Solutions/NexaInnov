@@ -57,7 +57,7 @@ const ClientStoriesComponent = (props: Props) => {
             </div>
           ))}
         </div>
-        <Button className="group flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
+        {/*<Button className="group flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
           <p className="w-full gradient-border-inner text-base md:text-lg font-bold tracking-wide text-neutral-200 px-6 py-3 flex flex-row items-center justify-center gap-2">
             <span>View All</span>
             <ArrowRight
@@ -65,7 +65,7 @@ const ClientStoriesComponent = (props: Props) => {
               className="transform transition-all duration-300 group-hover:translate-x-2"
             />
           </p>
-        </Button>
+        </Button>*/}
       </div>
     </div>
   );

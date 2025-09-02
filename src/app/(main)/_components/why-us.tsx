@@ -70,7 +70,7 @@ const WhyUsComponent = (props: Props) => {
             </div>
           </div>
           <div className="w-full overflow-hidden flex flex-nowrap flex-row items-center justify-center gap-2">
-            <Button className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 p-0">
+            {/*<Button className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 p-0">
               <p className="w-full gradient-border-inner text-lg tracking-wide text-neutral-200 px-4 lg:px-6 py-2 lg:py-3 flex flex-row items-center justify-center gap-1">
                 <span>Explore more</span>
                 <ArrowUpRight
@@ -78,7 +78,7 @@ const WhyUsComponent = (props: Props) => {
                   className="hidden md:inline-block transform transition-transform duration-300 group-hover:-translate-y-1 w-5 h-5"
                 />
               </p>
-            </Button>
+            </Button>*/}
             <Button
               className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 hover:bg-primary-black bg-neutral-700 rounded-full px-5 lg:px-6 py-6 lg:py-7"
               onClick={() => {

@@ -59,11 +59,11 @@ const GetInTouchComponent = (props: Props) => {
               and hands-on training programs are tailored to fit your lifestyle. Empower yourself with industry-relevant
               skills and grow at your own pace — anytime, anywhere.
               </p>
-              <Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
+              {/*<Button className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                     <p className="w-full gradient-border-inner text-base lg:text-lg tracking-wide text-neutral-200 px-4 py-2">
                       Get in touch
                     </p>
-                  </Button>
+                  </Button>*/}
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@ const OurOfficeComponent = (props: Props) => {
               locations listed below and let’s connect in person. 
             </p>
             <div className="w-full flex flex-col justify-center items-center gap-6">
-              <div className="group border border-neutral-700 p-4 md:p-[2rem] bg-neutral-700 w-full min-h-fit rounded-xl flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 cursor-pointer transform transition-all duration-300 hover:scale-105">
+              {/*<div className="group border border-neutral-700 p-4 md:p-[2rem] bg-neutral-700 w-full min-h-fit rounded-xl flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 cursor-pointer transform transition-all duration-300 hover:scale-105">
                 <div className="w-fit bg-neutral-600 p-2 rounded-xl">
                   <Building className="h-[1.5rem] w-[1.5rem] md:h-[2rem] md:w-[2rem]" />
                 </div>
@@ -45,7 +45,7 @@ const OurOfficeComponent = (props: Props) => {
                     maharashtra 421301
                   </p>
                 </div>
-              </div>
+              </div>>*/}
               <div className="group border border-neutral-700 p-4 md:p-[2rem] bg-neutral-700 w-full min-h-fit rounded-xl flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 cursor-pointer transform transition-all duration-300 hover:scale-105">
                 <div className="w-fit bg-neutral-600 p-2 rounded-xl">
                   <Landmark className="h-6 w-6 md:h-[2rem] md:w-[2rem]" />

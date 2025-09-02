@@ -14,10 +14,10 @@ const FeaturesListComponent = ({ className }: Props) => {
         <div className="w-full flex flex-col items-center justify-center gap-[4rem]">
           <div className="w-full flex flex-col items-center justify-center gap-4">
             <p className="text-5xl text-neutral-200 font-bold">Features</p>
-            <p className="text-lg text-neutral-400 text-center">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
-              dolores consectetur nesciunt ipsum officia perspiciatis.
-            </p>
+            <p className="text-lg text-neutral-400 text-center text-gray-900 font-bold">
+  We empower businesses with future-ready IT solutions, focusing on innovation,
+  scalability, and security to drive growth and operational excellence.
+</p>
           </div>
           <div className="w-full flex-1 bg-neutral-800 flex flex-col items-center justify-center gap-6 p-[4rem]">
             <p className="text-3xl font-semibold text-neutral-200">

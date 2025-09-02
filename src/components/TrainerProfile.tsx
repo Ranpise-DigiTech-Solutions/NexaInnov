@@ -5,6 +5,7 @@ import Image from "next/image";
 // npm install react-icons or yarn add react-icons
 import { FaGraduationCap, FaBriefcase, FaBuilding, FaEnvelope, FaLink } from "react-icons/fa";
 
+
 // Define the interface for the Trainer data structure
 // This should match the Trainer interface in src/data/trainers.ts
 interface TrainerDetails {
@@ -26,6 +27,7 @@ interface TrainerProfileProps {
 
 const TrainerProfile: React.FC<TrainerProfileProps> = ({ trainer }) => {
   return (
+    
     <div className="bg-neutral-800 rounded-3xl p-8 lg:p-12 shadow-2xl border border-secondary-purple/30 text-white animate-fade-in">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         {/* Trainer Image/Avatar */}
