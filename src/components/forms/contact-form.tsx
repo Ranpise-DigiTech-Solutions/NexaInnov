@@ -110,7 +110,7 @@ const ContactForm = ({ className }: Props) => {
   return (
     <div
       className={twMerge(
-        "rounded-3xl border border-slate-500 px-[1.5rem] lg:px-[3rem] py-[2rem] shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)] bg-neutral-800",
+        "rounded-3xl border border-slate-500 px-[1.5rem] lg:px-[3rem] py-[2rem] shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)] bg-blue-600 dark:bg-neutral-800",
         className
       )}
     >
@@ -125,7 +125,7 @@ const ContactForm = ({ className }: Props) => {
               placeholder="Full Name"
               value={formData.name}
               onChange={handleInputChange}
-              className="bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
+              className="bg-white dark:bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
             />
             {getErrorForField("name") && (
                 <p className="text-red-400 text-sm">{getErrorForField("name")}</p>
@@ -142,7 +142,7 @@ const ContactForm = ({ className }: Props) => {
               placeholder="Email"
               value={formData.email}
               onChange={handleInputChange}
-              className="bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
+              className="bg-white dark:bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
             />
             {getErrorForField("email") && (
                 <p className="text-red-400 text-sm">{getErrorForField("email")}</p>
@@ -156,7 +156,7 @@ const ContactForm = ({ className }: Props) => {
               placeholder="Phone"
               value={formData.phoneNo}
               onChange={handleInputChange}
-              className="bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
+              className="bg-white dark:bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
             />
           </div>
         </div>
@@ -170,7 +170,7 @@ const ContactForm = ({ className }: Props) => {
               placeholder="Subject"
               value={formData.subject}
               onChange={handleInputChange}
-              className="bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
+              className="bg-white dark:bg-neutral-600 min-h-[3rem] transition-all transform duration-300 hover:bg-neutral-700"
             />
             {getErrorForField("subject") && (
                 <p className="text-red-400 text-sm">{getErrorForField("subject")}</p>
@@ -186,7 +186,7 @@ const ContactForm = ({ className }: Props) => {
               placeholder="Please enter your message..."
               value={formData.message}
               onChange={handleInputChange}
-              className="bg-neutral-600 w-full rounded-md p-4 text-sm border min-h-[6rem] transition-all transform duration-300 hover:bg-neutral-700"
+              className="bg-white dark:bg-neutral-600 w-full rounded-md p-4 text-sm border min-h-[6rem] transition-all transform duration-300 hover:bg-neutral-700"
             />
             {getErrorForField("message") && (
                 <p className="text-red-400 text-sm">{getErrorForField("message")}</p>
@@ -196,7 +196,7 @@ const ContactForm = ({ className }: Props) => {
         {/* Submit Button */}
         <div className="w-full flex items-center justify-center">
           <Button type="submit" className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105" disabled={isLoading}>
-            <p className="gradient-border-inner tracking-wide text-neutral-200 py-3 px-6 font-bold text-md">
+            <p className="gradient-border-inner tracking-wide text-neutral-800 dark:text-neutral-200 py-3 px-6 font-bold text-md">
               {isLoading ? "Submitting..." : "Submit"}
             </p>
           </Button>

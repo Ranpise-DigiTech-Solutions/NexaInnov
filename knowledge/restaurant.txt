@@ -1,0 +1,6 @@
+Restaurant Management System:
+Order Management: Dine-in, Takeaway & Online Orders.
+Table Reservation with live occupancy.
+Digital Menu Control via admin dashboard.
+Billing & Payments: UPI, cards, wallets, cash.
+Reports: Daily, weekly, monthly sales reports.

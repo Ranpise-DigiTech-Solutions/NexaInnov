@@ -12,18 +12,18 @@ const ServiceCard = ({ title, description, icon }: { title: string; description:
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2 }}
-      className="flex flex-col items-center text-center p-6 bg-neutral-800 rounded-xl shadow-lg border border-neutral-700 hover:scale-105 transition-transform duration-300"
+      className="flex flex-col items-center text-center p-6 bg-orange-400 dark:bg-neutral-800 rounded-xl shadow-lg border border-neutral-700 hover:scale-105 transition-transform duration-300"
     >
       <div className="mb-4 text-primary-pink">{icon}</div>
       <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-neutral-400">{description}</p>
+      <p className="text-neutral-800 dark:text-neutral-400">{description}</p>
     </motion.div>
   );
 };
 
 export default function StaffingPage() {
   return (
-    <main className="min-h-screen bg-[#161616] text-neutral-400 font-inter py-12 md:py-16">
+    <main className="min-h-screen bg-wgite dark:bg-[#161616] text-neutral-400 font-inter py-12 md:py-16">
       <div className="container mx-auto max-w-7xl px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -54,7 +54,7 @@ export default function StaffingPage() {
             <h1 className="text-4xl lg:text-5xl font-extrabold text-primary-pink mb-6 leading-tight">
               Talent Acquisition Solutions
             </h1>
-            <p className="mb-6 text-lg">
+            <p className="mb-6 text-lg dark:text-neutral-200 text-neutral-800">
               At Nexainnov Solutions, we offer end-to-end talent acquisition services rooted in our strong domain expertise
               and a deep understanding of the technology and innovation landscape. As your strategic recruitment partner, we
               focus on delivering future-ready talent that aligns with your business goals and culture. We believe hiring
@@ -98,26 +98,26 @@ export default function StaffingPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="my-12 p-8 bg-neutral-900 rounded-xl border border-neutral-800"
+          className="my-12 p-8 bg-primary-blue dark:bg-neutral-900 rounded-xl border border-neutral-800"
         >
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 text-center">
             Why Choose Nexainnov?
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <p className="mb-4 text-lg leading-relaxed">
+              <p className="mb-4 text-lg dark:text-neutral-200 text-white leading-relaxed">
                 We recognize the challenges of sourcing the right talent at the right time. That’s why Nexainnov offers
                 flexible pricing models, dedicated HR campaign managers, and a customized hiring approach tailored
                 to your business needs.
               </p>
-              <p className="mb-4 text-lg leading-relaxed">
+              <p className="mb-4 text-lg dark:text-neutral-200 text-white leading-relaxed">
                 As one of the emerging recruitment partners in Mangalore, India, we know that collaboration is key to
                 securing top-tier talent in any niche. Our scalable recruitment process is designed to help you source,
                 assess, and onboard the most suitable candidates.
               </p>
             </div>
             <div>
-              <p className="mb-4 text-lg leading-relaxed">
+              <p className="mb-4 text-lg dark:text-neutral-200 text-white leading-relaxed">
                 In addition to staffing services, we offer research-driven talent consulting—leveraging our industry
                 knowledge, network strength, and operational capabilities to help you make smarter hiring decisions, faster.
               </p>

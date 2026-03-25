@@ -16,18 +16,18 @@ const OurStoryComponent = (props: Props) => {
         <p className="w-full text-base text-primary-pink text-center text-nowrap capitalize">
           Crafting Excellence
         </p>
-        <p className="w-full text-3xl md:text-4xl lg:text-5xl text-center text-neutral-200 font-semibold capitalize">
+        <p className="w-full text-3xl md:text-4xl lg:text-5xl text-center text-neutral-800 dark:text-neutral-200 font-semibold capitalize">
           The NexaInnov&apos;s Journey story
         </p>
-        <p className="w-full lg:w-[80%] text-center text-neutral-400 text-sm md:text-base text-wrap leading-6 lg:leading-7 lg:line-clamp-4">
+        <p className="w-full lg:w-[80%] text-center text-neutral-800 dark:text-neutral-400 text-sm md:text-base text-wrap leading-6 lg:leading-7 lg:line-clamp-4">
           NexaInnov Solutions started in the year 2024 as a vision of
-          Samadhan Ranpise and Ravindra Raghavan, as a passionate entrepreneurs
+          Ravindra Raghavan and Samadhan Ranpise, as a passionate entrepreneurs
           driven by the desire to innovate in the IT industries. The company was
           founded with the aim to develop software products that simplify
           complex tasks and empower businesses to thrive in the digital age.
         </p>
       </div>
-      <div className="w-full lg:w-[80%] min-h-screen rounded-3xl py-6 md:py-8 px-4 md:px-8 lg:px-12 bg-neutral-800 flex flex-col items-center justify-center gap-[2rem]">
+      <div className="w-full lg:w-[80%] min-h-screen rounded-3xl py-6 md:py-8 px-4 md:px-8 lg:px-12 bg-blue-500 dark:bg-neutral-800 flex flex-col items-center justify-center gap-[2rem]">
         <div className="group w-full h-[450px] md:h-[250px] flex flex-col md:flex-row items-center justify-between gap-0 md:gap-8 lg:gap-12 xl:gap-16 transform transition-all duration-500 hover:scale-y-105">
           <div className="relative w-full md:w-[300px] lg:w-[350px] xl:w-[400px] h-[40%] md:h-full">
             <Image
@@ -45,7 +45,7 @@ const OurStoryComponent = (props: Props) => {
             <p className="text-xl md:text-2xl font-bold transform transition-all duration-500 group-hover:text-primary-pink">
               Inception Vision
             </p>
-            <p className="text-wrap text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
+            <p className="text-wrap text-white dark:text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
               The journey of NexaInnov began with the goal of creating
               user-friendly solutions that cater to a broad range of industries.
               With a focus on innovation and quality, team NexaInnov set out to
@@ -73,7 +73,7 @@ const OurStoryComponent = (props: Props) => {
             <p className="text-xl md:text-2xl font-bold transform transition-all duration-500 group-hover:text-primary-pink">
               Expanding Horizons
             </p>
-            <p className="text-wrap text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
+            <p className="text-wrap text-white dark:text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
               As NexaInnov grew, so did its portfolio. The company branched out
               into various sectors, developing specialized products to meet
               specific market needs. One of the flagship offerings,
@@ -108,7 +108,7 @@ const OurStoryComponent = (props: Props) => {
             <p className="text-xl md:text-2xl font-bold transform transition-all duration-500 group-hover:text-primary-pink">
               Commitment to Learning and Growth
             </p>
-            <p className="text-wrap text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
+            <p className="text-wrap text-white dark:text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
               Beyond product development, NexaInnov Solutions has committed
               itself to education and training, reflecting our founder’s belief
               in the power of knowledge. The company offers specialized training
@@ -136,7 +136,7 @@ const OurStoryComponent = (props: Props) => {
             <p className="text-xl md:text-2xl font-bold transform transition-all duration-500 group-hover:text-primary-pink">
               Looking Ahead
             </p>
-            <p className="text-wrap text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
+            <p className="text-wrap text-white dark:text-neutral-400 leading-6 line-clamp-6 truncate text-sm md:text-base">
               Today, NexaInnov Solutions stands as a beacon of innovation and
               excellence in the IT sector. The journey, marked by perseverance,
               creativity, and a commitment to customer satisfaction, has

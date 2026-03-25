@@ -4,75 +4,75 @@
 
 @layer base {
   :root {
-    /* --- NexaInnov Custom Colors (Keep these as they are) --- */
+    /* --- Base Colors (Light Mode Values) --- */
     --primary-blue: #2d42ff;
     --primary-pink: #ff4895;
     --primary-purple: #6e4fe9;
     --primary-black: #13111a;
     --primary-light-blue: #1766ff;
-
     --secondary-blue: #4f56ff;
     --secondary-pink: #ff4980;
     --secondary-purple: #c084fc;
     --secondary-purple-dark: #9C27B0;
     --secondary-neon: #00c4cc;
-
     --neutral-800: #1d1a27;
     --neutral-700: #302c3f;
     --neutral-600: #5e5b71;
     --neutral-500: #88849c;
     --neutral-400: #b7b4c7;
     --neutral-300: #d9d7e6;
-    --neutral-200: #f5f4fa; /* This is a very light gray, close to white */
-
+    --neutral-200: #f5f4fa;
     --white: #ffffff;
     --black: #000000;
     --logo-text: #ffd700;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --green-tag: #009A70;
+    --orange-tag: #CB4822;
+    --destructive-tag: #7f1d1d;
+    --border: 0 0% 90.2%;
+    --input: 0 0% 90.2%;
+    --ring: 214.12 100% 50%;
+    
+    /* --- Semantic Colors (Light Theme, now the default) --- */
+    --background: var(--white);
+    --foreground: var(--black);
+    --card: var(--white);
+    --card-foreground: var(--primary-black);
+    --popover: var(--white);
+    --popover-foreground: var(--primary-black);
+    --primary: var(--primary-black);
+    --primary-foreground: var(--neutral-200);
+    --secondary: var(--neutral-200);
+    --secondary-foreground: var(--primary-black);
+    --muted: var(--neutral-300);
+    --muted-foreground: var(--neutral-500);
+    --accent: var(--neutral-200);
+    --accent-foreground: var(--primary-black);
+    --card-border: var(--neutral-300);
+    --button-bg: var(--neutral-700);
+    --button-text: var(--neutral-200);
 
+    /* --- Dynamic Gradient Variables (Light Theme, now the default) --- */
+    --gradient-start: #6f86ff;
+    --gradient-middle: #b372ce;
+    --gradient-end: #ff7586;
+    
+    /* These don't change based on theme */
     --shadow-card-default: rgba(0, 0, 0, 0.1);
     --shadow-card-large: rgba(0, 0, 0, 0.35);
     --shadow-card-large-dark: rgba(0, 0, 0, .45);
     --shadow-card-extra-large-dark: rgba(0, 0, 0, .65);
-
     --radius: 0.5rem;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --green-tag: #009A70;
-    --orange-tag: #CB4822;
-    --destructive-tag: #7f1d1d;
-
-    --border: 0 0% 90.2%;
-    --input: 0 0% 90.2%;
-    --ring: 214.12 100% 50%;
-
-    /* --- ADDED FOR THEME SWITCHING --- */
-    /* Light Theme (Default) */
-    --background: 0 0% 100%; /* Pure white background */
-    --foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
-    --card: 0 0% 100%; /* Card background in light mode */
-    --card-foreground: 222.2 47.4% 11.2%; /* Card text in light mode */
-    --popover: 0 0% 100%; /* Popover background in light mode */
-    --popover-foreground: 222.2 47.4% 11.2%; /* Popover text in light mode */
-    --primary: 222.2 47.4% 11.2%; /* Primary color for light mode (e.g., buttons) */
-    --primary-foreground: 210 40% 98%; /* Primary text color for light mode */
-    --secondary: 210 40% 96.1%; /* Secondary color for light mode */
-    --secondary-foreground: 222.2 47.4% 11.2%; /* Secondary text color for light mode */
-    --muted: 210 40% 96.1%; /* Muted background for light mode */
-    --muted-foreground: 215.4 16.3% 46.9%; /* Muted text for light mode */
-    --accent: 210 40% 96.1%; /* Accent background for light mode */
-    --accent-foreground: 222.2 47.4% 11.2%; /* Accent text for light mode */
   }
 
   .dark {
-    /* --- NexaInnov Custom Colors (Keep these as they are) --- */
+    /* --- Base Colors (Dark Mode Overrides) --- */
     --primary-blue: #4a5eff;
     --primary-pink: #ff67a5;
     --primary-purple: #7e5ffe;
     --primary-black: #2a272f;
     --primary-light-blue: #2a7aff;
-
     --neutral-800: #1a1821;
     --neutral-700: #3d384c;
     --neutral-600: #63607c;
@@ -81,36 +81,35 @@
     --neutral-300: #d1cfe0;
     --neutral-200: #eae8f5;
 
-    --white: #ffffff;
-    --black: #000000;
+    /* --- Semantic Colors (Dark Theme) --- */
+    --background: var(--primary-black);
+    --foreground: var(--neutral-200);
+    --card: var(--neutral-800);
+    --card-foreground: var(--neutral-200);
+    --popover: var(--primary-black);
+    --popover-foreground: var(--neutral-200);
+    --primary: var(--neutral-200);
+    --primary-foreground: var(--primary-black);
+    --secondary: var(--neutral-700);
+    --secondary-foreground: var(--neutral-200);
+    --muted: var(--neutral-700);
+    --muted-foreground: var(--neutral-400);
+    --accent: var(--neutral-700);
+    --accent-foreground: var(--neutral-200);
+    --card-border: var(--neutral-600);
+    --button-bg: var(--neutral-700);
+    --button-text: var(--neutral-200);
 
-    --shadow-card-default: rgba(0, 0, 0, 0.1);
-    --shadow-card-large: rgba(0, 0, 0, 0.35);
-    --shadow-card-large-dark: rgba(0, 0, 0, 0.45);
-
-    /* --- ADDED FOR THEME SWITCHING --- */
-    /* Dark Theme */
-    --background: 222.2 47.4% 11.2%; /* Dark background */
-    --foreground: 210 40% 98%; /* Light text for contrast */
-    --card: 222.2 47.4% 11.2%; /* Card background in dark mode */
-    --card-foreground: 210 40% 98%; /* Card text in dark mode */
-    --popover: 222.2 47.4% 11.2%; /* Popover background in dark mode */
-    --popover-foreground: 210 40% 98%; /* Popover text in dark mode */
-    --primary: 210 40% 98%; /* Primary color for dark mode */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Primary text color for dark mode */
-    --secondary: 217.2 32.6% 17.5%; /* Secondary color for dark mode */
-    --secondary-foreground: 210 40% 98%; /* Secondary text color for dark mode */
-    --muted: 217.2 32.6% 17.5%; /* Muted background for dark mode */
-    --muted-foreground: 215 20.2% 65.1%; /* Muted text for dark mode */
-    --accent: 217.2 32.6% 17.5%; /* Accent background for dark mode */
-    --accent-foreground: 210 40% 98%; /* Accent text for dark mode */
+    /* --- Dynamic Gradient Variables (Dark Theme) --- */
+    --gradient-start: #4f56ff;
+    --gradient-middle: #c084fc;
+    --gradient-end: #ff4980;
   }
 
-  /* ... (rest of your custom CSS classes like .button-primary-gradient, .gradient-border-inner, etc.) */
-
+  /* --- Button Class Updates --- */
   .button-primary-gradient {
     transform-style: preserve-3d;
-    background-image: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+    background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle) 49%, var(--gradient-end));
     border-radius: 10000px;
     padding: 2px;
     transition: transform 0.3s;
@@ -125,12 +124,12 @@
     outline: none;
     position: relative;
     border-radius: 2rem;
-    background: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-middle) 49%, var(--gradient-end));
     cursor: pointer;
     z-index: 1;
     transition: all 0.3s ease-in-out;
   }
-
+  
   .gradient-border-inner:hover {
     border-radius: 1.6rem;
   }
@@ -143,22 +142,34 @@
     right: 1.5px;
     bottom: 1.5px;
     left: 1.5px;
-    background-color: var(--primary-black);
+    background-color: var(--background);
     border-radius: 2rem;
     z-index: -1;
   }
 
+  /* --- Text Gradient --- */
   .gradient-text {
-    background-image: linear-gradient(270deg, #4f56ff, #ff4980);
+    background-image: linear-gradient(270deg, var(--gradient-start), var(--gradient-end));
     background-clip: text;
     color: transparent;
   }
 
+  /* --- Other Classes (no changes needed) --- */
   .line-divider {
     height: 1px;
     width: 100%;
     background-color: var(--neutral-700);
   }
+
+  .line-divider-light {
+  /* Keep the minimal height but set background to transparent */
+  height: 2px; /* Increased from 1px to 2px for a slightly visible base */
+  width: 100%;
+  background-color: orange; 
+
+  /* Apply the Shadow Effect */
+  box-shadow: 0 4px 6px -1px orange; /* Use Tailwind's shadow-md properties */
+}
 
   .icon-gradient {
     background-image: linear-gradient(315deg, #434bff, #ff4b81);
@@ -166,10 +177,8 @@
     border-radius: 0.5rem;
   }
 
-  .link-underline-gradient-container:hover {
-    .link-underline-gradient-effect::after {
-      width: 100%;
-    }
+  .link-underline-gradient-container:hover .link-underline-gradient-effect::after {
+    width: 100%;
   }
 
   .link-underline-gradient-effect::after {
@@ -199,7 +208,13 @@
     background: linear-gradient(to right, #6f86ff, #b372ce 49%, #ff7586);
   }
 
-  .bg-navbar-gradient {
+  .bg-navbar-gradient-dark {
     background: linear-gradient(to right, rgb(155, 162, 175), #302c3f 25%, #1d1a27 100%);
+  }
+
+  .bg-navbar-gradient-light {
+    background-image: linear-gradient(90deg, #007bff, #00c3ff);
+    /* Optional: Ensure the text remains white as intended for this option */
+    color: #ffffff;
   }
 }

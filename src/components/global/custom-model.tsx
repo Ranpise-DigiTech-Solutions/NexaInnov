@@ -22,10 +22,10 @@ const CustomModal = ({ title, subHeading, children, defaultOpen }: Props) => {
 
   return (
     <Dialog open={isOpen || defaultOpen} onOpenChange={setClose}>
-      <DialogContent className="overflow-auto md:max-h-[700px] md:h-fit h-screen bg-neutral-800 border-neutral-700">
+      <DialogContent className="overflow-auto md:max-h-[700px] md:h-fit h-screen bg-orange-400 dark:bg-neutral-800 border-neutral-700">
         <DialogHeader className="pt-6 text-left">
-          <DialogTitle className="text-2xl font-bold text-neutral-200">{title}</DialogTitle>
-          <DialogDescription className="text-neutral-500 text-base">{subHeading}</DialogDescription>
+          <DialogTitle className="text-2xl font-bold text-primary-blue dark:text-neutral-200">{title}</DialogTitle>
+          <DialogDescription className="text-neutral-800 dark:text-neutral-500 text-base">{subHeading}</DialogDescription>
           <div>
             {children}
           </div>

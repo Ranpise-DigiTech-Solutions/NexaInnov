@@ -19,7 +19,7 @@ const ArticleCard = ({ className, title, readTime, imageSrc, href }: Props) => {
     
       <div
         className={twMerge(
-          "group bg-neutral-800 cursor-pointer rounded-3xl transition-all transform duration-300 hover:translate-y-2 link-underline-gradient-container overflow-hidden",
+          "group bg-pink-200 dark:bg-neutral-800 cursor-pointer rounded-3xl transition-all transform duration-300 hover:translate-y-2 link-underline-gradient-container overflow-hidden",
           className
         )}
       >
@@ -36,7 +36,7 @@ const ArticleCard = ({ className, title, readTime, imageSrc, href }: Props) => {
           <div className="w-full self-start text-xl lg:text-2xl font-bold transition-all transform duration-300 group-hover:text-primary-pink text-wrap line-clamp-2">
             {title}
           </div>
-          <div className="w-full flex items-center gap-4 justify-start text-neutral-400 text-sm md:text-base">
+          <div className="w-full flex items-center gap-4 justify-start text-neutral-800 dark:text-neutral-400 text-sm md:text-base">
             <div className="flex items-center justify-start gap-2">
               <Clock />
               <p>{readTime}</p>

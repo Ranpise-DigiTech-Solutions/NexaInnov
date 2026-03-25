@@ -79,17 +79,21 @@ export function MediaInquiryForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
         {/* Name Field */}
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Name *</FormLabel>
+              <FormLabel className="text-neutral-800 dark:text-gray-300">Name *</FormLabel>
               <FormControl>
-                {/* Apply text-gray-900 class here */}
-                <Input placeholder="Your name" {...field} disabled={isPending} className="text-gray-900" />
+                <Input 
+                  placeholder="Your name" 
+                  {...field} 
+                  disabled={isPending} 
+                  className="bg-white dark:bg-neutral-800 text-white border-neutral-700 focus:border-purple-500 rounded-xl" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -101,25 +105,15 @@ export function MediaInquiryForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Email *</FormLabel>
+              <FormLabel className="text-neutral-800 dark:text-gray-300">Email *</FormLabel>
               <FormControl>
-                {/* Apply text-gray-900 class here */}
-                <Input type="email" placeholder="Your email" {...field} disabled={isPending} className="text-gray-900" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        {/* Message Field */}
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-white">Message *</FormLabel>
-              <FormControl>
-                {/* Apply text-gray-900 class here */}
-                <Textarea placeholder="Your message" rows={5} {...field} disabled={isPending} className="text-gray-900" />
+                <Input 
+                  type="email" 
+                  placeholder="Your email" 
+                  {...field} 
+                  disabled={isPending} 
+                  className="bg-white dark:bg-neutral-800 text-white border-neutral-700 focus:border-purple-500 rounded-xl" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -131,10 +125,15 @@ export function MediaInquiryForm() {
           name="phoneNo"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Phone No</FormLabel>
+              <FormLabel className="text-neutral-800 dark:text-gray-300">Phone No</FormLabel>
               <FormControl>
-                {/* Apply text-gray-900 class here */}
-                <Input type="tel" placeholder="Your phone number" {...field} disabled={isPending} className="text-gray-900" />
+                <Input 
+                  type="tel" 
+                  placeholder="Your phone number" 
+                  {...field} 
+                  disabled={isPending} 
+                  className="bg-white dark:bg-neutral-800 text-white border-neutral-700 focus:border-purple-500 rounded-xl" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -146,24 +145,53 @@ export function MediaInquiryForm() {
           name="organization"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-white">Organization</FormLabel>
+              <FormLabel className="text-neutral-800 dark:text-gray-300">Organization</FormLabel>
               <FormControl>
-                {/* Apply text-gray-900 class here */}
-                <Input placeholder="Your organization" {...field} disabled={isPending} className="text-gray-900" />
+                <Input 
+                  placeholder="Your organization" 
+                  {...field} 
+                  disabled={isPending} 
+                  className="bg-white dark:bg-neutral-800 text-white border-neutral-700 focus:border-purple-500 rounded-xl" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-
-        {/* Button (unchanged) */}
-        <div className="flex justify-center">
+        {/* Message Field */}
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-neutral-800 dark:text-gray-300">Message *</FormLabel>
+              <FormControl>
+                <Textarea 
+                  placeholder="Your message" 
+                  rows={5} 
+                  {...field} 
+                  disabled={isPending} 
+                  className="bg-white dark:bg-neutral-800 text-white border-neutral-700 focus:border-purple-500 rounded-xl" 
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        
+        {/* Submit Button */}
+        <div className="flex justify-center mt-8">
           <Button 
             type="submit" 
             disabled={isPending}
-            className="w-full sm:w-auto bg-white text-primary-pink hover:bg-gray-200 transition-colors duration-200 font-bold"
+            className="w-full sm:w-auto p-4 md:px-8 font-bold text-lg rounded-xl
+                       dark:bg-primary-blue bg-orange-400 text-white border-2 border-transparent
+                       bg-origin-border bg-clip-border relative
+                       before:absolute before:inset-0 before:rounded-xl
+                       before:bg-gradient-to-r before:from-purple-500 before:via-pink-500 before:to-purple-500 before:z-[-1]
+                       hover:scale-105 transition-transform duration-200"
           >
-            {isPending ? "Sending..." : "Send Inquiry"}
+            {isPending ? "Submitting..." : "Submit"}
           </Button>
         </div>
       </form>

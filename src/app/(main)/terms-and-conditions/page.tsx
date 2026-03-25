@@ -8,11 +8,11 @@ const TermsAndConditionsPage = (props: Props) => {
       <div className="w-[90%] lg:w-[85%] h-full flex flex-col items-center justify-center gap-[3rem] lg:gap-[4rem]">
         <div className="w-full flex flex-col items-center justify-center gap-[1rem]">
           <p className="w-full text-center text-base text-primary-pink">T&C</p>
-          <p className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-semibold capitalize text-neutral-200">
+          <p className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-semibold capitalize text-primary-blue dark:text-neutral-200">
             Terms and Conditions
           </p>
         </div>
-        <p className="w-full text-start font-normal text-base lg:text-lg  text-neutral-300 leading-8">
+        <p className="w-full text-start font-normal text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
           These Terms and Conditions (&quot;Terms&quot;) govern your use of
           Nexainnov Solutions’ website and services, including IT software
           development and training services. By accessing or using our services,
@@ -20,10 +20,10 @@ const TermsAndConditionsPage = (props: Props) => {
         </p>
         <div className="w-full flex flex-col items-center justify-center gap-12">
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Acceptance of Terms
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               By using our services, you agree to these Terms, our Privacy
               Policy, and any applicable agreements governing specific services,
               such as software development contracts or training program
@@ -32,15 +32,15 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Services Provided
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 Nexainnov Solutions offers a range of services, including but
                 not limited to:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -70,14 +70,14 @@ const TermsAndConditionsPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               User Responsibilities
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 As a user of our services, you agree to:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -110,10 +110,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Intellectual Property
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               All content, software, and materials provided by Nexainnov
               Solutions, including but not limited to text, graphics, logos, and
               code, are the intellectual property of Nexainnov Solutions or its
@@ -122,10 +122,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Confidentiality
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               For software development and consulting services, you and
               Nexainnov Solutions may exchange confidential information. Both
               parties agree to protect such information and not disclose it to
@@ -135,15 +135,15 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Payment Terms
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 For all paid services, including software development and
                 training programs:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -166,11 +166,11 @@ const TermsAndConditionsPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Refunds and Cancellations
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -198,10 +198,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Limitation of Liability
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               Nexainnov Solutions shall not be liable for any indirect,
               incidental, or consequential damages, including loss of profits,
               data, or business opportunities, arising out of or in connection
@@ -209,15 +209,15 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Termination
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 We reserve the right to terminate or suspend access to our
                 services without prior notice if:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -304,10 +304,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Third-Party Services
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               Our services may include third-party products or services, such as
               cloud hosting or payment processors. Nexainnov Solutions is not
               responsible for the performance or security of these third-party
@@ -316,10 +316,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Governing Law
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               These Terms are governed by and construed in accordance with the
               laws of the jurisdiction in which Nexainnov Solutions operates,
               without regard to its conflict of law provisions. Any disputes
@@ -329,10 +329,10 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Amendments
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               Nexainnov Solutions reserves the right to modify or replace these
               Terms at any time. Any changes will be posted on our website, and
               it is your responsibility to review them periodically. Your
@@ -341,15 +341,15 @@ const TermsAndConditionsPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Contact Information
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 For questions regarding these Terms or our services, please
                 contact us at:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -370,7 +370,7 @@ const TermsAndConditionsPage = (props: Props) => {
                       href="tel:+919769919222"
                       className="text-primary-light-blue hover:underline hover:text-primary-purple cursor-pointer"
                     >
-                      +919769919222 / +919819344106
+                      +919769919222 / +919483911559
                     </a>
                   </p>
                 </li>

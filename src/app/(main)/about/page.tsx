@@ -3,10 +3,10 @@ import React from "react";
 import AboutCompanyComponent from "./_components/about-company";
 import OurStoryComponent from "./_components/our-story";
 import OurValuesComponent from "./_components/our-values";
-import OurTeamComponent from "./_components/our-team";
+//import OurTeamComponent from "./_components/our-team";
 import OurOfficeComponent from "./_components/our-office";
 import OurPartnersComponent from "./_components/our-partners";
-import ClientStoriesComponent from "./_components/client-stories";
+//import ClientStoriesComponent from "./_components/client-stories";
 import FAQComponent from "@/components/common/faq";
 
 type Props = {};
@@ -17,10 +17,10 @@ const AboutPage = (props: Props) => {
       <AboutCompanyComponent />
       <OurStoryComponent />
       <OurValuesComponent />
-      <OurTeamComponent />
+      {/* <OurTeamComponent /> */}
       <OurOfficeComponent />
       <OurPartnersComponent />
-      <ClientStoriesComponent />
+      {/* <ClientStoriesComponent /> */}
       <FAQComponent faqs={[
         {
           key: "faq1",

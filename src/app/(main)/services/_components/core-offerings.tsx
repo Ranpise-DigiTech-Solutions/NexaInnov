@@ -39,8 +39,8 @@ const CoreOfferingsComponent = ({ imageUrl, services }: Props) => {
                 className="w-full flex flex-row items-start justify-start gap-2"
               >
                 <BadgeCheck className="text-green-tag h-[20px] w-[20px] flex-shrink-0 my-1" />
-                <p className="text-base text-neutral-300">
-                  <span className="font-bold text-neutral-200">{service.title}</span> {service.description}
+                <p className="text-base text-neutral-800 dark:text-neutral-300">
+                  <span className="font-bold text-primary-blue dark:text-neutral-200">{service.title}</span> {service.description}
                 </p>
               </div>
             ))}

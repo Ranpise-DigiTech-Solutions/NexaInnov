@@ -12,7 +12,7 @@ const TeamLayout = ({ children }: Props) => {
       <NavbarComponent />
       {children}
       <>
-        <div className="line-divider my-[5rem]"></div>
+        <div className="dark:line-divider line-divider-light my-[5rem]"></div>
         <FooterComponent />
       </>
     </div>

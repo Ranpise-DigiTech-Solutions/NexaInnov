@@ -11,7 +11,7 @@ const AboutLayout = ({ children }: Props) => {
     <div className="w-full min-h-screen flex flex-col gap-[4rem]">
       <NavbarComponent />
       {children}
-      <div className="line-divider"></div>
+      <div className="dark:line-divider line-divider-light"></div>
       <FooterComponent />
     </div>
   );

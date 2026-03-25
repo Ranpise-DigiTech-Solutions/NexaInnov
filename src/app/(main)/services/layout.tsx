@@ -12,7 +12,7 @@ const ServicesLayout = ({ children }: Props) => {
       <NavbarComponent />
       {children}
       <>
-        <div className="line-divider my-[4rem]"></div>
+        <div className="dark:line-divider line-divider-light my-[4rem]"></div>
         <FooterComponent />
       </>
     </div>

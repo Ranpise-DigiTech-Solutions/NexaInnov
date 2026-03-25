@@ -25,7 +25,7 @@ const GetStartedComponent = ({ className }: Props) => {
   return (
     <div
       className={twMerge(
-        "w-full min-h-screen flex items-center justify-center",
+        "w-full min-h-min flex items-center justify-center",
         className
       )}
     >
@@ -48,34 +48,33 @@ const GetStartedComponent = ({ className }: Props) => {
               key={index}
               className="w-full h-full flex items-center justify-center"
             >
-              <div className="w-full flex-1 h-full flex xl:flex-row flex-col-reverse items-stretch justify-center flex-wrap-reverse gap-0 md:gap-12 xl:gap-4">
-                <div className="w-full flex-1 lg:w-[90%] xl:w-[50%] self-center flex flex-col justify-center items-center gap-8 lg:gap-[3rem] text-wrap xl:pl-[4rem]">
-                  <div className="w-full text-3xl md:text-4xl lg:text-5xl text-neutral-200 flex flex-col justify-center items-center gap-2 font-bold">
-                    <p className="w-full text-center text-wrap lg:text-nowrap">
-                      Next-gen innovation company
+              <div className="w-full flex-1 h-full flex xl:flex-row flex-col-reverse items-stretch justify-center flex-wrap-reverse gap-2 md:gap-12 xl:gap-4">
+                <div className="w-full flex-1 lg:w-[90%] xl:w-[50%] self-center flex flex-col justify-center items-center gap-2 lg:gap-[3rem] text-wrap xl:pl-[4rem]">
+                  <div className="w-full text-3xl md:text-4xl lg:text-5xl text-foreground flex flex-col justify-center items-center gap-2 font-bold">
+                    <p className="w-full text-center text-wrap lg:text-nowr">
+                      A next-gen innovation partner
                     </p>
                     <p className="w-full gradient-text text-center text-wrap">
-                      for modern customers
+                      for modern digital customers
                     </p>
                   </div>
-                  <div className="w-full text-neutral-500 text-lg md:text-xl lg:text-2xl flex flex-col justify-center items-center gap-2">
+                  <div className="w-full text-foreground text-lg md:text-xl lg:text-2xl flex flex-col justify-center items-center gap-2">
                     <p className="w-full text-center">
-                      Leading-edge solutions provider for visionary customers.
-                      We provide Bespoke IT Solutions using Advanced Technology
+                      We deliver bespoke IT solutions and smart technology to help businesses scale with confidence.
                     </p>
                   </div>
-                  <div className="w-full flex flex-row items-center justify-center gap-4 lg:justify-between lg:px-2 mt-6 overflow-hidden">
+                  <div className="w-full flex flex-row items-center justify-center gap-4 lg:justify-between lg:px-2 mt-0 overflow-hidden">
                     <Button
                       className="w-[50%] flex items-center justify-center transform transition-transform duration-300 hover:scale-105 p-0"
                       onClick={() => scrollToSection("why-us")}
                     >
-                      <p className="w-full gradient-border-inner text-base md:text-lg lg:text-xl tracking-wide text-neutral-200 px-4 md:px-10 lg:px-[50px] lg:py-[15px]">
+                      <p className="w-full gradient-border-inner text-base md:text-lg lg:text-xl tracking-wide text-foreground px-4 md:px-10 lg:px-[50px] lg:py-[15px]">
                         Get Started
                       </p>
                     </Button>
                     <Link href={"/features"} className="w-[50%]">
-                      <Button className="w-full flex items-center justify-center transform transition-transform duration-300 hover:scale-105 hover:bg-primary-black bg-neutral-700 p-7 md:p-8 rounded-full">
-                        <p className="w-full h-full text-base md:text-lg lg:text-xl tracking-wide text-neutral-200 rounded-full flex items-center justify-center">
+                      <Button className="w-full flex items-center justify-center transform transition-transform duration-300 hover:scale-105 bg-pink-500 hover:bg-pink-800 dark:hover:bg-primary-black dark:bg-neutral-700 p-7 md:p-8 rounded-full">
+                        <p className="w-full h-full text-base md:text-lg lg:text-xl tracking-wide text-white dark:text-neutral-200 rounded-full flex items-center justify-center">
                           Browse Features
                         </p>
                       </Button>

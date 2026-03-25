@@ -71,7 +71,7 @@ const OpenPositionsComponent = (props: Props) => {
           <p className="tracking-widest uppercase text-sm lg:text-base font-semibold text-primary-pink">
             career
           </p>
-          <p className="capitalize text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-200">
+          <p className="capitalize text-3xl md:text-4xl lg:text-5xl font-bold text-primary-blue dark:text-neutral-200">
             Open positions
           </p>
         </div>
@@ -86,7 +86,7 @@ const OpenPositionsComponent = (props: Props) => {
                 ${
                   activeFilter === category
                     ? "bg-primary-pink text-neutral-200 border-neutral-200 hover:bg-secondary-pink"
-                    : "text-primary-pink border-primary-pink hover:text-neutral-200 hover:border-neutral-200"
+                    : "text-primary-pink border-primary-pink hover:text-neutral-800 hover:border-neutral-800 dark:hover:text-neutral-200 dark:hover:border-neutral-200"
                 }
               `}
             >
@@ -101,13 +101,13 @@ const OpenPositionsComponent = (props: Props) => {
               href={job.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full md:w-[45%] min-h-[200px] md:min-h-[250px] bg-neutral-800 rounded-2xl py-4 px-6 flex flex-col items-center justify-center gap-4 md:gap-6 cursor-pointer transform transition-transform duration-500 hover:translate-y-2"
+              className="group w-full md:w-[45%] min-h-[200px] md:min-h-[250px] bg-blue-300 dark:bg-neutral-800 rounded-2xl py-4 px-6 flex flex-col items-center justify-center gap-4 md:gap-6 cursor-pointer transform transition-transform duration-500 hover:translate-y-2"
             >
               <div className="w-full flex flex-col items-start justify-center gap-4">
                 <p className="w-full text-start text-xl md:text-2xl font-semibold text-neutral-200 transform transition-all duration-500 group-hover:text-primary-pink">
                   {job.title}
                 </p>
-                <p className="w-full text-neutral-400 line-clamp-3 md:line-clamp-2 truncate text-sm md:text-base leading-6 md:leading-7 font-normal text-wrap text-start">
+                <p className="w-full text-white dark:text-neutral-400 line-clamp-3 md:line-clamp-2 truncate text-sm md:text-base leading-6 md:leading-7 font-normal text-wrap text-start">
                   {job.description}
                 </p>
               </div>
@@ -116,15 +116,15 @@ const OpenPositionsComponent = (props: Props) => {
                 <div className="flex items-center justify-center gap-4">
                   <div className="flex items-center justify-center gap-1">
                     <LocationOnIcon className="!h-5 !w-5 md:h-6 md:w-6 text-primary-pink" />
-                    <p className="text-sm text-neutral-300">{job.location}</p>
+                    <p className="text-sm text-white dark:text-neutral-300">{job.location}</p>
                   </div>
                   <div className="flex items-center justify-center gap-1">
                     <WatchLaterIcon className="!h-5 !w-5 md:h-6 md:w-6 text-primary-pink" />
-                    <p className="text-sm text-neutral-300 text-nowrap">{job.type}</p>
+                    <p className="text-sm text-white dark:text-neutral-300 text-nowrap">{job.type}</p>
                   </div>
                 </div>
                 <div className="relative flex flex-row items-center justify-center gap-1">
-                  <p className="text-sm md:text-base font-normal text-neutral-300 text-nowrap">
+                  <p className="text-sm md:text-base font-normal text-white dark:text-neutral-300 text-nowrap">
                     Apply now
                   </p>
                   <ArrowUpRight className="text-neutral-300 w-4 h-4 md:w-6 md:h-6 transform transition-all duration-500 group-hover:-translate-y-1" />

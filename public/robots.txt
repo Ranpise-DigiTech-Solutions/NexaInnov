@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.nexainnov.com
+
+# Sitemaps
+Sitemap: https://www.nexainnov.com/sitemap.xml

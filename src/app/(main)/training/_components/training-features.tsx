@@ -49,17 +49,17 @@ const TrainingFeaturesComponent = (props: Props) => {
               objectFit="cover"
               className="h-full w-full absolute bottom-0 left-0 right-0 top-0 z-10 px-4"
             />
-            <div className="absolute z-1 w-full h-[80%] bottom-0 bg-neutral-700 rounded-2xl"></div>
+            <div className="absolute z-1 w-full h-[80%] bottom-0 bg-white dark:bg-neutral-700 rounded-2xl"></div>
           </div>
         </div>
 
         {/* Right side - Content */}
         <div className="flex-1 flex flex-col gap-8 items-start justify-center">
-          <p className="text-4xl lg:text-5xl text-start font-semibold text-wrap lg:text-nowrap capitalize text-neutral-200">
+          <p className="text-4xl lg:text-5xl text-start font-semibold text-wrap lg:text-nowrap capitalize text-primary-blue dark:text-neutral-200">
             Professional & lifelong <br />
             <span className="gradient-text">learning comes here</span>
           </p>
-          <p className="text-base font-normal text-wrap line-clamp-4 lg:line-clamp-3 truncate text-neutral-400 leading-7 text-start">
+          <p className="text-base font-normal text-wrap line-clamp-4 lg:line-clamp-3 truncate text-neutral-800 dark:text-neutral-400 leading-7 text-start">
             Nexainnov Academy is where professional growth and lifelong learning begin. We offer expert-led training in cutting-edge technologies, designed to upskill students, professionals, and career changers. Whether you're starting out or advancing your tech career, Nexainnov Academy is your trusted partner in continuous learning and real-world readiness.
           </p>
 
@@ -73,12 +73,12 @@ const TrainingFeaturesComponent = (props: Props) => {
               >
                 <div className="flex flex-row items-center justify-start gap-2">
                   <PsychologyOutlinedIcon fontSize="medium" className="text-primary-pink" />
-                  <p className="text-neutral-300 font-normal text-base lg:text-lg line-clamp-1">
+                  <p className="text-neutral-800 dark:text-neutral-300 font-normal text-base lg:text-lg line-clamp-1">
                     {item.title}
                   </p>
                 </div>
                 {openIndex === index && (
-                  <p className="text-neutral-400 text-sm lg:text-base pl-7 transition-all duration-300">
+                  <p className="text-neutral-800 dark:text-neutral-400 text-sm lg:text-base pl-7 transition-all duration-300">
                     {item.content}
                   </p>
                 )}

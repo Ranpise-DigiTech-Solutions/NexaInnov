@@ -4,7 +4,9 @@ import { UserProvider } from "@auth0/nextjs-auth0/client";
 import "./globals.css";
 import ModalProvider from "@/components/providers/modal-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
+import FloatingChatToggle from "@/components/FloatingChatToggle";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,11 +48,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Keep all meta tags and site verification */}
         <meta
           name="google-site-verification"
           content="AU4xpR869jNsnmznwvBA8TBUTqhcaWPAmJJMLohVsho"
         />
-        {/* Fallback meta tags */}
+        <meta
+          name="google-site-verification"
+          content="googlea2a68f878de9b9f9"
+        />
         <meta
           name="description"
           content="NexaInnov Solutions is at the forefront of next-generation innovation, providing cutting-edge technological solutions."
@@ -59,7 +65,6 @@ export default function RootLayout({
           name="keywords"
           content="NexaInnov, Next Generation Innovation, Technology Solutions, Innovative Solutions, Nexa, Innov"
         />
-        {/* Open Graph Meta Tags */}
         <meta property="og:title" content="NexaInnov Solutions LLP" />
         <meta
           property="og:description"
@@ -68,7 +73,6 @@ export default function RootLayout({
         <meta property="og:image" content="https://nexainnov.com/logo.png" />
         <meta property="og:url" content="https://nexainnov.com" />
         <meta property="og:type" content="website" />
-        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@nexainnovsolutions" />
         <meta name="twitter:title" content="NexaInnov Solutions LLP" />
@@ -80,7 +84,7 @@ export default function RootLayout({
         <meta name="p:domain_verify" content="8f322e05f258f4f3cecc2b75d694ca2c" />
         <meta name="google-site-verification" content="google4b0da5e0dcffbac1" />
       </head>
-      <body>
+      <body className={inter.className}>
         <UserProvider>
           <ModalProvider>
             <ThemeProvider
@@ -89,11 +93,15 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <main className={inter.className}>{children}</main>
+              <main>{children}</main>
+              <FloatingChatToggle />
               <Toaster />
             </ThemeProvider>
           </ModalProvider>
         </UserProvider>
+
+        {/* Cookie banner now controls GA4 & Clarity loading */}
+        <CookieConsentBanner />
       </body>
     </html>
   );

@@ -10,11 +10,11 @@ const PrivacyPolicyPage = (props: Props) => {
           <p className="w-full text-center text-base text-primary-pink">
             Policy
           </p>
-          <p className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-semibold capitalize text-neutral-200">
+          <p className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-semibold capitalize text-primary-blue dark:text-neutral-200">
             Privacy Policy
           </p>
         </div>
-        <p className="w-full text-start font-normal text-base lg:text-lg  text-neutral-300 leading-8">
+        <p className="w-full text-start font-normal text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
           At Nexainnov Solutions, we are committed to protecting your privacy.
           This Privacy Policy explains how we collect, use, disclose, and
           safeguard your information when you visit our website or use our
@@ -24,14 +24,14 @@ const PrivacyPolicyPage = (props: Props) => {
         </p>
         <div className="w-full flex flex-col items-center justify-center gap-12">
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Information We Collect
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 We may collect various types of information, including:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -76,15 +76,15 @@ const PrivacyPolicyPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               How We Use Your Information
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 The information we collect may be used for the following
                 purposes:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -148,10 +148,10 @@ const PrivacyPolicyPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               How We Protect Your Information
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               We implement a variety of security measures to ensure the safety
               of your personal information. These measures include encryption,
               firewalls, and regular system monitoring. Additionally, we require
@@ -160,14 +160,14 @@ const PrivacyPolicyPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Sharing of Information
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 We may share your information under the following circumstances:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -202,10 +202,10 @@ const PrivacyPolicyPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Data Retention
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               We retain your personal information only for as long as necessary
               to fulfill the purposes outlined in this Privacy Policy, comply
               with legal obligations, resolve disputes, and enforce our
@@ -213,15 +213,15 @@ const PrivacyPolicyPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Your Rights
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800  dark:text-neutral-300 leading-8">
                 You have the following rights concerning your personal
                 information:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -265,10 +265,10 @@ const PrivacyPolicyPage = (props: Props) => {
             </div>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Cookies and Tracking Technologies
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               Our website uses cookies and similar tracking technologies to
               enhance your browsing experience and monitor website activity. You
               can manage cookie preferences through your browser settings. By
@@ -277,10 +277,10 @@ const PrivacyPolicyPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Changes to This Privacy Policy
             </h2>
-            <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+            <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
               We may update this Privacy Policy periodically to reflect changes
               in our practices or comply with legal requirements. Significant
               changes will be communicated through a notice on our website or
@@ -290,15 +290,15 @@ const PrivacyPolicyPage = (props: Props) => {
             </p>
           </div>
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <h2 className="w-full text-start text-xl lg:text-2xl text-neutral-100 uppercase">
+            <h2 className="w-full text-start text-xl lg:text-2xl text-primary-blue dark:text-neutral-100 uppercase">
               Contact Information
             </h2>
             <div className="w-full flex flex-col items-center justify-center gap-4">
-              <p className="w-full text-start text-base lg:text-lg  text-neutral-300 leading-8">
+              <p className="w-full text-start text-base lg:text-lg  text-neutral-800 dark:text-neutral-300 leading-8">
                 For questions regarding these Terms or our services, please
                 contact us at:
               </p>
-              <ol className="w-full text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
+              <ol className="w-full text-neutral-800 dark:text-neutral-300 flex flex-col items-start gap-2 text-base lg:text-lg ">
                 <li className="flex items-start gap-2 leading-8">
                   <span className="flex-shrink-0">1.</span>
                   <p>
@@ -319,7 +319,7 @@ const PrivacyPolicyPage = (props: Props) => {
                       href="tel:+919769919222"
                       className="text-primary-light-blue hover:underline hover:text-primary-purple cursor-pointer"
                     >
-                      +919769919222 / +919819344106
+                      +919769919222 / +919483911559
                     </a>
                   </p>
                 </li>

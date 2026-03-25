@@ -2,37 +2,32 @@ import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined
 import { Sun } from "lucide-react";
 
 export const testimonialData = [
+  // {
+  //   id: 1,
+  //   heading: "A truly next gen Event Management App",
+  //   description:
+  //     "“NexaInnov Solutions transformed our digital marketing strategy with their innovative Event management website EventifyConnect. Their team’s expertise and dedication were evident from start to finish, resulting in a 40% increase in our lead generation within just six months. We couldn’t be happier with the results!”",
+  //   author: "Nithin Lobo",
+  //   profilePic: "/images/avatar_1.jpg",
+  //   /*companyLogo:"https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg",*/
+  //   designation: "GM @ Parivar Residency, Ullal Mangalore",
+  // },
   {
     id: 1,
-    heading: "A truly next-gen trading app",
-    description:
-      "“NexaInnov Solutions transformed our digital marketing strategy with their innovative Event management website EventifyConnect. Their team’s expertise and dedication were evident from start to finish, resulting in a 40% increase in our lead generation within just six months. We couldn’t be happier with the results!”",
-    author: "Nithin Lobo",
-    profilePic: "/images/avatar_1.jpg",
-    companyLogo:
-      "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg",
-    designation: "GM @ Parivar Residency, Ullal Mangalore",
-  },
-  {
-    id: 2,
     heading: "Revolutionizing our brand's online presence",
     description:
       "“We partnered with NexaInnov Solutions to build our new corporate website, and the outcome exceeded all expectations. Their meticulous attention to detail and creative vision led to a stunning, user-friendly platform that perfectly captures our brand. The positive feedback from our clients has been incredible, and it's all thanks to their exceptional work.”",
     author: "Mr Shlyesh",
-    profilePic: "/images/avatar_1.jpg",
-    companyLogo:
-      "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg",
+    profilePic: "/images/client_logo_6.png", // You might need a new image for this person // Use a relevant logo URL here
     designation: "Managing Partner @ HDGroup Mangalore",
   },
   {
-    id: 3,
+    id: 2,
     heading: "Unlocking unparalleled efficiency",
     description:
       "“NexaInnov Solutions provided us with a custom software solution that streamlined our operations and boosted our team's productivity. Their deep understanding of our business needs and their proactive approach to problem-solving made them an invaluable partner. The impact on our workflow has been truly transformative.”",
     author: "Mr. Wilson Monteiro",
-    profilePic: "/images/avatar_1.jpg", // You might need a new image for this person
-    companyLogo:
-      "https://assets-global.website-files.com/61113c4e9f23df1e7f554117/654e34212096900dd6bd63f3_institute-logo-testimonial-dark-x-webflow-template.svg", // Use a relevant logo URL here
+    profilePic: "/images/client_extra.png", // You might need a new image for this person // Use a relevant logo URL here
     designation: "Director @ CommLogic Group Australia",
   },
 ];
@@ -152,6 +147,13 @@ export const ourClients = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
     },
     {
+      id: 11,
+      logo: "/images/client_logo_13.jpg",
+      name: "Client 11",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
+    {
       id: 1,
       logo: "/images/client_logo_1.png",
       name: "Client 1",
@@ -221,7 +223,14 @@ export const ourClients = {
       name: "Client 10",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
-    }
+    },
+    {
+      id: 11,
+      logo: "/images/client_logo_13.jpg",
+      name: "Client 11",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non est ac diam semper consectetur.",
+    },
 
     // {
     //     id: 7,

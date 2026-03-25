@@ -111,10 +111,10 @@ const FAQComponent = ({ className, faqs }: Props) => {
       )}
     >
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="w-full text-3xl md:text-4xl lg:text-5xl font-bold text-center">
+        <div className="text-gray-800 dark:text-white w-full text-3xl md:text-4xl lg:text-5xl font-bold text-center">
           Frequently Asked Questions
         </div>
-        <div className="w-full text-center text-neutral-500 text-sm md:text-base lg:text-lg">
+        <div className="w-full text-center text-neutral-800 dark:text-neutral-500 text-sm md:text-base lg:text-lg">
           Explore our FAQs for more information on how Nexainnov Solutions can
           support your business and professional growth.
         </div>
@@ -125,7 +125,7 @@ const FAQComponent = ({ className, faqs }: Props) => {
             <div
               key={index}
               className={clsx(
-                "group max-h-[6rem] md:max-h-[4rem] w-full flex flex-col items-center justify-center gap-4 px-4 py-3 rounded-md bg-neutral-700 shadow-sm shadow-secondary-purple cursor-pointer transition-all transform duration-300 relative",
+                "group max-h-[6rem] md:max-h-[4rem] w-full flex flex-col items-center justify-center gap-4 px-4 py-3 rounded-md bg-blue-600 dark:bg-neutral-700 shadow-sm shadow-secondary-purple cursor-pointer transition-all transform duration-300 relative",
                 faqTrigger[faq.key] && "!max-h-[10rem]"
               )}
             >
@@ -153,7 +153,7 @@ const FAQComponent = ({ className, faqs }: Props) => {
               </div>
               <div
                 className={clsx(
-                  "inline-block w-full text-wrap text-neutral-400 leading-6 truncate",
+                  "inline-block w-full text-wrap text-white dark:text-neutral-400 leading-6 truncate",
                   !faqTrigger[faq.key] && "hidden"
                 )}
               >
@@ -196,23 +196,23 @@ const FAQComponent = ({ className, faqs }: Props) => {
             />
           </div>
           <div className="w-full flex flex-col items-center justify-center gap-4">
-            <div className="w-full text-center text-xl md:text-2xl font-bold">
+            <div className="text-neutral-800 dark:text-white w-full text-center text-xl md:text-2xl font-bold">
               Do You Have Any Question ?
             </div>
-            <div className="w-full text-sm md:text-base text-neutral-500 leading-6 md:leading-7 text-center">
+            <div className="w-full text-sm md:text-base text-neutral-800 dark:text-neutral-500 leading-6 md:leading-7 text-center">
               Whether you need a quote, have a project in mind, or simply want to learn more,
               our experts are just a message away.
             </div>
           </div>
           <form onSubmit={handleSubmit} className="w-full flex flex-col items-start justify-center gap-2">
-            <p className="text-base md:text-lg font-semibold text-neutral-300">
+            <p className="text-base md:text-lg font-semibold text-neutral-800 dark:text-neutral-300">
               Let us know
             </p>
             <Input
               placeholder="Type something..."
               type="text"
               name="faqQuery"
-              className="w-full bg-neutral-600 transition-all transform duration-300 hover:bg-neutral-700"
+              className="w-full bg-blue-600 dark:bg-neutral-600 transition-all transform duration-300 hover:bg-blue-700 dark:hover:bg-neutral-700"
               value={faqQuery}
               onChange={handleInputChange}
               disabled={isLoading}
@@ -222,7 +222,7 @@ const FAQComponent = ({ className, faqs }: Props) => {
               className="flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
               disabled={isLoading}
             >
-              <p className="w-full gradient-border-inner text-sm md:text-base lg:text-lg tracking-wide text-neutral-200 py-2 px-4 md:px-6">
+              <p className="w-full gradient-border-inner text-sm md:text-base lg:text-lg tracking-wide text-neutral-800 dark:text-neutral-200 py-2 px-4 md:px-6">
                 {isLoading ? "Sending..." : "Send"}
               </p>
             </Button>

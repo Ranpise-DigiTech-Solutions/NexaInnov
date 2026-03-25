@@ -10,7 +10,7 @@ const GetInTouchComponent = (props: Props) => {
         <div className='w-[90%] lg:w-[85%] h-full flex flex-col-reverse lg:flex-row items-center gap-16 justify-center'>
             <div className='w-full lg:w-[55%] flex flex-row items-center justify-center gap-12'>
               <div className='flex-1 flex flex-col items-center justify-center gap-12'>
-                <div className='w-full min-h-[300px] lg:min-h-[350px] relative bg-white overflow-hidden rounded-2xl'>
+                <div className='w-full min-h-[300px] lg:min-h-[350px] relative overflow-hidden rounded-2xl'>
                   <Image 
                     src={"/images/training-get-in-touch-1.jpg"}
                     alt='bg-1'
@@ -48,12 +48,12 @@ const GetInTouchComponent = (props: Props) => {
               </div>
             </div>
             <div className='w-full lg:flex-1 flex flex-col items-center lg:items-start justify-center gap-12'>
-              <p className='text-4xl lg:text-5xl text-center lg:text-start font-bold text-neutral-200 text-wrap capitalize'>
+              <p className='text-4xl lg:text-5xl text-center lg:text-start font-bold text-primary-blue dark:text-neutral-200 text-wrap capitalize'>
                 learn easy <br /> <span className='gradient-text'>
                     anywhere anytime
                   </span> 
               </p>
-              <p className='text-base font-normal text-neutral-400 text-wrap line-clamp-4 truncate text-center lg:text-start'>
+              <p className='text-base font-normal text-neutral-800 dark:text-neutral-400 text-wrap line-clamp-4 truncate text-center lg:text-start'>
               At Nexainnov Academy, we believe learning should be simple, flexible, and accessible to everyone.
               Whether you're at home, on the move, or balancing a busy schedule, our expertly designed courses 
               and hands-on training programs are tailored to fit your lifestyle. Empower yourself with industry-relevant

@@ -34,27 +34,27 @@ const alumniData = [
 
 export default function Alumni() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-100">
       <NavbarComponent></NavbarComponent>
       <Head>
         <title>Nexainnov Alumni - Our Pride</title>
       </Head>
 
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-center text-white mb-4">Nexainnov Alumni - Our Pride ✨</h1>
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h1 className="text-5xl font-extrabold text-center text-primary-blue dark:text-white mb-4">Nexainnov Alumni - Our Pride ✨</h1>
         <p className="text-xl font-medium text-center text-primary-pink mb-12">
           Celebrating the journeys of our alumni who are now making an impact in leading companies.
         </p>
 
         <section className="mb-16 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Our Alumni Have Made Their Mark At...</h2>
+          <h2 className="text-3xl font-bold text-primary-blue dark:text-white mb-6">Our Alumni Have Made Their Mark At...</h2>
           <div className="flex flex-wrap justify-center items-center gap-6">
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">Masters at Australia</span>
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">Amazon</span>
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">Infosys</span>
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">EG Denmark</span>
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">Elsevier</span>
-            <span className="bg-gray-800 text-lg py-2 px-4 rounded-full">GalaxE Solutions</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">Masters at Australia</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">Amazon</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">Infosys</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">EG Denmark</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">Elsevier</span>
+            <span className="bg-pink-400 dark:bg-gray-800 text-lg py-2 px-4 rounded-full">GalaxE Solutions</span>
           </div>
         </section>
 
@@ -62,7 +62,7 @@ export default function Alumni() {
           <h2 className="text-3xl font-bold text-white text-center mb-8">Alumni Stories</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {alumniData.map((alumnus, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg p-6 shadow-xl transform transition-all duration-300 hover:scale-[1.02]">
+              <div key={index} className="bg-orange-400 dark:bg-gray-800 rounded-lg p-6 shadow-xl transform transition-all duration-300 hover:scale-[1.02]">
                 {/*{alumnus.imageUrl && (
                   <img
                     src={alumnus.imageUrl}
@@ -70,9 +70,9 @@ export default function Alumni() {
                     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
                   />
                 )}*/}
-                <h3 className="text-2xl font-semibold text-center text-primary-pink mb-2">{alumnus.name}</h3>
-                <p className="text-sm text-gray-400 text-center mb-4">{alumnus.journey}</p>
-                <blockquote className="italic border-l-4 border-primary-pink pl-4 text-gray-300 mb-4">
+                <h3 className="text-2xl font-semibold text-center text-primary-blue dark:text-primary-pink mb-2">{alumnus.name}</h3>
+                <p className="text-sm text-white dark:text-gray-400 text-center mb-4">{alumnus.journey}</p>
+                <blockquote className="italic border-l-4 border-primary-pink pl-4 text-neutral-800 dark:text-gray-300 mb-4">
                   "{alumnus.testimonial}"
                 </blockquote>
                 {alumnus.currentRole && (
@@ -90,12 +90,12 @@ export default function Alumni() {
           </div>
         </section>
 
-        <section className="bg-primary-pink p-8 rounded-lg text-center text-white shadow-xl">
+        <section className="mb-12 bg-primary-blue dark:bg-primary-pink p-8 rounded-lg text-center text-white shadow-xl">
           <h2 className="text-3xl font-bold mb-4">Share Your Story!</h2>
           <p className="text-xl mb-6">
             Are you a Nexainnov alumnus with a story to tell? We'd love to hear it.
           </p>
-          <Link href="/contact" className="bg-gray-900 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-700 transition duration-300">
+          <Link href="/contact" className="bg-orange-400 dark:bg-gray-900 text-white font-bold py-3 px-6 rounded-md hover:bg-gray-700 transition duration-300">
             Submit Your Alumni Story
           </Link>
         </section>

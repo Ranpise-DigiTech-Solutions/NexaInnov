@@ -73,20 +73,20 @@ const SupportForm = () => {
   };
 
   return (
-    <div className="p-8 bg-neutral-800 rounded-3xl border border-slate-500 shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)]">
+    <div className="p-8 bg-white dark:bg-neutral-800 rounded-3xl border border-slate-500 shadow-[-1px_-1px_10px_var(--secondary-blue),1px_1px_10px_var(--secondary-pink)]">
       <DialogHeader>
-        <DialogTitle className="text-xl font-bold">Help & Support</DialogTitle>
-        <DialogDescription className="text-neutral-400">
+        <DialogTitle className="text-xl dark:text-white text-neutral-800 font-bold">Help & Support</DialogTitle>
+        <DialogDescription className="text-neutral-800 dark:text-neutral-400">
           Tell us about your issue and our support team will get back to you.
         </DialogDescription>
       </DialogHeader>
       <form onSubmit={handleSubmit} className="mt-4 flex flex-col gap-4">
         <div>
-          <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="bg-neutral-700" />
+          <Input name="name" placeholder="Your Name" value={formData.name} onChange={handleInputChange} className="bg-white dark:bg-neutral-700" />
           {getErrorForField("name") && <p className="text-red-400 text-sm mt-1">{getErrorForField("name")}</p>}
         </div>
         <div>
-          <Input name="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className="bg-neutral-700" />
+          <Input name="email" placeholder="Your Email" value={formData.email} onChange={handleInputChange} className="bg-white dark:bg-neutral-700" />
           {getErrorForField("email") && <p className="text-red-400 text-sm mt-1">{getErrorForField("email")}</p>}
         </div>
         <div>
@@ -95,11 +95,11 @@ const SupportForm = () => {
             placeholder="Your message..."
             value={formData.message}
             onChange={handleInputChange}
-            className="w-full h-32 p-3 rounded-md bg-neutral-700 text-neutral-200 border-none focus:outline-none focus:ring-2 focus:ring-primary-pink"
+            className="w-full h-32 p-3 rounded-md bg-white dark:bg-neutral-700 text-neutral-200 border-none focus:outline-none focus:ring-2 focus:ring-primary-pink"
           />
           {getErrorForField("message") && <p className="text-red-400 text-sm mt-1">{getErrorForField("message")}</p>}
         </div>
-        <Button type="submit" disabled={isLoading} className="gradient-border-inner">
+        <Button type="submit" disabled={isLoading} className="bg-purple-600 text-neutral-800 dark:text-white hover:bg-purple-700 transition-colors gradient-border-inner">
           <p>{isLoading ? "Submitting..." : "Submit"}</p>
         </Button>
       </form>

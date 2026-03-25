@@ -16,17 +16,17 @@ const WhyUsComponent = (props: Props) => {
 
   return (
     <div
-      className="min-h-screen w-full flex items-center justify-center"
+      className="min-h-min w-full flex items-start justify-center"
       id="why-us"
     >
-      <div className="w-[95%] overflow-hidden xl:w-[85%] px-[1rem] xl:p-0 flex flex-col lg:flex-row items-center lg:items-stretch justify-center xl:gap-4 gap-12">
-        <div className="w-full flex-1 flex flex-col items-start justify-center gap-10">
+      <div className="w-[95%] overflow-hidden xl:w-[85%] px-[1rem] xl:p-0 flex flex-col lg:flex-row items-center lg:items-stretch justify-center xl:gap-4 gap-10">
+        <div className="w-full flex-1 flex flex-col items-center justify-center gap-10">
           <div className="w-full flex flex-col items-start justify-center gap-6">
-            <div className="relative uppercase text-sm lg:text-base font-normal text-neutral-200">
+            <div className="relative uppercase text-sm lg:text-base font-normal dark:text-white text-neutral-800">
               why choose us?
               <p className="absolute h-0.5 w-full -bottom-1 left-0 right-0 bg-primary-pink"></p>
             </div>
-            <p className="w-full text-wrap text-neutral-200 font-bold text-3xl md:text-4xl lg:text-5xl">
+            <p className="w-full text-wrap font-bold text-3xl md:text-4xl lg:text-5xl dark:text-white text-neutral-800">
               Powerful features of{" "}
               <span className="gradient-text">NexaInnov</span>
             </p>
@@ -34,10 +34,10 @@ const WhyUsComponent = (props: Props) => {
           <div className="w-full flex flex-col items-center justify-center gap-4">
             <div className="w-full flex flex-col items-center justify-center gap-2 border border-neutral-600 shadow-sm shadow-secondary-purple p-2 rounded-xl">
               <div className="w-full flex flex-row gap-2 items-center justify-start">
-                <AccessTimeFilledIcon fontSize="medium" />
-                <p className="font-semibold text-lg">Customized Solutions</p>
+                <AccessTimeFilledIcon fontSize="medium" className="bg-gray-800"/>
+                <p className="font-semibold text-lg text-neutral-800 dark:text-white">Customized Solutions</p>
               </div>
-              <p className="w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
+              <p className="w-full text-wrap text-neutral-800 dark:text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
                 Our clients appreciate our ability to understand their unique
                 needs and provide tailored solutions that align perfectly with
                 their business goals.
@@ -45,10 +45,10 @@ const WhyUsComponent = (props: Props) => {
             </div>
             <div className="w-full flex flex-col items-center justify-center gap-2 border border-neutral-600 shadow-sm shadow-secondary-purple p-2 rounded-xl">
               <div className="w-full flex flex-row gap-2 items-center justify-start">
-                <AccessTimeFilledIcon fontSize="medium" />
-                <p className="font-semibold text-lg">Outstanding Support</p>
+                <AccessTimeFilledIcon fontSize="medium" className="bg-gray-800"/>
+                <p className="font-semibold text-lg text-neutral-800 dark:text-white">Outstanding Support</p>
               </div>
-              <p className="w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
+              <p className="text-neutral-800 dark:text-neutral-400 w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
                 From the initial consultation to ongoing maintenance, our
                 dedicated support team is always available to assist, ensuring a
                 seamless and positive experience
@@ -56,12 +56,12 @@ const WhyUsComponent = (props: Props) => {
             </div>
             <div className="w-full flex flex-col items-center justify-center gap-2 border border-neutral-600 shadow-sm shadow-secondary-purple p-2 rounded-xl">
               <div className="w-full flex flex-row gap-2 items-center justify-start">
-                <AccessTimeFilledIcon fontSize="medium" />
-                <p className="font-semibold text-lg">
+                <AccessTimeFilledIcon fontSize="medium" className="bg-gray-800"/>
+                <p className="font-semibold text-lg text-neutral-800 dark:text-white">
                   Exceptional Support and Maintenance
                 </p>
               </div>
-              <p className="w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
+              <p className="text-neutral-800 dark:text-neutral-400 w-full text-wrap text-neutral-400 line-clamp-2 truncate leading-7 font-normal text-base">
                 At NexaInnov Solutions, our commitment to clients doesn’t end
                 after deployment. We provide 24/7 support and maintenance
                 services, ensuring that your systems remain up-to-date and
@@ -80,7 +80,7 @@ const WhyUsComponent = (props: Props) => {
               </p>
             </Button>*/}
             <Button
-              className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 hover:bg-primary-black bg-neutral-700 rounded-full px-5 lg:px-6 py-6 lg:py-7"
+              className="w-[50%] group flex items-center justify-center transform transition-transform duration-300 hover:scale-95 bg-pink-500 hover:bg-pink-800 dark:hover:bg-primary-black dark:bg-neutral-700 rounded-full px-5 lg:px-6 py-6 lg:py-7"
               onClick={() => {
                 setOpen(
                   <CustomModal

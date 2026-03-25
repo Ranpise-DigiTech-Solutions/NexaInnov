@@ -21,7 +21,7 @@ export const courseList: Course[] = [
     subtitle: "Complete 5‑Module Fast‑Track Program",
     description:
       "A 168‑hour immersive workshop including COM, MOM, POM, PDG, and WHM modules. Choose your region to calculate pricing.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "6 weeks, 6 hrs/day, 5 days/week",
     durationInHours: 168,
@@ -45,7 +45,7 @@ export const courseList: Course[] = [
     subtitle: "Configure Products, Customers & Supplier Masters",
     description:
       "Item hierarchy, general settings, UoM, customer and supplier configuration. Compatible with Infor M3 v13.4 and earlier.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "5 days, 6 hrs/day",
     durationInHours: 30,
@@ -82,7 +82,7 @@ export const courseList: Course[] = [
     subtitle: "Efficient Order Processing & Configuration",
     description:
       "Order-to-cash workflows, pricing, discounts and output forms. Infor M3 v13.4‑compatible.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "6 days, 6 hrs/day",
     durationInHours: 36,
@@ -116,7 +116,7 @@ export const courseList: Course[] = [
     subtitle: "Optimize Distribution & Warehouse Processes",
     description:
       "Picking/packing, dispatch, inventory structure, DO & RO flows. Compatible with v13.4 and earlier.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "5 days, 6 hrs/day",
     durationInHours: 30,
@@ -151,7 +151,7 @@ export const courseList: Course[] = [
     subtitle: "Procurement Configuration & Processing",
     description:
       "PO creation, receiving flows, inspections, procurement statistics and output forms. For M3 v13.4 or earlier.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "5 days, 6 hrs/day",
     durationInHours: 30,
@@ -182,7 +182,7 @@ export const courseList: Course[] = [
     subtitle: "Manage Production & Manufacturing Workflows",
     description:
       "MOs, production statistics configuration, variant handling, and output formats in M3 v13.4.",
-    image: "/images/courses_4.jpg",
+    image: "/images/course_5.jpg",
     trainer: "Rasika Jayathilake",
     duration: "7 days, 6 hrs/day",
     durationInHours: 42,

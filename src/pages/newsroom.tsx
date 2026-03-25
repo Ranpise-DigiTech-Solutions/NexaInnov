@@ -99,14 +99,14 @@ export default function Newsroom() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-100">
       <NavbarComponent />
       <Head>
         <title>Nexainnov Newsroom</title>
       </Head>
 
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-5xl font-extrabold text-white text-center mb-4">Nexainnov Newsroom 📰</h1>
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h1 className="text-5xl font-extrabold text-primary-blue dark:text-white text-center mb-4">Nexainnov Newsroom 📰</h1>
         <p className="text-xl font-medium text-center text-primary-pink mb-12">
           Stay updated with the latest news, press releases, media coverage, and stories from Nexainnov Solutions.
         </p>
@@ -120,7 +120,7 @@ export default function Newsroom() {
               className={`font-semibold py-2 px-6 rounded-full transition-colors duration-300 ${
                 activeCategory === category
                   ? 'bg-primary-pink text-white hover:bg-pink-600'
-                  : 'bg-gray-800 text-gray-300 hover:bg-primary-pink hover:text-white'
+                  : 'bg-primary-blue dark:bg-gray-800 text-white dark:text-gray-300 hover:bg-pink-600 dark:hover:bg-primary-pink hover:text-white'
               }`}
             >
               {category}
@@ -131,34 +131,34 @@ export default function Newsroom() {
         {/* Categories Section (Static, based on your reference) */}
         <section className="mb-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-2 text-primary-pink">Press Releases</h3>
-              <p className="text-gray-300">
+            <div className="bg-orange-400 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2 text-neutral-800 dark:text-primary-pink">Press Releases</h3>
+              <p className="text-white dark:text-gray-300">
                 Official announcements from Nexainnov Solutions, including product launches and CSR updates.
               </p>
-              <p className="text-sm italic mt-2 text-gray-400">Coming Soon</p>
+              <p className="text-sm italic mt-2 text-white dark:text-gray-400">Coming Soon</p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-2 text-primary-pink">In the Media</h3>
-              <p className="text-gray-300">
+            <div className="bg-orange-400 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2 text-neutral-800 dark:text-primary-pink">In the Media</h3>
+              <p className="text-white dark:text-gray-300">
                 Watch this space for Nexainnov’s features in leading tech and business publications.
               </p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-2 text-primary-pink">Company Updates</h3>
-              <p className="text-gray-300">
+            <div className="bg-orange-400 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2 text-neutral-800 dark:text-primary-pink">Company Updates</h3>
+              <p className="text-white dark:text-gray-300">
                 Updates on new solutions like EventifyConnect, DragBlitz, and Nexainnov Academy.
               </p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-2 text-primary-pink">Events & Conferences</h3>
-              <p className="text-gray-300">
+            <div className="bg-orange-400 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2 text-neutral-800 dark:text-primary-pink">Events & Conferences</h3>
+              <p className="text-white dark:text-gray-300">
                 Stay tuned for our participation in Mangaluru Technovanza 2025 and other upcoming events.
               </p>
             </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-semibold mb-2 text-primary-pink">Founder’s Desk</h3>
-              <p className="text-gray-300">
+            <div className="bg-orange-400 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-semibold mb-2 text-neutral-800 dark:text-primary-pink">Founder’s Desk</h3>
+              <p className="text-white dark:text-gray-300">
                 Insights from our leadership team on innovation, sustainability, and technology trends.
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function Newsroom() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.length > 0 ? (
               filteredArticles.map((article, index) => (
-                <div key={index} className="bg-gray-800 p-4 rounded-lg flex flex-col items-start shadow-lg">
+                <div key={index} className="bg-blue-400 dark:bg-gray-800 p-4 rounded-lg flex flex-col items-start shadow-lg">
                   <div className="w-full h-48 relative rounded-md mb-4 overflow-hidden">
                     <Image
                       src={article.image}
@@ -182,8 +182,8 @@ export default function Newsroom() {
                     />
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-2">{article.headline}</h3>
-                  <p className="text-sm text-gray-400 mb-4">{article.category} | {article.date}</p>
-                  <div className="text-gray-300 text-sm flex-grow">
+                  <p className="text-sm text-white dark:text-gray-400 mb-4">{article.category} | {article.date}</p>
+                  <div className="text-white dark:text-gray-300 text-sm flex-grow">
                     {expandedArticles[article.id] ? (
                       <div dangerouslySetInnerHTML={{ __html: article.content }} />
                     ) : (
@@ -204,7 +204,7 @@ export default function Newsroom() {
           </div>
         </section>
 
-        <section className="bg-primary-pink p-8 rounded-lg text-center text-white shadow-xl mt-16">
+        <section className="mb-12 bg-primary-blue dark:bg-primary-pink p-8 rounded-lg text-center text-white shadow-xl mt-16">
           <h2 className="text-3xl font-bold mb-4">For Media Inquiries & Collaborations</h2>
           <p className="text-xl mb-6">
             If you are a journalist, editor, or content creator and would like to connect with us, please reach out to our media team.

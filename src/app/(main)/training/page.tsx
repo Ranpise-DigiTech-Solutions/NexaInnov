@@ -9,11 +9,11 @@ type Props = {}
 
 const TrainingPage = (props: Props) => {
   return (
-    <div className='w-full min-h-screen flex flex-col items-center justify-center gap-[4rem]'>
+    <div className='w-full min-h-screen flex flex-col bg-white dark:bg-neutral-700 items-center justify-center gap-[4rem]'>
         <GetStartedComponent />
         <FactNumbersComponent />
         <TrainingFeaturesComponent />
-        <CourseListComponent />
+        {/* <CourseListComponent /> */}
         <GetInTouchComponent />
     </div>
   )

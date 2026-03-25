@@ -119,12 +119,12 @@ const GetQuoteForm = (props: Props) => {
   };
 
   return (
-    <Card className="border border-neutral-700">
+    <Card className="border border-neutral-700 bg-blue-400 dark:bg-neutral-800">
       <CardHeader>
         <CardTitle className="text-primary-pink text-2xl">
           Project Information
         </CardTitle>
-        <CardDescription className="text-sm text-neutral-500">
+        <CardDescription className="text-sm text-neutral-800 dark:text-neutral-500">
           Please enter your project details.
         </CardDescription>
       </CardHeader>
@@ -148,7 +148,7 @@ const GetQuoteForm = (props: Props) => {
                       type="text"
                       placeholder="Your full name"
                       {...field}
-                      className="bg-transparent border-neutral-700 outline-none text-neutral-400"
+                      className="bg-transparent border-neutral-700 outline-none text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                     />
                   </FormControl>
                   <FormMessage />
@@ -169,7 +169,7 @@ const GetQuoteForm = (props: Props) => {
                       type="email"
                       placeholder="Your email id"
                       {...field}
-                      className="bg-transparent border-neutral-700 outline-none text-neutral-400"
+                      className="bg-transparent border-neutral-700 outline-none text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                     />
                   </FormControl>
                   <FormMessage />
@@ -190,7 +190,7 @@ const GetQuoteForm = (props: Props) => {
                       type="text"
                       placeholder="Your mobile no."
                       {...field}
-                      className="bg-transparent border-neutral-700 outline-none text-neutral-400"
+                      className="bg-transparent border-neutral-700 outline-none text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                     />
                   </FormControl>
                   <FormMessage />
@@ -211,7 +211,7 @@ const GetQuoteForm = (props: Props) => {
                       type="text"
                       placeholder="Your organization name"
                       {...field}
-                      className="bg-transparent border-neutral-700 outline-none text-neutral-400"
+                      className="bg-transparent border-neutral-700 outline-none text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                     />
                   </FormControl>
                   <FormMessage />
@@ -231,7 +231,7 @@ const GetQuoteForm = (props: Props) => {
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <SelectTrigger
                         id="projectType"
-                        className="border-neutral-700 text-neutral-400"
+                        className="border-neutral-700 text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                       >
                         <SelectValue placeholder="Select a project type" />
                       </SelectTrigger>
@@ -277,7 +277,7 @@ const GetQuoteForm = (props: Props) => {
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <SelectTrigger
                         id="projectBudget"
-                        className="border-neutral-700 text-neutral-400"
+                        className="border-neutral-700 text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                       >
                         <SelectValue placeholder="Enter your proposed budget" />
                       </SelectTrigger>
@@ -317,7 +317,7 @@ const GetQuoteForm = (props: Props) => {
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <SelectTrigger
                         id="projectTimeline"
-                        className="border-neutral-700 text-neutral-400"
+                        className="border-neutral-700 text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                       >
                         <SelectValue placeholder="Enter your project timeline" />
                       </SelectTrigger>
@@ -362,7 +362,7 @@ const GetQuoteForm = (props: Props) => {
                       placeholder="Write your description here..."
                       rows={4}
                       {...field}
-                      className="mt-1 block w-full rounded-md border-neutral-700 shadow-none bg-transparent text-neutral-400"
+                      className="mt-1 block w-full rounded-md border-neutral-700 shadow-none bg-transparent text-neutral-800 dark:text-neutral-400 dark:placeholder:text-white placeholder:text-neutral-800"
                     />
                   </FormControl>
                   <FormMessage />

@@ -14,7 +14,7 @@ const OverviewComponent = ({ imageUrl, description }: Props) => {
     >
       <div className="w-full flex-[55%] h-full flex flex-col items-start justify-center gap-4 py-[2rem] px-[3rem]">
         <p className="text-sm lg:text-base text-primary-pink text-start tracking-widest font-semibold uppercase">Overview</p>
-        <p className="text-start text-base xl:text-lg font-normal text-neutral-300 leading-8 xl:leading-10">
+        <p className="text-start text-base xl:text-lg font-normal text-neutral-800 dark:text-neutral-300 leading-8 xl:leading-10">
           {description}
         </p>
       </div>

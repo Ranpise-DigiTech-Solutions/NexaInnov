@@ -16,7 +16,7 @@ export default function Home() {
         <NavbarComponent className="h-[15%]" />
         <GetStartedComponent className="flex-1"/>
       </div>
-      <div className="min-h-screen w-full flex flex-col text-neutral-200 gap-[5rem]">
+      <div className="min-h-screen w-full flex flex-col text-neutral-200 gap-[4rem]">
         <WhyUsComponent />
         <OurClientsComponent />
         {/* <TechnologyPartnersComponent /> */}
@@ -26,7 +26,7 @@ export default function Home() {
         <ArticlesComponent />
       </div>
       <>
-        <div className="line-divider"></div>
+        <div className="dark:line-divider line-divider-light"></div>
         <FooterComponent />
       </>
     </main>

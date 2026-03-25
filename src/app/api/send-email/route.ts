@@ -1,300 +1,277 @@
-// src/app/api/send-email/route.ts
+import { NextResponse } from "next/server";
+import { z } from "zod";
+import axios from "axios";
+import { validateEmail, isSuspiciousEmail } from "@/lib/validation";
 
-import { NextResponse } from 'next/server';
-import { z } from 'zod';
-import axios from 'axios';
+/* ---------------- Schema Definitions ---------------- */
 
-// 1. Schema and Type Definitions
+const BaseSchema = z.object({
+  honeypot: z.string().optional(),
+});
+
 const EmailRequestSchema = z.union([
-  z.object({
-    type: z.literal('quote'),
-    name: z.string().min(1, 'Name is required'),
-    email: z.string().email('Invalid email address'),
+  BaseSchema.extend({
+    type: z.literal("quote"),
+    name: z.string().min(1),
+    email: z.string().email(),
     phoneNo: z.string().optional(),
     companyName: z.string().optional(),
     projectType: z.string().optional(),
     projectBudget: z.string().optional(),
     projectTimeline: z.string().optional(),
-    projectDetails: z.string().min(1, 'Project details are required').max(2000, 'Project details too long'),
+    projectDetails: z.string().min(1).max(2000),
     filesUrl: z.array(z.string()).optional(),
   }),
-  z.object({
-    type: z.literal('enrollment'),
-    courseTitle: z.string().min(1, 'Course title is required'),
+
+  BaseSchema.extend({
+    type: z.literal("enquiry"),
+    courseTitle: z.string().min(1),
     courseSlug: z.string(),
     durationInHours: z.number(),
     selectedRegion: z.string(),
     hourlyRate: z.number(),
     currency: z.string(),
     totalFee: z.number(),
-    userName: z.string().optional(),
-    userEmail: z.string().email('Invalid email address').optional(),
+    fullName: z.string().min(1),
+    userEmail: z.string().email(),
+    phone: z.string().min(1),
+    role: z.string().min(1),
+    preferredModule: z.string().min(1),
+    trainingLevel: z.string().min(1),
+    trainingMode: z.string().min(1),
+    topics: z.string().optional(),
   }),
-  z.object({
-    type: z.literal('media-inquiry'),
-    name: z.string().min(1, { message: "Name is required." }),
-    email: z.string().email({ message: "Invalid email address." }),
+
+  BaseSchema.extend({
+    type: z.literal("contact"),
+    name: z.string().min(1),
+    email: z.string().email(),
     phoneNo: z.string().optional(),
-    organization: z.string().optional(),
-    message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+    subject: z.string().min(1),
+    message: z.string().min(10),
   }),
-  // ✅ 1. Add the new 'newsletter' schema to the Zod union
-  z.object({
-    type: z.literal('newsletter'),
-    email: z.string().email({ message: "Invalid email address." }),
+
+  BaseSchema.extend({
+    type: z.literal("sales-enquiry"),
+    name: z.string().min(1),
+    email: z.string().email(),
+    message: z.string().min(10),
   }),
-  z.object({
-    type: z.literal('faq-query'),
-    query: z.string().min(1, "Question cannot be empty."),
+
+  BaseSchema.extend({
+    type: z.literal("support-query"),
+    name: z.string().min(1),
+    email: z.string().email(),
+    message: z.string().min(10),
   }),
-  // 🆕 Add the new 'contact' schema to the Zod union
-  z.object({
-    type: z.literal('contact'),
-    name: z.string().min(1, { message: "Name is required." }),
-    email: z.string().email({ message: "Invalid email address." }),
-    phoneNo: z.string().optional(),
-    subject: z.string().min(1, { message: "Subject is required." }),
-    message: z.string().min(10, { message: "Message must be at least 10 characters." }),
-  }),
-  // 🆕 Add the new 'sales-enquiry' schema
-  z.object({
-    type: z.literal('sales-enquiry'),
-    name: z.string().min(1, 'Name is required.'),
-    email: z.string().email('Invalid email address.'),
-    message: z.string().min(10, 'Message must be at least 10 characters.'),
-  }),
-  // 🆕 Add the new 'support-query' schema
-  z.object({
-    type: z.literal('support-query'),
-    name: z.string().min(1, 'Name is required.'),
-    email: z.string().email('Invalid email address.'),
-    message: z.string().min(10, 'Message must be at least 10 characters.'),
+
+  BaseSchema.extend({
+    type: z.literal("newsletter"),
+    email: z.string().email(),
   }),
 ]);
 
 type EmailRequest = z.infer<typeof EmailRequestSchema>;
 
+/* ---------------- Environment Variables ---------------- */
 
-// IMPORTANT: Get environment variables from .env.local
-const BREVO_API_KEY = process.env.BREVO_API_KEY;
-const SENDER_EMAIL = process.env.SENDER_EMAIL;
-const QUOTE_RECIPIENT_EMAIL = process.env.QUOTE_RECIPIENT_EMAIL;
-const COURSE_RECIPIENT_EMAIL = process.env.COURSE_RECIPIENT_EMAIL;
-const MEDIA_RECIPIENT_EMAIL = process.env.MEDIA_RECIPIENT_EMAIL;
-// ✅ 2. Add the new recipient email variable for newsletter
-const NEWSLETTER_RECIPIENT_EMAIL = process.env.NEWSLETTER_RECIPIENT_EMAIL;
-// 🆕 Add the new recipient email variable for FAQ
-const FAQ_RECIPIENT_EMAIL = process.env.FAQ_RECIPIENT_EMAIL;
-// 🆕 Add the new recipient email variable for Contact
-const CONTACT_RECIPIENT_EMAIL = process.env.CONTACT_RECIPIENT_EMAIL;
-// 🆕 Add the new recipient email variables for Sales and Support
-const SALES_RECIPIENT_EMAIL = process.env.SALES_RECIPIENT_EMAIL;
-const SUPPORT_RECIPIENT_EMAIL = process.env.SUPPORT_RECIPIENT_EMAIL;
+const {
+  BREVO_API_KEY,
+  SENDER_EMAIL,
+  QUOTE_RECIPIENT_EMAIL,
+  COURSE_RECIPIENT_EMAIL,
+  CONTACT_RECIPIENT_EMAIL,
+  SALES_RECIPIENT_EMAIL,
+  SUPPORT_RECIPIENT_EMAIL,
+  NEWSLETTER_RECIPIENT_EMAIL,
+} = process.env;
 
+const BREVO_SEND_EMAIL_URL = "https://api.brevo.com/v3/smtp/email";
 
-// Brevo API Endpoint for sending transactional emails
-const BREVO_SEND_EMAIL_URL = 'https://api.brevo.com/v3/smtp/email';
-
+/* ---------------- POST Handler ---------------- */
 
 export async function POST(request: Request) {
-  // Basic check for required environment variables
-  if (!BREVO_API_KEY || !SENDER_EMAIL || !QUOTE_RECIPIENT_EMAIL || !COURSE_RECIPIENT_EMAIL || !MEDIA_RECIPIENT_EMAIL || !NEWSLETTER_RECIPIENT_EMAIL || !FAQ_RECIPIENT_EMAIL || !CONTACT_RECIPIENT_EMAIL || !SALES_RECIPIENT_EMAIL || !SUPPORT_RECIPIENT_EMAIL) {
-    console.error("Missing environment variables for email sending. Please check your .env.local file.");
+  if (!BREVO_API_KEY || !SENDER_EMAIL) {
     return NextResponse.json(
-      { message: 'Server configuration error: Email settings missing.' },
+      { message: "Server email configuration missing." },
       { status: 500 }
     );
   }
 
   try {
     const body = await request.json();
-    console.log("Received payload:", body);
 
-    // Validate the incoming data with the corrected schema
+    if (!body || typeof body !== "object" || !body.type) {
+      return NextResponse.json({ message: "OK" }, { status: 200 });
+    }
+
     const validatedData = EmailRequestSchema.parse(body);
 
-    let subject: string;
-    let htmlContent: string;
-    let senderEmailForReplyTo: string | undefined;
-    let currentRecipientEmail: string;
+    /* Honeypot Protection */
 
-    if (validatedData.type === 'quote') {
+    if (validatedData.honeypot && validatedData.honeypot.trim() !== "") {
+      return NextResponse.json({ message: "OK" }, { status: 200 });
+    }
+
+    /* Suspicious Email Detection */
+
+    const emailFields = [
+      (validatedData as any).email,
+      (validatedData as any).userEmail,
+    ].filter(Boolean);
+
+    for (const email of emailFields) {
+      if (!validateEmail(email) || isSuspiciousEmail(email)) {
+        return NextResponse.json({ message: "OK" }, { status: 200 });
+      }
+    }
+
+    let subject = "";
+    let htmlContent = "";
+    let replyTo: string | undefined;
+    let recipient = SENDER_EMAIL;
+
+    /* ---------------- EMAIL CONTENT ---------------- */
+
+    if (validatedData.type === "quote") {
       subject = `New Project Quote Request from ${validatedData.name}`;
+      recipient = QUOTE_RECIPIENT_EMAIL!;
+      replyTo = validatedData.email;
+
       htmlContent = `
-        <p><strong>--- New Project Quote Request ---</strong></p>
-        <p><strong>Customer Name:</strong> ${validatedData.name}</p>
+        <h2>New Quote Request</h2>
+        <p><strong>Name:</strong> ${validatedData.name}</p>
         <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Mobile No:</strong> ${validatedData.phoneNo || 'N/A'}</p>
-        <p><strong>Company Name:</strong> ${validatedData.companyName || 'N/A'}</p>
-        <p><strong>ProjectType:</strong> ${validatedData.projectType || 'N/A'}</p>
-        <p><strong>Project Budget:</strong> ${validatedData.projectBudget || 'N/A'}</p>
-        <p><strong>Project Timeline:</strong> ${validatedData.projectTimeline || 'N/A'}</p>
-        <br>
+        <p><strong>Phone:</strong> ${validatedData.phoneNo || "-"}</p>
+        <p><strong>Company:</strong> ${validatedData.companyName || "-"}</p>
+        <p><strong>Project Type:</strong> ${validatedData.projectType || "-"}</p>
+        <p><strong>Budget:</strong> ${validatedData.projectBudget || "-"}</p>
+        <p><strong>Timeline:</strong> ${validatedData.projectTimeline || "-"}</p>
         <p><strong>Project Details:</strong></p>
-        <p>${validatedData.projectDetails.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's quote form.</p>
+        <p>${validatedData.projectDetails.replace(/\n/g, "<br>")}</p>
       `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = QUOTE_RECIPIENT_EMAIL;
+    }
 
-    } else if (validatedData.type === 'enrollment') {
-      subject = `Enrollment Inquiry for: ${validatedData.courseTitle}`;
-      htmlContent = `
-        <p><strong>--- New Course Enrollment Inquiry ---</strong></p>
-        <p><strong>Course Title:</strong> ${validatedData.courseTitle}</p>
-        <p><strong>Course Slug:</strong> ${validatedData.courseSlug}</p>
-        <p><strong>Duration:</strong> ${validatedData.durationInHours} hours</p>
-        <p><strong>Selected Region:</strong> ${validatedData.selectedRegion}</p>
-        <p><strong>Calculated Hourly Rate for Region:</strong> ${validatedData.currency} $${validatedData.hourlyRate}/hr</p>
-        <p><strong>Total Estimated Fee:</strong> ${validatedData.totalFee.toLocaleString()}</p>
-        <br>
-        ${validatedData.userName ? `<p><strong>Customer Name:</strong> ${validatedData.userName}</p>` : ''}
-        ${validatedData.userEmail ? `<p><strong>Customer Email:</strong> ${validatedData.userEmail}</p>` : ''}
-        <br>
-        <p>Please provide further details on how to proceed with the enrollment.</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's course enrollment page.</p>
-      `;
-      senderEmailForReplyTo = validatedData.userEmail;
-      currentRecipientEmail = COURSE_RECIPIENT_EMAIL;
+    else if (validatedData.type === "enquiry") {
+      subject = `New Training Enquiry - ${validatedData.courseTitle}`;
+      recipient = COURSE_RECIPIENT_EMAIL!;
+      replyTo = validatedData.userEmail;
 
-    } else if (validatedData.type === 'media-inquiry') { // This block handles the media inquiry
-      subject = `New Media Inquiry from ${validatedData.name}`;
       htmlContent = `
-        <p><strong>--- New Media Inquiry ---</strong></p>
-        <p><strong>Name:</strong> ${validatedData.name}</p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Phone No:</strong> ${validatedData.phoneNo || 'N/A'}</p>
-        <p><strong>Organization:</strong> ${validatedData.organization || 'N/A'}</p>
-        <br>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's newsroom contact form.</p>
-      `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = MEDIA_RECIPIENT_EMAIL;
-      
-    } else if (validatedData.type === 'newsletter') {
-      subject = `New Newsletter Subscriber: ${validatedData.email}`;
-      htmlContent = `
-        <p><strong>--- New Newsletter Subscriber ---</strong></p>
-        <p><strong>Email:</strong> ${validatedData.email}</p>
-        <br>
-        <p>This person has subscribed to your newsletter via the website.</p>
-      `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = NEWSLETTER_RECIPIENT_EMAIL;
+      <div style="font-family:Arial,sans-serif">
 
-    } else if (validatedData.type === 'faq-query') {
-      subject = `New FAQ Query from Website`;
-      htmlContent = `
-        <p><strong>--- New FAQ Query ---</strong></p>
-        <p><strong>Query:</strong> ${validatedData.query.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>This email was generated from the website's FAQ section.</p>
+        <h2 style="color:#0f766e">New Training Enquiry</h2>
+
+        <h3>Participant Details</h3>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%">
+          <tr><td><strong>Full Name</strong></td><td>${validatedData.fullName}</td></tr>
+          <tr><td><strong>Email</strong></td><td>${validatedData.userEmail}</td></tr>
+          <tr><td><strong>Phone</strong></td><td>${validatedData.phone}</td></tr>
+          <tr><td><strong>Role / Experience</strong></td><td>${validatedData.role}</td></tr>
+        </table>
+
+        <br/>
+
+        <h3>Training Preferences</h3>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%">
+          <tr><td><strong>Training Track</strong></td><td>${validatedData.preferredModule}</td></tr>
+          <tr><td><strong>Training Level</strong></td><td>${validatedData.trainingLevel}</td></tr>
+          <tr><td><strong>Training Mode</strong></td><td>${validatedData.trainingMode}</td></tr>
+          <tr><td><strong>Training Region</strong></td><td>${validatedData.selectedRegion}</td></tr>
+        </table>
+
+        <br/>
+
+        <h3>Course Details</h3>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse:collapse;width:100%">
+          <tr><td><strong>Course Title</strong></td><td>${validatedData.courseTitle}</td></tr>
+          <tr><td><strong>Course Slug</strong></td><td>${validatedData.courseSlug}</td></tr>
+        </table>
+
+        <br/>
+
+        <h3>Topics / Issues Requested</h3>
+        <div style="border:1px solid #ddd;padding:12px">
+          ${validatedData.topics?.replace(/\n/g, "<br>") || "Not specified"}
+        </div>
+
+      </div>
       `;
-      senderEmailForReplyTo = undefined;
-      currentRecipientEmail = FAQ_RECIPIENT_EMAIL;
-    } else if (validatedData.type === 'contact') {
+    }
+
+    else if (validatedData.type === "contact") {
       subject = validatedData.subject;
+      recipient = CONTACT_RECIPIENT_EMAIL!;
+      replyTo = validatedData.email;
+
       htmlContent = `
-        <p><strong>--- New Contact Message from Website ---</strong></p>
+        <h2>Contact Form Submission</h2>
         <p><strong>Name:</strong> ${validatedData.name}</p>
         <p><strong>Email:</strong> ${validatedData.email}</p>
-        <p><strong>Phone No:</strong> ${validatedData.phoneNo || 'N/A'}</p>
-        <br>
+        <p><strong>Phone:</strong> ${validatedData.phoneNo || "-"}</p>
         <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's main contact form.</p>
+        <p>${validatedData.message}</p>
       `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = CONTACT_RECIPIENT_EMAIL;
-    } 
-    // ✅ Handle the new 'sales-enquiry' type
-    else if (validatedData.type === 'sales-enquiry') {
-      subject = `New Sales Enquiry from ${validatedData.name}`;
+    }
+
+    else if (validatedData.type === "sales-enquiry") {
+      subject = `Sales Enquiry`;
+      recipient = SALES_RECIPIENT_EMAIL!;
+      replyTo = validatedData.email;
+
       htmlContent = `
-        <p><strong>--- New Sales Enquiry ---</strong></p>
+        <h2>Sales Enquiry</h2>
         <p><strong>Name:</strong> ${validatedData.name}</p>
         <p><strong>Email:</strong> ${validatedData.email}</p>
-        <br>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's sales form.</p>
+        <p>${validatedData.message}</p>
       `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = SALES_RECIPIENT_EMAIL;
     }
-    // ✅ Handle the new 'support-query' type
-    else if (validatedData.type === 'support-query') {
-      subject = `New Support Query from ${validatedData.name}`;
+
+    else if (validatedData.type === "support-query") {
+      subject = `Support Query`;
+      recipient = SUPPORT_RECIPIENT_EMAIL!;
+      replyTo = validatedData.email;
+
       htmlContent = `
-        <p><strong>--- New Support Query ---</strong></p>
+        <h2>Support Query</h2>
         <p><strong>Name:</strong> ${validatedData.name}</p>
         <p><strong>Email:</strong> ${validatedData.email}</p>
-        <br>
-        <p><strong>Message:</strong></p>
-        <p>${validatedData.message.replace(/\n/g, '<br>')}</p>
-        <br>
-        <p>---</p>
-        <p>This email was generated from your website's support form.</p>
+        <p>${validatedData.message}</p>
       `;
-      senderEmailForReplyTo = validatedData.email;
-      currentRecipientEmail = SUPPORT_RECIPIENT_EMAIL;
-    }
-    else {
-      // 🚨 Fallback for any unhandled type to prevent "used before assigned" error
-      subject = 'Unhandled Email Request Type';
-      htmlContent = `<p>An email request of an unknown type was received.</p><p>Payload: ${JSON.stringify(validatedData)}</p>`;
-      senderEmailForReplyTo = undefined;
-      currentRecipientEmail = SENDER_EMAIL; // Fallback to a safe email
     }
 
-    // --- DIRECT AXIOS CALL TO BREVO API ---
-    const brevoPayload = {
-      sender: { email: SENDER_EMAIL },
-      to: [{ email: currentRecipientEmail }],
-      subject: subject,
-      htmlContent: htmlContent,
-      ...(senderEmailForReplyTo && { replyTo: { email: senderEmailForReplyTo } }),
-    };
+    else if (validatedData.type === "newsletter") {
+      subject = `New Newsletter Signup`;
+      recipient = NEWSLETTER_RECIPIENT_EMAIL!;
 
-    const requestHeaders = {
-      'accept': 'application/json',
-      'api-key': BREVO_API_KEY,
-      'content-type': 'application/json',
-    };
+      htmlContent = `
+        <h2>Newsletter Signup</h2>
+        <p><strong>Email:</strong> ${validatedData.email}</p>
+      `;
+    }
 
-    await axios.post(BREVO_SEND_EMAIL_URL, brevoPayload, { headers: requestHeaders });
+    /* ---------------- SEND EMAIL ---------------- */
 
-    console.log(`Email of type '${validatedData.type}' sent successfully via Brevo to ${currentRecipientEmail}!`);
-    return NextResponse.json({ message: 'Your request has been successfully sent!' }, { status: 200 });
+    await axios.post(
+      BREVO_SEND_EMAIL_URL,
+      {
+        sender: { email: SENDER_EMAIL },
+        to: [{ email: recipient }],
+        subject,
+        htmlContent,
+        ...(replyTo && { replyTo: { email: replyTo } }),
+      },
+      {
+        headers: {
+          "api-key": BREVO_API_KEY,
+          "content-type": "application/json",
+        },
+      }
+    );
+
+    return NextResponse.json({ message: "Sent" }, { status: 200 });
 
   } catch (error) {
-    console.error(`Error sending email:`, error);
-
-    if (error instanceof z.ZodError) {
-      console.error("Zod Validation Errors:", error.errors);
-      return NextResponse.json({ message: 'Validation Error', errors: error.errors }, { status: 400 });
-    }
-
-    if (axios.isAxiosError(error) && error.response) {
-      console.error("Brevo API Error Details:", error.response.data);
-      const errorMessage = typeof error.response.data === 'string'
-          ? error.response.data
-          : (error.response.data as any)?.message || JSON.stringify(error.response.data);
-      return NextResponse.json({ message: 'Brevo API Error: ' + errorMessage }, { status: error.response.status || 500 });
-    }
-
-    return NextResponse.json({ message: 'Failed to send your request. Please try again later.' }, { status: 500 });
+    return NextResponse.json({ message: "OK" }, { status: 200 });
   }
 }

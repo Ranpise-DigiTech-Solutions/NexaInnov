@@ -40,10 +40,10 @@ const TestimonialComponent = (props: Props) => {
   return (
     <div className="min-h-screen text-white w-full flex flex-col items-center justify-center gap-12">
       <div className="w-full flex flex-col items-center justify-center gap-8">
-        <div className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-bold">
+        <div className="w-full text-center text-3xl md:text-4xl lg:text-5xl font-bold dark:text-white text-neutral-800">
           What our clients say
         </div>
-        <div className="w-[75%] md:w-[60%] lg:w-[50%] text-base text-center text-wrap text-neutral-400 leading-7">
+        <div className="w-[75%] md:w-[60%] lg:w-[50%] text-base text-center text-wrap text-neutral-800 dark:text-neutral-400 leading-7">
           At NexaInnov Solutions, we take pride in delivering exceptional
           results and outstanding service. But don’t just take our word for
           it—here’s what our clients have to say about their experience working
@@ -53,21 +53,21 @@ const TestimonialComponent = (props: Props) => {
       <div className="w-full flex items-center justify-center gap-6">
         <div className="hidden flex-[15%] lg:flex items-center justify-center">
           <Button
-            className="bg-neutral-700 rounded-full transition-all transform duration-300 hover:scale-105 py-7"
+            className="bg-pink-300 dark:bg-neutral-700 rounded-full transition-all transform duration-300 hover:scale-105 py-7"
             onClick={handleLeftSwipe}
           >
             <ArrowLeft />
           </Button>
         </div>
-        <div className="w-[90%] h-fit bg-neutral-800 rounded-3xl lg:p-[4rem] overflow-hidden">
+        <div className="w-[90%] h-fit bg-white dark:bg-neutral-800 rounded-3xl lg:p-[4rem] overflow-hidden">
           <div
             className={`h-full w-full p-4 md:px-8 lg:p-0 flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-between lg:gap-4 gap-6 inset-0 ${animation}`}
           >
-            <div className="w-full flex flex-col items-center lg:items-start justify-between gap-6 lg:gap-10 text-neutral-200">
+            <div className="w-full flex flex-col items-center lg:items-start justify-between gap-6 lg:gap-10 text-neutral-800 dark:text-neutral-200">
               <div className="w-full text-center lg:text-start text-2xl font-bold">
                 {testimonialData[currentIndex].heading}
               </div>
-              <div className="w-full text-center lg:text-start text-neutral-400 leading-7 text-wrap">
+              <div className="w-full text-center lg:text-start text-neutral-800 dark:text-neutral-400 leading-7 text-wrap">
                 {testimonialData[currentIndex].description}
               </div>
               <div className="w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-4">
@@ -75,16 +75,16 @@ const TestimonialComponent = (props: Props) => {
                   <div className="text-2xl font-bold">
                     {testimonialData[currentIndex].author}
                   </div>
-                  <div className="text-center lg:text-start text-neutral-500">
+                  <div className="text-center lg:text-start text-neutal-800 dark:text-neutral-500">
                     {testimonialData[currentIndex].designation}
                   </div>
                 </div>
-                <Image
+                {/* <Image
                   src={testimonialData[currentIndex].companyLogo}
                   width={150}
                   height={150}
                   alt="company logo"
-                />
+                /> */}
               </div>
             </div>
             <Image
@@ -100,7 +100,7 @@ const TestimonialComponent = (props: Props) => {
         </div>
         <div className="hidden flex-[15%] lg:flex items-center justify-center">
           <Button
-            className="bg-neutral-700 rounded-full transition-all transform duration-300 hover:scale-105 py-7"
+            className="bg-pink-300 dark:bg-neutral-700 rounded-full transition-all transform duration-300 hover:scale-105 py-7"
             onClick={handleRightSwipe}
           >
             <ArrowRight />

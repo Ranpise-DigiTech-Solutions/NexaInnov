@@ -1,327 +1,840 @@
-import { NextResponse } from 'next/server';
+// // --- CORRECTED AND ENHANCED Hardcoded Responses for NexaInnov Solutions Chatbot ---
+// const hardcodedResponses = [
+//     // --- PRIORITY 1: SPECIFIC PRODUCTS, PRICES, & KEY SYSTEMS (Highest specificity) ---
+//     {
+//         keywords: [
+//             "ppf cutting software",
+//             "ppf",
+//             "paint protection film",
+//             "plotter"
+//         ],
+//         response: "Our PPF Cutting Software offers Precision Cutting, an Extensive Vehicle Pattern Database, Fast & Easy Workflow, and Customization Tools to minimize film wastage and speed up installations. ✂️"
+//     },
+//     {
+//         keywords: [
+//             "PPF Cutting Software",
+//             "paint protection film software",
+//             "what is ppf cutting software",
+//             "software name",
+//             "precision speed protection",
+//             "software for detailing business"
+//         ],
+//         response: "Our PPF Cutting Software is an advanced Paint Protection Film Cutting Software designed to take your automotive detailing business to the next level with precision, speed, protection, accuracy, efficiency, and ease of use."
+//     },
+//     {
+//         keywords: [
+//             "key features",
+//             "main features",
+//             "what does the software do",
+//             "benefits of the software",
+//             "ppf software functionality"
+//         ],
+//         response: "Key features include Precision Cutting, an Extensive Vehicle Pattern Database, Fast & Easy Workflow, Customization Tools, Seamless Plotter Integration, and features for Business Efficiency."
+//     },
+//     {
+//         keywords: [
+//             "precision cutting",
+//             "accurate cuts",
+//             "achieve perfect fits",
+//             "millimeter-level accuracy",
+//             "pattern library access"
+//         ],
+//         response: "The Precision Cutting feature allows access to a vast pattern library for cars, bikes, and marine vehicles, helping you achieve perfect fits with millimeter-level accuracy."
+//     },
+//     {
+//         keywords: [
+//             "extensive database",
+//             "vehicle pattern database",
+//             "how many cars are in the database",
+//             "updated templates",
+//             "multiple makes models"
+//         ],
+//         response: "The software includes an Extensive Database of regularly updated vehicle templates, covering multiple makes, models, and years."
+//     },
+//     {
+//         keywords: [
+//             "fast workflow",
+//             "easy workflow",
+//             "minimal learning curve",
+//             "quick search",
+//             "intuitive interface"
+//         ],
+//         response: "The Fast & Easy Workflow provides an intuitive interface with a minimal learning curve, plus quick search and selection of vehicle patterns."
+//     },
+//     {
+//         keywords: [
+//             "customization tools",
+//             "edit patterns",
+//             "adjust resize patterns",
+//             "save custom templates",
+//             "pattern editing"
+//         ],
+//         response: "The Customization Tools let you adjust, resize, and edit patterns *before cutting*, and save custom templates for repeat use."
+//     },
+//     {
+//         keywords: [
+//             "plotter integration",
+//             "seamless plotter",
+//             "works with my plotter",
+//             "plotter machines",
+//             "smooth data transfer"
+//         ],
+//         response: "The software offers Seamless Plotter Integration, meaning it works with popular plotter machines and provides smooth data transfer for error-free cutting."
+//     },
+//     {
+//         keywords: [
+//             "business efficiency",
+//             "reduce film wastage",
+//             "optimized cutting",
+//             "faster installations",
+//             "boost profitability",
+//             "minimize waste"
+//         ],
+//         response: "Features for Business Efficiency include reducing film wastage with optimized cutting and delivering faster installations to boost profitability."
+//     },
+//     {
+//         keywords: [
+//             "get started",
+//             "how to buy software",
+//             "start cutting",
+//             "how to sign up"
+//         ],
+//         response: "You can Cut smarter and Protect better by clicking 'Get Started' to begin using the PPF Cutting Software today!"
+//     },
+//     {
+//         keywords: [
+//             "infor m3 training cost",
+//             "pom cost",
+//             "mom cost",
+//             "whm cost",
+//             "com cost",
+//             "pdg cost",
+//             "manufacturing order management cost"
+//         ],
+//         response: "Our specialized Infor M3 module workshops are priced as follows: POM (30hrs) is USD $2,100, MOM (42hrs) is USD $2,940, WHM (30hrs) is USD $2,100, COM (36hrs) is USD $2,520, and PDG (30hrs) is USD $2,100. 💰"
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 training",
+//             "Infor M3 technical functional",
+//             "M3 technical training",
+//             "M3 functional training",
+//             "what training do you offer"
+//         ],
+//         response: "We offer both Technical and Functional Infor M3 Training. Technical training covers M3 SDK, M3/H5 Client, MEC & Mashup tools. Functional training covers core modules: POM, MOM, WHM, COM, and PDG."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 training modules",
+//             "list of modules",
+//             "infor m3 pom mom com",
+//             "functional training modules"
+//         ],
+//         response: "Our key Infor M3 functional training modules are POM (Purchase Order Management), MOM (Manufacturing Order Management), WHM (Warehouse Management), COM (Customer Order Management), and PDG (Product Data Governance)."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 Purchase Order Management training",
+//             "POM training cost duration"
+//         ],
+//         response: "The Infor M3 Purchase Order Management (POM) course is 30 hours long and costs USD $2,100."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 Manufacturing Order Management training",
+//             "MOM training cost duration"
+//         ],
+//         response: "The Infor M3 Manufacturing Order Management (MOM) course is 42 hours long and costs USD $2,940."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 Warehouse Management training",
+//             "WHM training cost duration"
+//         ],
+//         response: "The Infor M3 Warehouse Management (WHM) course is 30 hours long and costs USD $2,100."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 Customer Order Management training",
+//             "COM training cost duration"
+//         ],
+//         response: "The Infor M3 Customer Order Management (COM) course is 36 hours long and costs USD $2,520."
+//     },
+//     {
+//         keywords: [
+//             "Infor M3 Product Data Governance training",
+//             "PDG training cost duration"
+//         ],
+//         response: "The Infor M3 Product Data Governance (PDG) course is 30 hours long and costs USD $2,100."
+//     },
+//     {
+//         keywords: [
+//             "restaurant management system",
+//             "restaurant software",
+//             "order management"
+//         ],
+//         response: "Our Restaurant Management System is Smart, Simple, and Scalable. Key features include Order Management (Dine-in/Online), Table & Reservation control, Digital Menu Control, and comprehensive Reports & Analytics. 🍽️"
+//     },
+//     {
+//         keywords: [
+//             "Restaurant Management System",
+//             "restaurant software",
+//             "smart simple scalable",
+//             "streamline daily operations",
+//             "maximize efficiency"
+//         ],
+//         response: "The Restaurant Management System is a Smart, Simple & Scalable platform for Modern Restaurants designed to streamline daily operations, improve customer experience, and maximize efficiency."
+//     },
+//     {
+//         keywords: [
+//             "Order Management",
+//             "Dine-in Takeaway Online Orders",
+//             "real-time order tracking",
+//             "digital menu display"
+//         ],
+//         response: "Order Management handles Dine-in, Takeaway & Online Orders seamlessly, offers digital menu display & ordering, and provides real-time order tracking from kitchen to table."
+//     },
+//     {
+//         keywords: [
+//             "Table & Reservation Management",
+//             "interactive table layout",
+//             "live occupancy status",
+//             "reservation booking system",
+//             "reduce wait times",
+//             "optimize table turnover"
+//         ],
+//         response: "Table & Reservation Management includes an interactive table layout with live occupancy status, a reservation booking system for guests, and features to help reduce wait times and optimize table turnover."
+//     },
+//     {
+//         keywords: [
+//             "Menu Control",
+//             "easy-to-update digital menus",
+//             "admin dashboard menu",
+//             "daily offers setting",
+//             "scrolling display of menu items"
+//         ],
+//         response: "Menu Control provides an easy-to-update digital menu via an admin dashboard, allows setting up daily offers, and supports a big screen TV scrolling display of menu items."
+//     },
+//     {
+//         keywords: [
+//             "Billing & Payments",
+//             "multiple payment options",
+//             "UPI cards wallets cash",
+//             "payment gateways"
+//         ],
+//         response: "Billing & Payments supports multiple payment options including UPI, cards, wallets, and cash."
+//     },
+//     {
+//         keywords: [
+//             "Reports & Analytics",
+//             "daily weekly monthly sales reports",
+//             "best-selling items",
+//             "peak hours analysis",
+//             "staff performance insights",
+//             "customer behavior insights"
+//         ],
+//         response: "Reports & Analytics deliver daily/weekly/monthly sales reports, analysis of best-selling items & peak hours, and insights into staff performance & customer behavior."
+//     },
+//     {
+//         keywords: [
+//             "get started with restaurant management",
+//             "simplify restaurant operations",
+//             "buy restaurant software"
+//         ],
+//         response: "You can get started and simplify your restaurant operations by clicking the 'Get Started' button today!"
+//     },
+//     {
+//         keywords: [
+//             "eventify connect",
+//             "event planning",
+//             "venue booking"
+//         ],
+//         response: "Eventify Connect helps you Plan Smarter and Celebrate Better. It features Venue Booking, Catering, Decor, DJ & Entertainment, and smart tools like a Budget Tracker and Digital Invites. 🎉"
+//     },
+//     {
+//         keywords: [
+//             "Eventify Connect",
+//             "event planning",
+//             "plan smarter celebrate better",
+//             "event management platform"
+//         ],
+//         response: "Eventify Connect is the platform that helps you Plan Smarter, Celebrate Better. It provides a single solution for all your event planning needs."
+//     },
+//     {
+//         keywords: [
+//             "Venue Booking",
+//             "local time availability",
+//             "book halls spaces instantly",
+//             "event halls"
+//         ],
+//         response: "Venue Booking allows you to check local time availability and book halls and spaces instantly."
+//     },
+//     {
+//         keywords: [
+//             "Photography & Videography",
+//             "capture every moment",
+//             "verified professionals",
+//             "event photographers"
+//         ],
+//         response: "Photography & Videography helps you capture every moment with verified professionals."
+//     },
+//     {
+//         keywords: [
+//             "Catering Services",
+//             "delicious menus",
+//             "flexible packages",
+//             "event food"
+//         ],
+//         response: "Catering Services provides delicious menus and flexible packages for any crowd size."
+//     },
+//     {
+//         keywords: [
+//             "Decor & Themes",
+//             "floral stage custom designs",
+//             "match your style"
+//         ],
+//         response: "Decor & Themes offers floral, stage, and custom designs to match your style."
+//     },
+//     {
+//         keywords: [
+//             "DJs & Entertainment",
+//             "set the vibe",
+//             "live bands",
+//             "performers",
+//             "event music"
+//         ],
+//         response: "DJs & Entertainment helps you set the vibe with DJs, live bands, and performers."
+//     },
+//     {
+//         keywords: [
+//             "All-in-one dashboard",
+//             "manage vendors timelines",
+//             "event management dashboard"
+//         ],
+//         response: "The Smart Tools include an All-in-one dashboard to manage vendors and timelines."
+//     },
+//     {
+//         keywords: [
+//             "Budget Tracker",
+//             "stay on top of expenses",
+//             "event budget control"
+//         ],
+//         response: "The Budget Tracker helps you stay on top of expenses."
+//     },
+//     {
+//         keywords: [
+//             "Digital Invites RSVP",
+//             "manage guest lists effortlessly",
+//             "digital invitations"
+//         ],
+//         response: "Digital Invites & RSVP allows you to manage guest lists effortlessly."
+//     },
+//     {
+//         keywords: [
+//             "Guest room bookings",
+//             "seamless accommodation planning",
+//             "event accommodation"
+//         ],
+//         response: "Guest room bookings enables seamless accommodation planning."
+//     },
+//     {
+//         keywords: [
+//             "why choose eventify connect",
+//             "one platform all services",
+//             "transparent pricing availability",
+//             "time-saving tools for stress-free planning"
+//         ],
+//         response: "Eventify Connect is a trusted, single platform offering transparent pricing & availability, and time-saving tools for stress-free planning."
+//     },
+//     {
+//         keywords: [
+//             "start now with eventify connect",
+//             "plan your dream event",
+//             "get started eventify"
+//         ],
+//         response: "You are ready to plan your dream event! You can start now with Eventify Connect in just a few clicks by clicking 'Get Started'."
+//     },
+//     {
+//         keywords: [
+//             "ai agent",
+//             "ai ecosystem",
+//             "ai subscription"
+//         ],
+//         response: "The AI Agent is your gateway to our unified AI Ecosystem. It offers Flexible Subscriptions for bundled AI applications, allowing you to quickly Deploy and Customize automation agents for exponential growth. 🤖"
+//     },
+//     {
+//         keywords: [
+//             "AI Agent",
+//             "smarter AI",
+//             "simple AI",
+//             "your AI journey simplified",
+//             "what is the AI agent"
+//         ],
+//         response: "The AI Agent is NexalInnov's solution for a smarter, made-simple AI journey, focused on helping you Subscribe, Deploy, and Grow."
+//     },
+//     {
+//         keywords: [
+//             "AI Agent Subscribe",
+//             "gain instant access",
+//             "suite of bundled applications",
+//             "flexible subscription plans"
+//         ],
+//         response: "The Subscribe stage allows you to gain instant access to a suite of bundled AI applications with flexible subscription plans."
+//     },
+//     {
+//         keywords: [
+//             "AI Agent Deploy",
+//             "quickly deploy customize",
+//             "automation agents",
+//             "accelerate business needs"
+//         ],
+//         response: "The Deploy stage enables you to quickly deploy and customize automation agents and acceleration agents to meet your business needs."
+//     },
+//     {
+//         keywords: [
+//             "AI Agent Grow",
+//             "leverage AI tools",
+//             "automate workflows",
+//             "optimize tasks",
+//             "drive exponential growth"
+//         ],
+//         response: "The Grow stage helps you leverage AI tools to automate workflows, optimize tasks, and drive exponential growth."
+//     },
+//     {
+//         keywords: [
+//             "Unified AI Ecosystem",
+//             "all apps under one platform",
+//             "seamless integration",
+//             "simplified management"
+//         ],
+//         response: "The Unified AI Ecosystem puts all apps under one platform for seamless integration and simplified management."
+//     },
+//     {
+//         keywords: [
+//             "Flexible Subscriptions",
+//             "pay only for what you need",
+//             "scale with your needs",
+//             "AI pricing"
+//         ],
+//         response: "Flexible Subscriptions mean you pay only for what you need with pricing that scales with your growing needs."
+//     },
+//     {
+//         keywords: [
+//             "Enterprise-Ready",
+//             "secure scalable reliable",
+//             "built for business environments",
+//             "AI for business"
+//         ],
+//         response: "The apps are Enterprise-Ready, secured, scalable, and built for business environments."
+//     },
+//     {
+//         keywords: [
+//             "Future-Driven AI",
+//             "continuously evolve",
+//             "stay on the cutting edge"
+//         ],
+//         response: "The apps are Future-Driven, continuously evolving to keep you on the cutting edge of AI."
+//     },
+//     {
+//         keywords: [
+//             "start free trial",
+//             "7-day free trial",
+//             "ready to simplify your workflow"
+//         ],
+//         response: "You can simplify your workflow by choosing a bundle and starting your 7-day free trial today."
+//     },
+//     {
+//         keywords: [
+//             "jdedwards upgrades or support",
+//             "jde services",
+//             "jde implementation",
+//             "jde consulting"
+//         ],
+//         response: "Our JD Edwards (JDE) services include Strategic Implementation, System Upgrades (to the latest releases), Advisory & Consulting, Integrations & Customizations, and 24/7 Managed Support. 🛠️"
+//     },
+//     {
+//         keywords: [
+//             "sap s/4hana services",
+//             "sap ecc services",
+//             "s/4hana implementation"
+//         ],
+//         response: "Our SAP services cover strategic implementation and support for both SAP ECC and the latest SAP S/4HANA platform, helping you drive digital transformation."
+//     },
 
-const hardcodedResponses = [
-  // --- General Greetings & Company Overview ---
-  {
-    keywords: ['hello', 'hi', 'hey', 'greetings', 'good morning', 'good afternoon', 'good evening'],
-    response: 'Hello there! 👋 I\'m your virtual assistant for NexaInnov Solutions. How can I help you discover our innovative solutions today?'
-  },
-  {
-    keywords: ['thanks', 'thank you', 'appreciate', 'cheers'],
-    response: 'You\'re most welcome! 😊 Is there anything else you\'d like to know about our services or training programs?'
-  },
-  {
-    keywords: ['about', 'who are you', 'company', 'what is nexainnov', 'tell me about you'],
-    response: 'NexaInnov Solutions LLP is a next-gen innovation company for modern businesses. We\'re driven by our core values of **Passion**, **Integrity**, **Excellence**, and **Innovation**, and we specialize in a wide range of powerful digital solutions. 🚀'
-  },
-  {
-    keywords: ['core values', 'values', 'principles'],
-    response: 'Our core values are **Passion**, **Integrity**, **Excellence**, and **Innovation**. These principles are at the heart of everything we do and guide our commitment to delivering exceptional results. ✨'
-  },
-  {
-    keywords: ['powerful features', 'agile', 'clean code', 'ai-driven'],
-    response: 'We deliver powerful solutions using **agile development** for flexibility, **clean code** for reliability, and **AI-driven solutions** for cutting-edge intelligence. This ensures your project is scalable, efficient, and future-proof. 💡'
-  },
-  {
-    keywords: ['how long', 'when established', 'founded', 'incorporated', 'company age'],
-    response: 'NexaInnov Solutions LLP was incorporated on **October 25, 2024**. Our company may be new, but our team brings extensive industry experience and a fresh, innovative perspective to every project! 🗓️'
-  },
-  {
-    keywords: ['mission', 'vision', 'goals'],
-    response: 'Our mission is to empower businesses with innovative digital solutions that drive growth and efficiency. Our vision is to be a leading partner in digital transformation, recognized for our commitment to excellence and client success. 📈'
-  },
-  {
-    keywords: ['founders', 'key people', 'leadership', 'experts'],
-    response: 'Our team is led by seasoned professionals dedicated to innovation and client success. To connect with one of our experts for a personalized discussion, please reach out through our official contact channels. 📞'
-  },
+//     // --- PRIORITY 2: GENERAL INFORMATION & SERVICES (Medium specificity) ---
+//     {
+//         keywords: [
+//             "what does nexainnov specialize in",
+//             "what do you specialize in",
+//             "what does your company do",
+//             "nexa innov solutions specialize"
+//         ],
+//         response: "NexaInnov Solutions LLP specializes in building beautiful, high-performance web and mobile applications, and driving digital transformation through AI, ERP consulting, and bespoke software solutions. 🚀"
+//     },
+//     {
+//         keywords: [
+//             "other products",
+//             "list of products",
+//             "what products do you sell",
+//             "NexalInnov products",
+//             "what are your products"
+//         ],
+//         response: "Our main products are EventyConnect, the Restaurant Management System, PPF Cutting Software, and the AI Agent ecosystem. We also provide Custom Web and Mobile Product Development. 🚀"
+//     },
+//     {
+//         keywords: [
+//             "other services",
+//             "what services do you offer",
+//             "list of services",
+//             "full service list",
+//             "NexalInnov services",
+//             "what are your services"
+//         ],
+//         response: "NexalInnov Solutions offers a comprehensive range of services across Digital Experience Solutions, Enterprise Application Services, AI, Data & Intelligent Automation, Talent Development & IT Staffing, and general Product Development and Consulting services."
+//     },
+//     {
+//         keywords: [
+//             "web and mobile applications",
+//             "mobile app development",
+//             "android ios apps",
+//             "custom web app development"
+//         ],
+//         response: "We specialize in crafting high-quality, custom Web & Mobile Applications tailored to unique business needs. We develop responsive web apps and secured native mobile apps for both Android and iOS platforms. 📱"
+//     },
+//     {
+//         keywords: [
+//             "software development services",
+//             "web development services",
+//             "mobile development services"
+//         ],
+//         response: "Our core software development services include Custom Web Application Development, Intuitive Mobile Application Development (for Android & iOS), E-Commerce Solutions (Shopify, WordPress), and API Integration."
+//     },
+//     {
+//         keywords: [
+//             "E-Commerce Solutions",
+//             "Content Management Systems",
+//             "CMS implementation",
+//             "shopify",
+//             "wordpress development"
+//         ],
+//         response: "Yes, we provide end-to-end E-Commerce Solutions including development on major CMS platforms like WordPress and Shopify, giving you full control over your content and online presence. 🛒"
+//     },
+//     {
+//         keywords: [
+//             "software integration",
+//             "api connection",
+//             "system integration",
+//             "integration approach",
+//             "eliminate silos"
+//         ],
+//         response: "Our approach to software integration and API connection involves seamlessly integrating your systems and applications to ensure efficient data flow, eliminate silos, and enhance overall business performance and connectivity. 🔗"
+//     },
+//     {
+//         keywords: [
+//             "ai services",
+//             "artificial intelligence",
+//             "machine learning",
+//             "nlp",
+//             "computer vision",
+//             "predictive analytics",
+//             "ai ml",
+//             "ai and machine learning"
+//         ],
+//         response: "We innovate with AI, offering Custom AI Development, Predictive Analytics, Intelligent Chatbots, Computer Vision, and Natural Language Processing (NLP) to transform your business. 🧠"
+//     },
+//     {
+//         keywords: [
+//             "rpa",
+//             "robotic process automation",
+//             "business automation",
+//             "bpa",
+//             "api automation",
+//             "data reporting automation"
+//         ],
+//         response: "RPA (Robotic Process Automation) is one of our key offerings. We also provide Business Process Automation (BPA), API Automation, and Data & Reporting Automation to streamline your operations. 🤖"
+//     },
+//     {
+//         keywords: [
+//             "specialized erp systems",
+//             "erp consulting",
+//             "ibm i as/400",
+//             "modernize systems"
+//         ],
+//         response: "We offer specialized ERP Consulting for IBM i (AS/400) (system upgrades, integration) and JD Edwards (implementation, customization, upgrades) to modernize systems and optimize business processes. 💼"
+//     },
+//     {
+//         keywords: [
+//             "bpo",
+//             "business process outsourcing",
+//             "it outsourcing",
+//             "infrastructure management",
+//             "supply chain outsourcing",
+//             "can nexainnov assist with it outsourcing"
+//         ],
+//         response: "Our Expert Outsourcing Services include Business Process Outsourcing (BPO) (e.g., data entry, payroll), IT Outsourcing (infrastructure/cybersecurity), and Supply Chain Management Outsourcing (e.g., SCM, logistics). 🤝"
+//     },
+//     {
+//         keywords: [
+//             "consulting for digital transformation",
+//             "business strategy consulting",
+//             "advisory services"
+//         ],
+//         response: "Our Advisory Services offer expert guidance on Digital Transformation, Business Strategy, Cloud Strategy, and Security Strategy to help you navigate complex business landscapes. 💡"
+//     },
+//     {
+//         keywords: [
+//             "talent acquisition",
+//             "staffing",
+//             "hiring",
+//             "recruitment",
+//             "permanent vs contract",
+//             "what are your talent acquisition offerings"
+//         ],
+//         response: "Our Talent Acquisition Services offer Permanent Hiring (long-term team members), Contract/Temporary Staffing (project-specific experts), and Executive & Leadership search for senior roles. We offer flexible pricing models. 💼"
+//     },
+//     {
+//         keywords: [
+//             "what are your training services",
+//             "corporate it training programs",
+//             "specialized staffing solutions",
+//             "it training"
+//         ],
+//         response: "Our Talent Development services offer Corporate IT Training Programs (like Infor M3 Functional/Technical), Specialized Staffing Solutions, and Advisory & Outsourcing Services."
+//     },
 
-  // --- Core Company Features & Clients ---
-  {
-    keywords: ['clients', 'partners', 'customers', 'who do you work with'],
-    response: 'We are proud to partner with a diverse range of clients, including **Sagar Group**, **Raah Group**, and **MD Group**. We build lasting relationships based on trust and mutual success. 🤝'
-  },
-  {
-    keywords: ['testimonials', 'what clients say', 'feedback', 'client reviews', 'case studies'],
-    response: 'We have received excellent feedback from clients, like Karan Mehta, who praise our commitment to innovation and quality. For a closer look at our project successes, you can find detailed **testimonials and case studies** on our website. 🌟'
-  },
-  {
-    keywords: ['why choose nexainnov', 'differentiators', 'what makes you different'],
-    response: 'Choose NexaInnov for our **unwavering commitment to innovation**, our **agile and client-centric approach**, and our dedication to delivering **high-quality, scalable solutions**. We don\'t just build projects; we create partnerships for success. ✨'
-  },
 
-  // --- Services: Overview ---
-  {
-    keywords: ['services', 'what do you offer', 'what can you do', 'solutions', 'offerings'],
-    response: 'NexaInnov offers a comprehensive suite of digital solutions, including: **Software Development**, **Automation & Robotics**, **Digital Marketing**, **Advisory & Outsourcing**, **ERP Consulting**, **Internet of Things (IoT)**, **Augmented & Virtual Reality (AR/VR)**, and **Talent Acquisition**. Which area can I tell you more about? 🌐'
-  },
+//     // --- PRIORITY 3: COMPANY, CONTACT, LEGAL (Lowest specificity) ---
+//     {
+//         keywords: [
+//             "ceo",
+//             "founder",
+//             "leadership",
+//             "ravindra raghavan",
+//             "who is the ceo founder"
+//         ],
+//         response: "Our team is led by Ravindra Raghavan, our Founder and CEO, who brings over 18 years of experience in IT, development, and project management. 👨‍💼"
+//     },
+//     {
+//         keywords: [
+//             "core values",
+//             "our philosophy",
+//             "dedication",
+//             "integrity",
+//             "transparency",
+//             "honor",
+//             "passion",
+//             "what are your company's core values"
+//         ],
+//         response: "Our core values are Integrity, Teamwork, Dedication, and Honor, emphasizing trust, transparency, and a commitment to delivery. ✨"
+//     },
+//     {
+//         keywords: [
+//             "clients",
+//             "partners",
+//             "customers",
+//             "worked with previously",
+//             "sagar group",
+//             "raah group",
+//             "md group",
+//             "who are your clients"
+//         ],
+//         response: "We are proud to partner with diverse clients, including Sagar Group, Raah Group, and MD Group. We focus on building lasting relationships based on trust and mutual success. 🤝"
+//     },
+//     {
+//         keywords: [
+//             "contact us",
+//             "get in touch",
+//             "contact information",
+//             "phone number",
+//             "email address",
+//             "how can i contact your sales or support team"
+//         ],
+//         response: "You can get in touch via phone at (+91) 87659-10222, or email at info@nexainnov.com or admin@nexainnov.com. We have dedicated teams for Sales & Enquiries, Help & Support, and Media & Press. 📞"
+//     },
+//     {
+//         keywords: [
+//             "csr",
+//             "corporate social responsibility",
+//             "responsibility",
+//             "sustainability",
+//             "future roadmap"
+//         ],
+//         response: "Their CSR commitment is based on a philosophy of Responsibility, Collaboration, and Sustainability. The Future Roadmap includes planning CSR areas (2025), launching education initiatives (2026), and expanding partnerships (2027)."
+//     },
+//     {
+//         keywords: [
+//             "privacy policy",
+//             "information do you collect",
+//             "personal identification information",
+//             "technical information",
+//             "training data"
+//         ],
+//         response: "Our Privacy Policy details the collection of Personal Identification Information (name, email), Technical Information (IP, browser type), and Training Data. This data is used for service delivery and communication. 🔒"
+//     },
+//     {
+//         keywords: [
+//             "terms and conditions",
+//             "laws govern",
+//             "refunds cancellations",
+//             "laws of the republic of india"
+//         ],
+//         response: "Our Terms and Conditions are governed by the laws of the Republic of India. Refunds/Cancellations for software development are on a case-by-case basis; training program refunds are subject to specific program terms. 📜"
+//     },
+//     {
+//         keywords: [
+//             "how can i apply for a job or internship",
+//             "careers",
+//             "open positions",
+//             "software developer intern",
+//             "machine learning intern",
+//             "diversity equity & inclusion"
+//         ],
+//         response: "To apply for a job or internship, please check our careers page for current openings like Software Developer Intern and Machine Learning Intern. We value Diversity, Equity & Inclusion (DEI). 🧑‍💻"
+//     },
 
-  // --- Services: Software Development ---
-  {
-    keywords: ['software development', 'custom software', 'website and mobile app development', 'app development'],
-    response: 'We specialize in tailored software solutions to meet your business needs. Our core offerings include **custom software**, **web and mobile app development**, **enterprise solutions**, **software integration**, and **ongoing support and maintenance**. 💻'
-  },
-  {
-    keywords: ['custom software development'],
-    response: 'We provide custom software solutions meticulously designed to streamline operations and enhance efficiency. We build a perfect fit for your unique business workflows. 🛠️'
-  },
-  {
-    keywords: ['website development', 'mobile app development', 'mobile apps', 'website', 'build a site', 'create an app'],
-    response: 'We build responsive, visually appealing websites and high-performance mobile apps for iOS and Android, ensuring a seamless user experience across all devices. 📱'
-  },
-  {
-    keywords: ['cms solutions', 'wordpress', 'shopify', 'content management system'],
-    response: 'We empower our clients with easy-to-use CMS solutions like **WordPress** and **Shopify**, giving you full control over your content and e-commerce presence. 🛒'
-  },
-  {
-    keywords: ['software integration', 'api integration', 'system integration'],
-    response: 'We integrate your systems and applications to ensure efficient data flow, eliminate silos, and enhance overall business performance and connectivity. 🔗'
-  },
-  {
-    keywords: ['support and maintenance', 'ongoing maintenance', 'post-launch support'],
-    response: 'We provide comprehensive **software maintenance and support services** to keep your systems running smoothly, securely, and up-to-date, minimizing downtime and maximizing performance. 🛠️'
-  },
 
-  // --- Services: Automation & Robotics ---
-  {
-    keywords: ['automation', 'rpa', 'workflows', 'automate processes'],
-    response: 'Our automation solutions are designed to streamline business processes, reduce manual effort, and boost productivity. We use technologies like **Robotic Process Automation (RPA)**, AI-driven workflows, and custom scripting. 🤖'
-  },
-  {
-    keywords: ['robotics', 'industrial automation', 'cobots'],
-    response: 'We deliver advanced robotics solutions that automate complex tasks and improve operational efficiency. Our services include **industrial automation**, **collaborative robots (Cobots)**, and specialized **robotics consulting**. ⚙️'
-  },
+//     // --- DEFAULT & UTILITY RESPONSES (Must be last) ---
+//     {
+//         keywords: [
+//             "About Us",
+//             "Terms and Conditions",
+//             "FAQ's",
+//             "Our Alumni",
+//             "Contact Us",
+//             "Career",
+//             "News Room",
+//             "CSR"
+//         ],
+//         response: "You can find detailed information on these topics in the main navigation or the footer of any page."
+//     },
+//     {
+//         keywords: [
+//             "sorry",
+//             "don't understand",
+//             "help",
+//             "can you help",
+//             "what do you mean",
+//             "query",
+//             "question",
+//             "I do not understand"
+//         ],
+//         response: "I'm sorry, I couldn't quite understand that. 🤔 I can help you with specific questions about our services, products, training courses, and contact information. Could you please rephrase your query with more detail?"
+//     }
+// ];
 
-  // --- Services: Digital Marketing ---
-  {
-    keywords: ['digital marketing', 'seo', 'smm', 'content marketing', 'online presence'],
-    response: 'We offer a full suite of digital marketing services, including **Search Engine Optimization (SEO)**, **Social Media Marketing (SMM)**, and **Content Marketing**, to elevate your brand’s online presence and drive engagement. 📈'
-  },
-  {
-    keywords: ['search engine optimization', 'seo'],
-    response: 'Our SEO services enhance your website\'s visibility on search engines, driving higher rankings, increased organic traffic, and better lead generation. 🔍'
-  },
-  {
-    keywords: ['social media marketing', 'smm', 'facebook marketing', 'instagram marketing'],
-    response: 'We create and manage impactful social media campaigns across platforms like Facebook and Instagram to engage with your audience, build brand loyalty, and drive conversions. 📣'
-  },
-  {
-    keywords: ['content marketing', 'blogging', 'articles'],
-    response: 'We develop and distribute valuable, relevant content to engage your target audience, driving website traffic, improving brand awareness, and establishing your thought leadership. ✍️'
-  },
+// export async function POST(req: Request) {
+//     try {
+//         const { message } = await req.json();
+//         if (!message) {
+//             return Response.json(
+//                 { response: 'Please type your question.' },
+//                 { status: 400 }
+//             );
+//         }
 
-  // --- Services: Advisory & Outsourcing ---
-  {
-    keywords: ['advisory', 'outsourcing', 'bpo', 'it outsourcing', 'consulting'],
-    response: 'We provide expert advisory and outsourcing services, including **Business Process Outsourcing (BPO)** and **IT Outsourcing**, to help you streamline operations, reduce costs, and focus on your core business. 🤝'
-  },
-  {
-    keywords: ['business process outsourcing', 'bpo', 'customer support outsourcing', 'data entry outsourcing'],
-    response: 'Our BPO services help you manage time-consuming tasks like customer support and data entry, ensuring cost efficiency, quality control, and consistency. 📊'
-  },
-  {
-    keywords: ['it outsourcing', 'it infrastructure management', 'managed it services'],
-    response: 'Our IT outsourcing services help you manage your IT infrastructure, software development, and quality assurance, allowing you to leverage external expertise without the overhead. ☁️'
-  },
+//         const text = message.toLowerCase().trim();
 
-  // --- Services: ERP Consulting ---
-  {
-    keywords: ['erp consulting', 'ibm as400', 'jd edwards', 'enterprise resource planning'],
-    response: 'We offer specialized **ERP consulting** for **IBM i (AS/400)** and **JD Edwards** systems to help businesses plan, implement, and optimize their ERP environments for maximum efficiency. 💼'
-  },
-  {
-    keywords: ['ibm i as400 consulting', 'as400', 'ibm i series'],
-    response: 'Our experts provide comprehensive support for **IBM i (AS/400)** applications, including implementation, customization, migration, and ongoing support, ensuring your critical systems run flawlessly. 🖥️'
-  },
-  {
-    keywords: ['jd edwards erp consulting', 'jd edwards'],
-    response: 'We provide end-to-end consulting for **JD Edwards ERP**, covering everything from project planning and implementation to upgrades and post-go-live support. We ensure a successful ERP journey. ✅'
-  },
+//         let responseText = "I'm sorry, I couldn't quite understand that. 🤔 I can help you with specific questions about our services, products, training courses, and contact information. Could you please rephrase your query with more detail?";
 
-  // --- Services: Internet of Things (IoT) ---
-  {
-    keywords: ['iot', 'internet of things', 'iot solutions', 'connected devices'],
-    response: 'We provide cutting-edge **Internet of Things (IoT) solutions** that harness the power of connected devices to collect data, automate processes, and generate valuable insights. Our services include IoT strategy, custom development, and data analytics. 🌐'
-  },
-  {
-    keywords: ['iot strategy and consulting'],
-    response: 'We work with businesses to develop a tailored **IoT strategy** that addresses their specific goals, identifying opportunities for innovation and efficiency through connected devices. 🗺️'
-  },
-  {
-    keywords: ['custom iot development'],
-    response: 'Our team designs and develops custom **IoT applications** for a wide range of industries, from smart homes to industrial automation, creating solutions that fit your exact requirements. 💡'
-  },
-  {
-    keywords: ['iot device management'],
-    response: 'We offer full lifecycle management of IoT devices, ensuring smooth deployments, secure maintenance, and timely updates for optimal performance and reliability. 🔧'
-  },
-  {
-    keywords: ['iot data analytics'],
-    response: 'Our **data analytics and visualization services** generate actionable insights from the vast amounts of data collected by your IoT devices, helping you make informed decisions and optimize operations. 📈'
-  },
+//         // Iterates through the prioritized list for the first match
+//         for (const item of hardcodedResponses) {
+//             // Checks if any keyword in the item is included in the user's message
+//             if (item.keywords.some(word => text.includes(word))) {
+//                 responseText = item.response;
+//                 break;
+//             }
+//         }
 
-  // --- Services: Augmented & Virtual Reality (Updated) ---
-  {
-    keywords: ['ar', 'augmented reality', 'ar solutions'],
-    response: 'We offer innovative **Augmented Reality (AR) solutions** that blend digital content with the physical world. Our services include custom AR development, AR for marketing, and AR applications in training, education, and retail. 👓'
-  },
-  {
-    keywords: ['vr', 'virtual reality', 'vr solutions'],
-    response: 'We offer immersive **Virtual Reality (VR) solutions** for custom VR development, realistic training and simulations, engaging marketing experiences, and innovative retail applications. 🎮'
-  },
-  {
-    keywords: ['vr training', 'vr simulations', 'virtual training'],
-    response: 'Our VR solutions provide immersive learning outcomes with **VR-based training programs** for complex procedures and technical skills, offering a safe and effective learning environment. 🧑‍🎓'
-  },
+//         return Response.json({ response: responseText });
+//     } catch (err) {
+//         console.error("Error processing chatbot request:", err);
+//         return Response.json(
+//             { response: 'An unexpected error occurred while processing your request. Please try again later.' },
+//             { status: 500 }
+//         );
+//     }
+// }
+import { NextResponse } from "next/server";
+import Groq from "groq-sdk";
+import fs from "fs";
+import path from "path";
 
-  // --- Services: Talent Acquisition/Staffing ---
-  {
-    keywords: ['talent acquisition', 'staffing', 'hiring', 'recruitment', 'find employees', 'jobs'],
-    response: 'We offer end-to-end **talent acquisition solutions** to help you build a workforce that powers innovation and drives growth. Our services include **Permanent Hiring**, **Contract/Temporary Staffing**, and **Executive & Leadership search**. 💼'
-  },
-  {
-    keywords: ['permanent hiring'],
-    response: 'Our **Permanent Hiring** service finds long-term team members who will grow with your company and contribute to its future success, ensuring a perfect cultural and skill fit. ✅'
-  },
-  {
-    keywords: ['contract staffing', 'temporary staffing', 'temp staff'],
-    response: 'We provide **Contract and Temporary Staffing** to help you quickly scale your workforce for specific projects or short-term needs with skilled, vetted professionals. ⏳'
-  },
-  {
-    keywords: ['executive search', 'leadership hiring', 'ceo search'],
-    response: 'Our **Executive & Leadership search** focuses on identifying and recruiting top-tier executives to guide your company and drive strategic growth, ensuring you have the right leadership in place. 👑'
-  },
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-  // --- Our Products ---
-  {
-    keywords: ['products', 'eventifyconnect', 'dragblitz', 'shopify'],
-    response: 'We offer specialized products like **EventifyConnect** and **Dragblitz**. We also provide expert services and solutions for **Shopify** e-commerce platforms. 🛍️'
-  },
+function detectIntent(q: string) {
+    const query = q.toLowerCase();
 
-  // --- Training Courses ---
-  {
-    keywords: ['training', 'courses', 'learn', 'workshops', 'bootcamp', 'education', 'certifications'],
-    response: 'We offer professional and lifelong learning courses led by top instructors, including our full **ERP Infor M3 program** and individual modules, **SAP S4/HANA Functional**, **SAP Basis Administration**, **C# Full Stack**, **MERN Full Stack**, **SAP HANA Bootcamp**, and **Flutter Development**. 🎓'
-  },
-  {
-    keywords: ['infor m3 training', 'infor m3', 'erp infor m3'],
-    response: 'Our comprehensive **ERP Infor M3 Training** is a 168-hour, 5-module fast-track program led by trainer Rasika Jayathilake. It covers COM, MOM, POM, PDG, and WHM modules. We also offer individual modules separately. 📚'
-  },
-  {
-    keywords: ['infor m3 pom', 'pom module', 'purchase order management'],
-    response: 'The **Infor M3 Purchase Order Management (POM)** module is a specialized 30-hour workshop. It focuses on procurement configuration, PO creation, and receiving flows, and costs **USD $2,100**. 🛒'
-  },
-  {
-    keywords: ['infor m3 mom', 'mom module', 'manufacturing order management'],
-    response: 'The **Infor M3 Manufacturing Order Management (MOM)** module is a specialized 42-hour workshop focusing on managing production workflows, production statistics, and variant handling, and costs **USD $2,940**. 🏭'
-  },
-  {
-    keywords: ['infor m3 whm', 'whm module', 'warehouse management'],
-    response: 'The **Infor M3 Warehouse Management (WHM)** module is a specialized 30-hour workshop focusing on optimizing warehouse processes like picking, packing, and dispatch, and costs **USD $2,100**. 📦'
-  },
-  {
-    keywords: ['infor m3 com', 'com module', 'customer order management'],
-    response: 'The **Infor M3 Customer Order Management (COM)** module is a specialized 36-hour workshop focusing on efficient order processing, pricing, and discounts. It costs **USD $2,520**. 🤝'
-  },
-  {
-    keywords: ['infor m3 pdg', 'pdg module', 'product data general settings'],
-    response: 'The **Infor M3 Product Data & General Settings (PDG)** module is a specialized 30-hour workshop focusing on configuring products, customers, and supplier masters. It costs **USD $2,100**. ⚙️'
-  },
-  {
-    keywords: ['sap s4/hana functional', 'sap s4 hana', 'sap functional'],
-    response: 'Our **SAP S4/HANA Functional** course is a comprehensive 5-week program taught by top instructors, designed to equip you with essential SAP functional skills. 📊'
-  },
-  {
-    keywords: ['sap basis administration', 'sap basis'],
-    response: 'The **SAP Basis Administration** course is a robust 4-week program taught by top instructors, covering the core administration aspects of SAP systems. 💻'
-  },
-  {
-    keywords: ['c# full stack', 'c-sharp full stack', '.net full stack'],
-    response: 'Our **C# (C-Sharp) Full Stack** course is an intensive 6-week program, covering both front-end and back-end development with C# and .NET technologies. 🧑‍💻'
-  },
-  {
-    keywords: ['mern full stack', 'mern development'],
-    response: 'The **MERN Full Stack** course is a comprehensive 6-week program focusing on MongoDB, Express.js, React, and Node.js for modern web application development. 🌐'
-  },
-  {
-    keywords: ['sap hana bootcamp', 'sap hana database', 'hana database'],
-    response: 'Our **SAP HANA Bootcamp** covers database modeling and analytics to help you advance your skills in high-performance in-memory computing with SAP HANA. 📈'
-  },
-  {
-    keywords: ['flutter development', 'flutter mobile', 'dart flutter'],
-    response: 'Our **Flutter Development** course teaches you how to build beautiful, natively compiled, cross-platform mobile apps efficiently from a single codebase. 📱'
-  },
+    // 1. Careers
+    if (query.includes("career") || query.includes("job") || query.includes("intern") || query.includes("hiring")) return "careers";
 
-  // --- Engagement & Pricing ---
-  {
-    keywords: ['contact', 'email', 'phone', 'reach', 'talk to', 'get in touch', 'how to contact'],
-    response: 'You can connect with our experts directly or reach out through our official communication channels. Please visit our website\'s **Contact Us** page for email and phone details, or to fill out an inquiry form. We look forward to connecting with you! 📞'
-  },
-  {
-    keywords: ['pricing', 'cost', 'quote', 'how much', 'rates'],
-    response: 'Our service pricing is **project-specific** and depends on the scope, complexity, and duration. Please contact us for a detailed, personalized quote. For our Infor M3 training modules, prices range from **USD $2,100** to **USD $2,940**. 💰'
-  },
-  {
-    keywords: ['how to start', 'get started', 'begin a project', 'new project'],
-    response: 'To start a project with NexaInnov, we recommend scheduling an initial **consultation**. This allows us to understand your needs and propose the best solution. You can request this through our website\'s contact form. 🚀'
-  },
-  {
-    keywords: ['consultation', 'free consultation', 'discovery call'],
-    response: 'Yes, we offer initial consultations to discuss your project needs and how we can help. This is a great way to explore potential solutions without any commitment. Please contact us to schedule yours! 🤝'
-  },
-  {
-    keywords: ['project duration', 'timeline', 'how long'],
-    response: 'Project durations vary greatly depending on the scope and complexity. During our initial consultation, we can provide a more accurate timeline estimate tailored to your specific requirements. 📅'
-  },
-  {
-    keywords: ['project process', 'workflow', 'steps'],
-    response: 'Our typical project process involves several key phases: **Discovery & Planning**, **Design & Development**, **Testing & Quality Assurance**, and **Deployment & Support**. We maintain agile practices throughout to ensure flexibility and transparency. ⚙️'
-  },
+    // 2. CSR
+    if (query.includes("csr") || query.includes("ngo") || query.includes("community") || query.includes("sustainability")) return "csr";
 
-  // --- Technical Expertise ---
-  {
-    keywords: ['technologies used', 'tech stack', 'programming languages', 'frameworks'],
-    response: 'Our team is proficient in a wide range of modern technologies, including **MERN Stack**, **C#/.NET**, **Flutter** for mobile, and specialized ERP systems like **IBM i (AS/400)** and **JD Edwards**. We adapt our tech stack to best suit your project\'s needs. 👨‍💻'
-  },
-  {
-    keywords: ['quality assurance', 'qa', 'testing', 'security', 'data security'],
-    response: 'We prioritize **quality assurance** with rigorous testing methodologies. **Security** is built into our solutions from the ground up, following industry best practices to protect your data and systems. 🔒'
-  },
+    // 3. SERVICES & ACADEMY (Primary Intent for your new screenshots)
+    if (
+        query.includes("service") || query.includes("automation") || query.includes("marketing") || 
+        query.includes("development") || query.includes("consulting") || query.includes("outsourcing") ||
+        query.includes("training") || query.includes("academy") || query.includes("course") ||
+        query.includes("infor") || query.includes("sap") || query.includes("jd edwards") ||
+        query.includes("pom") || query.includes("mom") || query.includes("whm") || query.includes("pdg")
+    ) return "services";
 
-  // --- Fallback Response ---
-  {
-    keywords: ['sorry', 'don\'t understand', 'help', 'can you help', 'what do you mean'],
-    response: 'I\'m sorry, I couldn\'t quite understand that. 🤔 I can answer questions about our **services**, **training courses**, **products**, and how to **contact us**. Can you please rephrase your question?'
-  }
-];
+    // 4. Products
+    if (query.includes("ppf") || query.includes("cutting software")) return "ppf";
+    if (query.includes("restaurant") || query.includes("menu")) return "restaurant";
+    if (query.includes("eventify")) return "eventify";
+
+    // 5. General/Company/Location
+    if (
+        query.includes("location") || query.includes("address") || query.includes("mangalore") || 
+        query.includes("gartner") || query.includes("trend") || query.includes("about") || 
+        query.includes("contact") || query.includes("ceo") || query.includes("ravindra")
+    ) return "general";
+
+    return "general"; 
+}
 
 export async function POST(req: Request) {
-  try {
-    const { message } = await req.json();
-    if (!message) {
-      return NextResponse.json(
-        { response: 'Please type your question.' },
-        { status: 400 }
-      );
+    try {
+        const { message } = await req.json();
+        if (!message) return NextResponse.json({ response: "Please type a message." }, { status: 400 });
+
+        const intent = detectIntent(message);
+        const filePath = path.join(process.cwd(), "knowledge", `${intent}.txt`);
+        let context = "";
+        
+        try {
+            context = fs.readFileSync(filePath, "utf8");
+        } catch (err) {
+            // Fallback context if a file is missing
+            context = "NexaInnov Solutions specializes in AI, ERP (IBM i, JD Edwards, Infor M3), and Custom Software development.";
+        }
+
+        const chatCompletion = await groq.chat.completions.create({
+            messages: [
+                {
+                    role: "system",
+    content: `You are the professional and welcoming Virtual Assistant for NexaInnov Solutions. 
+    
+    Guidelines:
+    - Use ONLY the Business Info below to answer.
+    - IMPORTANT: When asked about training, explicitly mention that we offer Academy courses for Infor M3, JD Edwards (Financials/Technical), IBM i AS/400 (RPGLE/Admin), and SAP (S/4HANA).
+    - For careers, mention "Software Developer Intern" or "Machine Learning Intern" roles.
+    - If the answer is unknown, direct them to info@nexainnov.com.
+    - Keep responses to 2-3 concise sentences.
+    
+    Business Info:
+    ${context}`
+                },
+                { role: "user", content: message },
+            ],
+            model: "llama-3.1-8b-instant",
+            temperature: 0.5, // Keeps responses focused and professional
+        });
+
+        return NextResponse.json({ response: chatCompletion.choices[0]?.message?.content });
+    } catch (error) {
+        console.error("Chatbot Error:", error);
+        return NextResponse.json({ response: "I'm having trouble accessing my knowledge right now. Please try again or email us at info@nexainnov.com." }, { status: 500 });
     }
-
-    const text = message.toLowerCase();
-    let responseText = "I\'m sorry, I couldn\'t quite understand that. 🤔 I can answer questions about our **services**, **training courses**, **products**, and how to **contact us**. Can you please rephrase your question?";
-
-    const sortedResponses = [...hardcodedResponses].sort((a, b) => b.keywords.length - a.keywords.length);
-
-    for (const item of sortedResponses) {
-      if (item.keywords.some(word => text.includes(word))) {
-        responseText = item.response;
-        break;
-      }
-    }
-
-    return NextResponse.json({ response: responseText });
-  } catch (err) {
-    console.error("Error processing chatbot request:", err);
-    return NextResponse.json(
-      { response: 'An unexpected error occurred while processing your request. Please try again later.' },
-      { status: 500 }
-    );
-  }
 }

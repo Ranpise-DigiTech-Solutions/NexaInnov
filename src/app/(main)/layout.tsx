@@ -11,7 +11,7 @@ type Props = {
 
 const MainLayout = ({ children }: Props) => {
   return (
-    <div className="min-h-screen max-w-screen overflow-x-clip bg-primary-black font-helvetica select-none">
+    <div className="min-h-screen max-w-screen overflow-x-clip bg-background font-helvetica select-none">
       {/* <AnimatePresence mode="wait">
         <motion.div
            key={typeof window !== 'undefined' ? window.location.pathname : ''}

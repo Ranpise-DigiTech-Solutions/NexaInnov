@@ -22,20 +22,20 @@ const TeamMembersComponent = ({ className }: Props) => {
         className
       )}
     >
-      <div className="w-[90%] flex flex-col items-center justify-center gap-6 text-neutral-200">
+      <div className="w-[90%] flex flex-col items-center justify-center gap-6 text-neutral-800 dark:text-neutral-200">
         <div className="w-full text-center text-4xl lg:text-5xl font-bold">
           Our Leadership Team
         </div>
-        <div className="w-full text-base lg:text-lg text-center text-wrap text-neutral-400 leading-7">
+        <div className="w-full text-base lg:text-lg text-center text-wrap text-neutral-800 dark:text-neutral-400 leading-7">
           The right tools wielded by the right people to make anything possible.
           From year to year we strive to invent the most innovative technology
           produced by our creative people.
         </div>
         <div className="w-full py-[2rem] flex flex-row items-center justify-center flex-wrap gap-8">
-          <Link href={"/team/ceo"}>
-            <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
+          {/* <Link href={"/team/ceo"}>
+            <div className="group h-[500px] max-w-[325px] bg-blue-600 dark:bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-blue-800 dark:hover:bg-neutral-700">
               <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-                <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
+                <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-800 dark:text-neutral-200 py-2 px-4 font-semibold">
                   Strategic Investor
                 </p>
               </Button>
@@ -53,11 +53,11 @@ const TeamMembersComponent = ({ className }: Props) => {
                 <div className="transition-all transform duration-300 group-hover:text-primary-pink text-2xl font-semibold">
                   Samadhan Ranpise
                 </div>
-                <div className="font-bold text-neutral-500">
+                <div className="font-bold text-white dark:text-neutral-500">
                   Strategic Investor
                 </div>
               </div>
-              <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">
+              <div className="max-h-[120px] w-full text-center text-wrap text-white dark:text-neutral-400 truncate line-clamp-4 leading-7">
                 Samadhan brings over 20 years of work experience in Information
                 Technology in system analysis, design, development and project
                 management. His technological forte is IBM AS400 and he has
@@ -94,11 +94,11 @@ const TeamMembersComponent = ({ className }: Props) => {
                 />
               </div>
             </div>
-          </Link>
-          <Link href={"/team/cto"}>
-            <div className="group h-[500px] max-w-[325px] bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-neutral-700">
+          </Link> */}
+          <Link href="#">
+            <div className="group h-[500px] max-w-[325px] bg-blue-600 dark:bg-neutral-800 rounded-lg p-4 flex flex-col items-center justify-center gap-6 relative cursor-pointer transform transition-all duration-300 hover:translate-y-2 hover:bg-blue-800 dark:hover:bg-neutral-700">
               <Button className="absolute top-3 right-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-                <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-200 py-2 px-4 font-semibold">
+                <p className="w-full gradient-border-inner text-md tracking-wide text-neutral-800 dark:text-neutral-200 py-2 px-4 font-semibold">
                   Founder and CEO
                 </p>
               </Button>
@@ -116,11 +116,11 @@ const TeamMembersComponent = ({ className }: Props) => {
                 <div className="transition-all transform duration-300 group-hover:text-primary-pink text-2xl font-semibold">
                   Ravindra Raghavan
                 </div>
-                <div className="font-bold text-neutral-500">
+                <div className="font-bold text-white dark:text-neutral-500">
                   Founder and CEO
                 </div>
               </div>
-              <div className="max-h-[120px] w-full text-center text-wrap text-neutral-400 truncate line-clamp-4 leading-7">
+              <div className="max-h-[120px] w-full text-center text-wrap text-white dark:text-neutral-400 truncate line-clamp-4 leading-7">
                 Ravindra brings over 18 years of work experience in Information
                 Technology in system analysis, design, development and project
                 management. His technological forte is IBM AS400 and he is

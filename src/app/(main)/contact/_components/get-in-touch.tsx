@@ -19,8 +19,8 @@ const GetInTouchComponent = (props: Props) => {
     <div className="min-h-screen w-full flex flex-col lg:flex-row items-center justify-center text-neutral-200 gap-16 lg:gap-0">
       <div className="w-full lg:w-[50%] h-fit lg:h-full flex items-center justify-center">
         <div className="w-[90%] h-fit lg:p-[3rem] lg:h-full flex flex-col gap-8 lg:gap-12 items-start justify-center overflow-hidden">
-          <p className="text-4xl lg:text-5xl font-bold">Get in touch</p>
-          <p className="text-neutral-500 text-base lg:text-lg text-wrap leading-7">
+          <p className="text-4xl lg:text-5xl font-bold text-neutral-800 dark:text-white">Get in touch</p>
+          <p className="text-neutral-800 dark:text-neutral-500 text-base lg:text-lg text-wrap leading-7">
             We’d love to hear from you! Whether you have questions, feedback, or
             need assistance, feel free to reach out. Use the contact form below,
             or connect with us via email or phone, and we’ll get back to you as
@@ -29,13 +29,13 @@ const GetInTouchComponent = (props: Props) => {
           <div className="w-full flex flex-col gap-6">
             <div className="group w-full flex flex-row items-center justify-start gap-6 cursor-pointer">
               <LocalPhoneIcon className="w-6 h-6 lg:w-7 lg:h-7 bg-neutral-700 p-1 scale-110 rounded-md transition-all transform duration-300 group-hover:scale-125" />
-              <span className="transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
+              <span className="dark:text-white text-neutral-800 transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
                 (+91) 97699-19222
               </span>
             </div>
             <div className="group w-full flex flex-row items-center justify-start gap-6 cursor-pointer">
               <EmailIcon className="w-6 h-6 lg:w-7 lg:h-7 bg-neutral-700 p-1 scale-110 rounded-md transition-all transform duration-300 group-hover:scale-125" />
-              <span className="transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
+              <span className="dark:text-white text-neutral-800 transition-all transform duration-300 text-base lg:text-lg group-hover:text-primary-pink">
                 info@nexainnov.com / admin@nexainnov.com
               </span>
             </div>
